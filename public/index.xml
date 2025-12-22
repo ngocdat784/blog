@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ký sự Lập trình Java &amp; JavaScript</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Ký sự Lập trình Java &amp; JavaScript</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giới thiệu về ngôn ngữ lập trình Java</title>
+      <link>http://localhost:1313/blog/java-gioi-thieu/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/java-gioi-thieu/</guid>
+      <description>&lt;h2 id=&#34;java-là-gì&#34;&gt;Java là gì?&lt;/h2&gt;&#xA;&lt;p&gt;Java là một ngôn ngữ lập trình hướng đối tượng, được sử dụng rộng rãi trong&#xA;phát triển phần mềm doanh nghiệp, web và ứng dụng mạng.&lt;/p&gt;&#xA;&lt;h2 id=&#34;đặc-điểm-nổi-bật-của-java&#34;&gt;Đặc điểm nổi bật của Java&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Chạy trên nhiều nền tảng (Write Once, Run Anywhere)&lt;/li&gt;&#xA;&lt;li&gt;Hướng đối tượng&lt;/li&gt;&#xA;&lt;li&gt;Bảo mật cao&lt;/li&gt;&#xA;&lt;li&gt;Được dùng nhiều trong lập trình mạng&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ứng-dụng-của-java&#34;&gt;Ứng dụng của Java&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Web backend&lt;/li&gt;&#xA;&lt;li&gt;Ứng dụng desktop&lt;/li&gt;&#xA;&lt;li&gt;Hệ thống mạng&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/blog/java-oop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/java-oop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/blog/js-bien-kieu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/js-bien-kieu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/blog/js-la-gi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/js-la-gi/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

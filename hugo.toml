@@ -1,0 +1,32 @@
+baseURL = "http://localhost:1313/"
+languageCode = "vi"
+title = "Ký sự Lập trình Java & JavaScript"
+theme = "paper"
+
+[params]
+  description = "Chia sẻ kiến thức Java, JavaScript và lập trình mạng cho sinh viên"
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 2
+
+[[menu.main]]
+  name = "Java"
+  url = "/tags/java/"
+  weight = 3
+
+[[menu.main]]
+  name = "JavaScript"
+  url = "/tags/javascript/"
+  weight = 4
+
+[[menu.main]]
+  name = "About Me"
+  url = "/about/"
+  weight = 5
+
