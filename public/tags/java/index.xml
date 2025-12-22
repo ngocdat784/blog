@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Ký sự Lập trình Java &amp; JavaScript</title>
+    <link>http://localhost:1313/tags/java/</link>
+    <description>Recent content in Java on Ký sự Lập trình Java &amp; JavaScript</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giới thiệu về ngôn ngữ lập trình Java</title>
+      <link>http://localhost:1313/blog/java-gioi-thieu/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/java-gioi-thieu/</guid>
+      <description>&lt;h2 id=&#34;java-là-gì&#34;&gt;Java là gì?&lt;/h2&gt;&#xA;&lt;p&gt;Java là một ngôn ngữ lập trình hướng đối tượng, được sử dụng rộng rãi trong&#xA;phát triển phần mềm, đặc biệt là các hệ thống lớn và lập trình mạng.&lt;/p&gt;&#xA;&lt;h2 id=&#34;đặc-điểm-nổi-bật-của-java&#34;&gt;Đặc điểm nổi bật của Java&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Chạy trên nhiều nền tảng (Write Once, Run Anywhere)&lt;/li&gt;&#xA;&lt;li&gt;Hướng đối tượng&lt;/li&gt;&#xA;&lt;li&gt;Bảo mật cao&lt;/li&gt;&#xA;&lt;li&gt;Cộng đồng lớn&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ứng-dụng-của-java&#34;&gt;Ứng dụng của Java&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ứng dụng web (Backend)&lt;/li&gt;&#xA;&lt;li&gt;Ứng dụng desktop&lt;/li&gt;&#xA;&lt;li&gt;Lập trình mạng&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Lập trình hướng đối tượng trong Java</title>
+      <link>http://localhost:1313/blog/java-oop/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/java-oop/</guid>
+      <description>&lt;h2 id=&#34;lập-trình-hướng-đối-tượng-là-gì&#34;&gt;Lập trình hướng đối tượng là gì?&lt;/h2&gt;&#xA;&lt;p&gt;Lập trình hướng đối tượng (OOP) là phương pháp lập trình dựa trên các đối tượng&#xA;và lớp.&lt;/p&gt;&#xA;&lt;h2 id=&#34;4-đặc-tính-chính-của-oop-trong-java&#34;&gt;4 đặc tính chính của OOP trong Java&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Đóng gói (Encapsulation)&lt;/li&gt;&#xA;&lt;li&gt;Kế thừa (Inheritance)&lt;/li&gt;&#xA;&lt;li&gt;Đa hình (Polymorphism)&lt;/li&gt;&#xA;&lt;li&gt;Trừu tượng (Abstraction)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ví-dụ-đơn-giản&#34;&gt;Ví dụ đơn giản&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Student&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    String name;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; age;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
