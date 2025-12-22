@@ -1,4 +1,3 @@
-```md
 ---
 title: "JavaScript là gì?"
 date: 2025-12-22
@@ -8,14 +7,36 @@ tags: ["JavaScript"]
 
 ## JavaScript là gì?
 
-JavaScript là ngôn ngữ lập trình dùng để tạo các trang web động,
-giúp website tương tác với người dùng.
+JavaScript là một ngôn ngữ lập trình phổ biến, được sử dụng chủ yếu trong
+phát triển website để tạo ra các trang web **động và tương tác** với người dùng.
+
+Ngày nay, JavaScript không chỉ chạy trên trình duyệt mà còn được sử dụng
+rộng rãi ở phía máy chủ.
+
+---
 
 ## JavaScript chạy ở đâu?
-- Trình duyệt web
-- Server (Node.js)
+
+JavaScript có thể chạy ở nhiều môi trường khác nhau:
+
+- **Trình duyệt web**: Chrome, Edge, Firefox…
+- **Server** thông qua nền tảng **Node.js**
+
+---
 
 ## Ứng dụng của JavaScript
-- Xử lý sự kiện
-- Kiểm tra form
-- Xây dựng ứng dụng web
+
+JavaScript được sử dụng trong nhiều lĩnh vực:
+
+- Xử lý sự kiện người dùng (click, nhập liệu…)
+- Kiểm tra dữ liệu form trước khi gửi
+- Xây dựng website động
+- Phát triển ứng dụng web hiện đại (React, Vue, Angular)
+
+---
+
+## Kết luận
+
+JavaScript là một ngôn ngữ **không thể thiếu** trong lập trình web hiện đại.
+Việc nắm vững JavaScript sẽ giúp lập trình viên xây dựng các ứng dụng web
+mạnh mẽ và thân thiện với người dùng.
