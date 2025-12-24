@@ -20,12 +20,154 @@
   />
 
   
-  <title> - Ký sự Lập trình Web &amp; JavaScript</title>
+  <title>Async / Await trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
 
   
   <meta name="theme-color" />
 
-  <meta name="description" content="" />
+  <meta name="description" content="Async / Await là gì?
+Async / Await là cú pháp giúp viết code bất đồng bộ trong JavaScript giống như đồng bộ, giúp:
+
+Dễ đọc
+Dễ debug
+Tránh callback hell
+Code sạch hơn Promise thuần
+
+👉 Thực chất, async / await được xây dựng trên Promise.
+
+Vấn đề của JavaScript bất đồng bộ
+JavaScript không chờ các tác vụ tốn thời gian:
+console.log(&#34;A&#34;);
+
+setTimeout(() =&gt; {
+  console.log(&#34;B&#34;);
+}, 1000);
+
+console.log(&#34;C&#34;);
+📌 Kết quả:
+
+A
+C
+B
+
+Promise – tiền đề của Async / Await
+function getData() {
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+      resolve(&#34;Dữ liệu đã tải&#34;);
+    }, 1000);
+  });
+}
+
+getData().then(data =&gt; console.log(data));
+
+
+❌ Khó đọc khi chain nhiều then().
+
+Cú pháp cơ bản của Async / Await
+async function loadData() {
+  const data = await getData();
+  console.log(data);
+}
+
+loadData();
+
+
+📌 Quy tắc:
+
+Hàm dùng await phải có async
+
+await chỉ dùng với Promise
+
+Ví dụ 1: Gọi API bằng Async / Await
+async function loadPosts() {
+  const res = await fetch(&#34;https://jsonplaceholder.typicode.com/posts&#34;);
+  const data = await res.json();
+  console.log(data);
+}
+
+loadPosts();
+
+
+✔ Gọn hơn then()
+✔ Dễ hiểu hơn
+
+Xử lý lỗi với try / catch
+async function loadData() {
+  try {
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      throw new Error(&#34;Lỗi server&#34;);
+    }
+
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
+
+👉 try / catch = then().catch()
+
+Ví dụ 2: Gọi nhiều API liên tiếp
+async function loadUserData() {
+  const user = await fetch(&#34;/api/user&#34;).then(res =&gt; res.json());
+  const orders = await fetch(`/api/orders/${user.id}`).then(res =&gt; res.json());
+
+  console.log(user, orders);
+}
+
+
+📌 API sau phụ thuộc API trước → dùng await rất hợp.
+
+Ví dụ 3: Gọi nhiều API song song
+async function loadAll() {
+  const [users, products] = await Promise.all([
+    fetch(&#34;/api/users&#34;).then(r =&gt; r.json()),
+    fetch(&#34;/api/products&#34;).then(r =&gt; r.json())
+  ]);
+
+  console.log(users, products);
+}
+
+
+✔ Nhanh hơn
+✔ Thực tế hơn
+
+Async / Await với LocalStorage
+async function login() {
+  const res = await fetch(&#34;/api/login&#34;);
+  const data = await res.json();
+
+  localStorage.setItem(&#34;token&#34;, data.token);
+}
+
+Lỗi thường gặp khi dùng Async / Await
+
+❌ Quên await → dữ liệu là Promise
+❌ Dùng await ngoài hàm async
+❌ Không bắt lỗi
+❌ Chờ tuần tự không cần thiết
+
+Khi nào nên dùng Async / Await?
+
+✔ Gọi API
+✔ Đọc / ghi file
+✔ Xử lý dữ liệu bất đồng bộ
+✔ Code nghiệp vụ phức tạp
+
+❌ Không cần cho logic đơn giản, đồng bộ
+
+Async / Await vs Promise thuần
+| Tiêu chí  | Async / Await | Promise |
+| --------- | ------------- | ------- |
+| Dễ đọc    | ⭐⭐⭐⭐⭐         | ⭐⭐⭐     |
+| Debug     | Dễ            | Khó     |
+| Phổ biến  | Rất cao       | Cao     |
+| Dự án lớn | Khuyến nghị   | Ít dùng |
+" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -159,18 +301,164 @@
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     ><article>
   <header class="mb-14">
-    <h1 class="my-0! pb-2.5"></h1><div class="text-xs antialiased opacity-60"></div></header>
+    <h1 class="my-0! pb-2.5">Async / Await trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 24, 2025</time></div></header>
 
-  <section></section>
+  <section><h2 id="async--await-là-gì">Async / Await là gì?</h2>
+<p><strong>Async / Await</strong> là cú pháp giúp viết <strong>code bất đồng bộ</strong> trong JavaScript <strong>giống như đồng bộ</strong>, giúp:</p>
+<ul>
+<li>Dễ đọc</li>
+<li>Dễ debug</li>
+<li>Tránh callback hell</li>
+<li>Code sạch hơn Promise thuần</li>
+</ul>
+<p>👉 Thực chất, <code>async / await</code> <strong>được xây dựng trên Promise</strong>.</p>
+<hr>
+<h2 id="vấn-đề-của-javascript-bất-đồng-bộ">Vấn đề của JavaScript bất đồng bộ</h2>
+<p>JavaScript <strong>không chờ</strong> các tác vụ tốn thời gian:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;A&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;B&#34;</span>);
+</span></span><span style="display:flex;"><span>}, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;C&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Kết</span> <span style="color:#a6e22e">quả</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">A</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">C</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">B</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Promise <span style="color:#960050;background-color:#1e0010">–</span> <span style="color:#a6e22e">tiền</span> <span style="color:#a6e22e">đề</span> <span style="color:#a6e22e">của</span> <span style="color:#a6e22e">Async</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">Await</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getData</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#34;Dữ liệu đã tải&#34;</span>);
+</span></span><span style="display:flex;"><span>    }, <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">getData</span>().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Khó</span> <span style="color:#a6e22e">đọc</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">chain</span> <span style="color:#a6e22e">nhiều</span> <span style="color:#a6e22e">then</span>().
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cú</span> <span style="color:#a6e22e">pháp</span> <span style="color:#a6e22e">cơ</span> <span style="color:#a6e22e">bản</span> <span style="color:#a6e22e">của</span> <span style="color:#a6e22e">Async</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">Await</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadData</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">getData</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">loadData</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Quy</span> <span style="color:#a6e22e">tắc</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Hàm</span> <span style="color:#a6e22e">dùng</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">phải</span> <span style="color:#a6e22e">có</span> <span style="color:#66d9ef">async</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">chỉ</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">với</span> Promise
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Gọi</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">bằng</span> <span style="color:#a6e22e">Async</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">Await</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadPosts</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/posts&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">loadPosts</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Gọn</span> <span style="color:#a6e22e">hơn</span> <span style="color:#a6e22e">then</span>()
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Dễ</span> <span style="color:#a6e22e">hiểu</span> <span style="color:#a6e22e">hơn</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Xử</span> <span style="color:#a6e22e">lý</span> <span style="color:#a6e22e">lỗi</span> <span style="color:#a6e22e">với</span> <span style="color:#66d9ef">try</span> <span style="color:#960050;background-color:#1e0010">/ catch</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadData</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">url</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">ok</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;Lỗi server&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#66d9ef">try</span> <span style="color:#960050;background-color:#1e0010">/ catch = then().catch()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Gọi</span> <span style="color:#a6e22e">nhiều</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">liên</span> <span style="color:#a6e22e">tiếp</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadUserData</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;/api/user&#34;</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>());
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">orders</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">`/api/orders/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">id</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">user</span>, <span style="color:#a6e22e">orders</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">sau</span> <span style="color:#a6e22e">phụ</span> <span style="color:#a6e22e">thuộc</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">trước</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">dùng</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">rất</span> <span style="color:#a6e22e">hợp</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Gọi</span> <span style="color:#a6e22e">nhiều</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">song</span> <span style="color:#a6e22e">song</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadAll</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">users</span>, <span style="color:#a6e22e">products</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> Promise.<span style="color:#a6e22e">all</span>([
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;/api/users&#34;</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">r</span> =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">json</span>()),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;/api/products&#34;</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">r</span> =&gt; <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">json</span>())
+</span></span><span style="display:flex;"><span>  ]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">users</span>, <span style="color:#a6e22e">products</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Nhanh</span> <span style="color:#a6e22e">hơn</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Thực</span> <span style="color:#a6e22e">tế</span> <span style="color:#a6e22e">hơn</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Async</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">Await</span> <span style="color:#a6e22e">với</span> <span style="color:#a6e22e">LocalStorage</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">login</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;/api/login&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;token&#34;</span>, <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">token</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Lỗi</span> <span style="color:#a6e22e">thường</span> <span style="color:#a6e22e">gặp</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">Async</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">Await</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Quên</span> <span style="color:#66d9ef">await</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span> <span style="color:#a6e22e">là</span> Promise
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Dùng</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ngoài</span> <span style="color:#a6e22e">hàm</span> <span style="color:#66d9ef">async</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">bắt</span> <span style="color:#a6e22e">lỗi</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Chờ</span> <span style="color:#a6e22e">tuần</span> <span style="color:#a6e22e">tự</span> <span style="color:#a6e22e">không</span> <span style="color:#a6e22e">cần</span> <span style="color:#a6e22e">thiết</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Khi</span> <span style="color:#a6e22e">nào</span> <span style="color:#a6e22e">nên</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">Async</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">Await</span><span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Gọi</span> <span style="color:#a6e22e">API</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Đọc</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">ghi</span> <span style="color:#a6e22e">file</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Xử</span> <span style="color:#a6e22e">lý</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span> <span style="color:#a6e22e">bất</span> <span style="color:#a6e22e">đồng</span> <span style="color:#a6e22e">bộ</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Code</span> <span style="color:#a6e22e">nghiệp</span> <span style="color:#a6e22e">vụ</span> <span style="color:#a6e22e">phức</span> <span style="color:#a6e22e">tạp</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">cần</span> <span style="color:#a6e22e">cho</span> <span style="color:#a6e22e">logic</span> <span style="color:#a6e22e">đơn</span> <span style="color:#a6e22e">giản</span>, <span style="color:#a6e22e">đồng</span> <span style="color:#a6e22e">bộ</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Async</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">Await</span> <span style="color:#a6e22e">vs</span> Promise <span style="color:#a6e22e">thuần</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Tiêu</span> <span style="color:#a6e22e">chí</span>  <span style="color:#f92672">|</span> <span style="color:#a6e22e">Async</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">Await</span> <span style="color:#f92672">|</span> Promise <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">---------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">-------------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">-------</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Dễ</span> <span style="color:#a6e22e">đọc</span>    <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">⭐⭐⭐⭐⭐</span>         <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">⭐⭐⭐</span>     <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Debug</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Dễ</span>            <span style="color:#f92672">|</span> <span style="color:#a6e22e">Khó</span>     <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Phổ</span> <span style="color:#a6e22e">biến</span>  <span style="color:#f92672">|</span> <span style="color:#a6e22e">Rất</span> <span style="color:#a6e22e">cao</span>       <span style="color:#f92672">|</span> <span style="color:#a6e22e">Cao</span>     <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Dự</span> <span style="color:#a6e22e">án</span> <span style="color:#a6e22e">lớn</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Khuyến</span> <span style="color:#a6e22e">nghị</span>   <span style="color:#f92672">|</span> <span style="color:#a6e22e">Ít</span> <span style="color:#a6e22e">dùng</span> <span style="color:#f92672">|</span>
+</span></span></code></pre></div></section>
 
-  <nav
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/js-nang-cao"
+      >js-nang-cao</a
+    ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-toan-tu/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Toán tử trong JavaScript</span></a
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-la-gi/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>JavaScript là gì?</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-call-api-thuc-te/"
-      ><span></span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      href="http://localhost:1313/blog/js-fetch-api/"
+      ><span>Fetch API trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >

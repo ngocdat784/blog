@@ -20,12 +20,139 @@
   />
 
   
-  <title> - Ký sự Lập trình Web &amp; JavaScript</title>
+  <title>LocalStorage trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
 
   
   <meta name="theme-color" />
 
-  <meta name="description" content="" />
+  <meta name="description" content="LocalStorage là gì?
+LocalStorage là một Web API cho phép JavaScript lưu trữ dữ liệu ngay trên trình duyệt của người dùng.
+📌 Đặc điểm:
+
+Lưu dữ liệu dạng key – value
+Dữ liệu không tự mất khi reload hay đóng trình duyệt
+Dung lượng khoảng 5–10MB
+Chỉ lưu được string
+
+👉 Rất hay dùng trong:
+
+Lưu token đăng nhập
+Giỏ hàng
+Theme (dark / light)
+Trạng thái người dùng
+
+
+Cú pháp cơ bản của LocalStorage
+Lưu dữ liệu
+localStorage.setItem(&#34;username&#34;, &#34;admin&#34;);
+Lấy dữ liệu
+const username = localStorage.getItem(&#34;username&#34;);
+console.log(username);
+
+Xoá 1 key
+localStorage.removeItem(&#34;username&#34;);
+
+Xoá toàn bộ
+localStorage.clear();
+
+Lưu Object / Array vào LocalStorage
+
+❌ LocalStorage không lưu trực tiếp object
+
+👉 Phải chuyển sang JSON.
+
+Lưu object
+const user = {
+  name: &#34;Ngọc Đạt&#34;,
+  role: &#34;admin&#34;
+};
+
+localStorage.setItem(&#34;user&#34;, JSON.stringify(user));
+
+Lấy object
+const user = JSON.parse(localStorage.getItem(&#34;user&#34;));
+console.log(user.name);
+
+Ví dụ 1: Lưu trạng thái đăng nhập
+Sau khi login thành công
+localStorage.setItem(&#34;token&#34;, &#34;abc123&#34;);
+localStorage.setItem(&#34;fullName&#34;, &#34;Ngọc Đạt Trần&#34;);
+
+Khi load trang
+const token = localStorage.getItem(&#34;token&#34;);
+
+if (token) {
+  console.log(&#34;Đã đăng nhập&#34;);
+} else {
+  console.log(&#34;Chưa đăng nhập&#34;);
+}
+
+Ví dụ 2: Đăng xuất (Logout)
+function logout() {
+  localStorage.removeItem(&#34;token&#34;);
+  localStorage.removeItem(&#34;fullName&#34;);
+  window.location.href = &#34;/login.html&#34;;
+}
+
+Ví dụ 3: Lưu giỏ hàng vào LocalStorage
+Thêm sản phẩm vào giỏ
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem(&#34;cart&#34;)) || [];
+
+  cart.push(product);
+
+  localStorage.setItem(&#34;cart&#34;, JSON.stringify(cart));
+}
+
+Lấy giỏ hàng
+function getCart() {
+  return JSON.parse(localStorage.getItem(&#34;cart&#34;)) || [];
+}
+
+Ví dụ 4: Lưu theme Dark / Light
+function setTheme(theme) {
+  localStorage.setItem(&#34;theme&#34;, theme);
+  document.body.className = theme;
+}
+
+function loadTheme() {
+  const theme = localStorage.getItem(&#34;theme&#34;) || &#34;light&#34;;
+  document.body.className = theme;
+}
+
+loadTheme();
+
+LocalStorage vs SessionStorage
+| Tiêu chí         | LocalStorage | SessionStorage |
+| ---------------- | ------------ | -------------- |
+| Lưu lâu dài      | ✅            | ❌              |
+| Mất khi đóng tab | ❌            | ✅              |
+| Dung lượng       | ~5MB         | ~5MB           |
+| Phổ biến         | Rất cao      | Trung bình     |
+👉 Token đăng nhập → LocalStorage
+👉 Form tạm → SessionStorage
+
+Lưu ý bảo mật khi dùng LocalStorage
+
+⚠ Không nên lưu:
+
+Mật khẩu
+
+Thông tin nhạy cảm
+
+⚠ Token trong LocalStorage:
+
+Dễ bị XSS đánh cắp
+
+Giải pháp nâng cao: HttpOnly Cookie
+
+Các lỗi thường gặp
+
+❌ Quên JSON.stringify
+❌ JSON.parse(null) gây lỗi
+❌ Dùng key trùng nhau
+❌ Lưu quá nhiều dữ liệu
+" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -159,18 +286,149 @@
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     ><article>
   <header class="mb-14">
-    <h1 class="my-0! pb-2.5"></h1><div class="text-xs antialiased opacity-60"></div></header>
+    <h1 class="my-0! pb-2.5">LocalStorage trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 24, 2025</time></div></header>
 
-  <section></section>
+  <section><h2 id="localstorage-là-gì">LocalStorage là gì?</h2>
+<p><strong>LocalStorage</strong> là một Web API cho phép JavaScript <strong>lưu trữ dữ liệu ngay trên trình duyệt</strong> của người dùng.</p>
+<p>📌 Đặc điểm:</p>
+<ul>
+<li>Lưu dữ liệu <strong>dạng key – value</strong></li>
+<li>Dữ liệu <strong>không tự mất</strong> khi reload hay đóng trình duyệt</li>
+<li>Dung lượng khoảng <strong>5–10MB</strong></li>
+<li>Chỉ lưu được <strong>string</strong></li>
+</ul>
+<p>👉 Rất hay dùng trong:</p>
+<ul>
+<li>Lưu token đăng nhập</li>
+<li>Giỏ hàng</li>
+<li>Theme (dark / light)</li>
+<li>Trạng thái người dùng</li>
+</ul>
+<hr>
+<h2 id="cú-pháp-cơ-bản-của-localstorage">Cú pháp cơ bản của LocalStorage</h2>
+<h3 id="lưu-dữ-liệu">Lưu dữ liệu</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;username&#34;</span>, <span style="color:#e6db74">&#34;admin&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Lấy</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">username</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Xoá</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">key</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">removeItem</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Xoá</span> <span style="color:#a6e22e">toàn</span> <span style="color:#a6e22e">bộ</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">clear</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Lưu</span> Object <span style="color:#f92672">/</span> Array <span style="color:#a6e22e">vào</span> <span style="color:#a6e22e">LocalStorage</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">LocalStorage</span> <span style="color:#a6e22e">không</span> <span style="color:#a6e22e">lưu</span> <span style="color:#a6e22e">trực</span> <span style="color:#a6e22e">tiếp</span> <span style="color:#a6e22e">object</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Phải</span> <span style="color:#a6e22e">chuyển</span> <span style="color:#a6e22e">sang</span> <span style="color:#a6e22e">JSON</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Lưu</span> <span style="color:#a6e22e">object</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Ngọc Đạt&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;admin&#34;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">user</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Lấy</span> <span style="color:#a6e22e">object</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;user&#34;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Lưu</span> <span style="color:#a6e22e">trạng</span> <span style="color:#a6e22e">thái</span> <span style="color:#a6e22e">đăng</span> <span style="color:#a6e22e">nhập</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Sau</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">login</span> <span style="color:#a6e22e">thành</span> <span style="color:#a6e22e">công</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;token&#34;</span>, <span style="color:#e6db74">&#34;abc123&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;fullName&#34;</span>, <span style="color:#e6db74">&#34;Ngọc Đạt Trần&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Khi</span> <span style="color:#a6e22e">load</span> <span style="color:#a6e22e">trang</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;token&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">token</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Đã đăng nhập&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Chưa đăng nhập&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Đăng</span> <span style="color:#a6e22e">xuất</span> (<span style="color:#a6e22e">Logout</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">logout</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">removeItem</span>(<span style="color:#e6db74">&#34;token&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">removeItem</span>(<span style="color:#e6db74">&#34;fullName&#34;</span>);
+</span></span><span style="display:flex;"><span>  window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/login.html&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Lưu</span> <span style="color:#a6e22e">giỏ</span> <span style="color:#a6e22e">hàng</span> <span style="color:#a6e22e">vào</span> <span style="color:#a6e22e">LocalStorage</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Thêm</span> <span style="color:#a6e22e">sản</span> <span style="color:#a6e22e">phẩm</span> <span style="color:#a6e22e">vào</span> <span style="color:#a6e22e">giỏ</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addToCart</span>(<span style="color:#a6e22e">product</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;cart&#34;</span>)) <span style="color:#f92672">||</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;cart&#34;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">cart</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Lấy</span> <span style="color:#a6e22e">giỏ</span> <span style="color:#a6e22e">hàng</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCart</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;cart&#34;</span>)) <span style="color:#f92672">||</span> [];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Lưu</span> <span style="color:#a6e22e">theme</span> <span style="color:#a6e22e">Dark</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">Light</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setTheme</span>(<span style="color:#a6e22e">theme</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;theme&#34;</span>, <span style="color:#a6e22e">theme</span>);
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">theme</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadTheme</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">theme</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;theme&#34;</span>) <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;light&#34;</span>;
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">theme</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">loadTheme</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">LocalStorage</span> <span style="color:#a6e22e">vs</span> <span style="color:#a6e22e">SessionStorage</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Tiêu</span> <span style="color:#a6e22e">chí</span>         <span style="color:#f92672">|</span> <span style="color:#a6e22e">LocalStorage</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">SessionStorage</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">----------------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">------------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">--------------</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Lưu</span> <span style="color:#a6e22e">lâu</span> <span style="color:#a6e22e">dài</span>      <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">✅</span>            <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">❌</span>              <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Mất</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">đóng</span> <span style="color:#a6e22e">tab</span> <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">❌</span>            <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">✅</span>              <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Dung</span> <span style="color:#a6e22e">lượng</span>       <span style="color:#f92672">|</span> <span style="color:#f92672">~</span><span style="color:#ae81ff">5</span><span style="color:#a6e22e">MB</span>         <span style="color:#f92672">|</span> <span style="color:#f92672">~</span><span style="color:#ae81ff">5</span><span style="color:#a6e22e">MB</span>           <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Phổ</span> <span style="color:#a6e22e">biến</span>         <span style="color:#f92672">|</span> <span style="color:#a6e22e">Rất</span> <span style="color:#a6e22e">cao</span>      <span style="color:#f92672">|</span> <span style="color:#a6e22e">Trung</span> <span style="color:#a6e22e">bình</span>     <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Token</span> <span style="color:#a6e22e">đăng</span> <span style="color:#a6e22e">nhập</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">LocalStorage</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Form</span> <span style="color:#a6e22e">tạm</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">SessionStorage</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Lưu</span> <span style="color:#a6e22e">ý</span> <span style="color:#a6e22e">bảo</span> <span style="color:#a6e22e">mật</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">LocalStorage</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">⚠</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">nên</span> <span style="color:#a6e22e">lưu</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Mật</span> <span style="color:#a6e22e">khẩu</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Thông</span> <span style="color:#a6e22e">tin</span> <span style="color:#a6e22e">nhạy</span> <span style="color:#a6e22e">cảm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">⚠</span> <span style="color:#a6e22e">Token</span> <span style="color:#a6e22e">trong</span> <span style="color:#a6e22e">LocalStorage</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Dễ</span> <span style="color:#a6e22e">bị</span> <span style="color:#a6e22e">XSS</span> <span style="color:#a6e22e">đánh</span> <span style="color:#a6e22e">cắp</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Giải</span> <span style="color:#a6e22e">pháp</span> <span style="color:#a6e22e">nâng</span> <span style="color:#a6e22e">cao</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">HttpOnly</span> <span style="color:#a6e22e">Cookie</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Các</span> <span style="color:#a6e22e">lỗi</span> <span style="color:#a6e22e">thường</span> <span style="color:#a6e22e">gặp</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Quên</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#66d9ef">null</span>) <span style="color:#a6e22e">gây</span> <span style="color:#a6e22e">lỗi</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Dùng</span> <span style="color:#a6e22e">key</span> <span style="color:#a6e22e">trùng</span> <span style="color:#a6e22e">nhau</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Lưu</span> <span style="color:#a6e22e">quá</span> <span style="color:#a6e22e">nhiều</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span>
+</span></span></code></pre></div></section>
 
-  <nav
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/js-api"
+      >js-api</a
+    ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-ham-function/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-call-api-thuc-te/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Gọi API thực tế bằng JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-mang-va-object/"
-      ><span></span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      href="http://localhost:1313/blog/js-bien-va-kieu-du-lieu/"
+      ><span>Biến và Kiểu dữ liệu trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >

@@ -20,12 +20,124 @@
   />
 
   
-  <title> - Ký sự Lập trình Web &amp; JavaScript</title>
+  <title>Xử lý Form &amp; Validation trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
 
   
   <meta name="theme-color" />
 
-  <meta name="description" content="" />
+  <meta name="description" content="1. Form và Validation là gì?
+
+Form dùng để thu thập dữ liệu người dùng
+Validation dùng để kiểm tra dữ liệu trước khi gửi
+
+👉 Validation giúp:
+
+Tránh dữ liệu sai
+Tăng trải nghiệm người dùng
+Giảm lỗi phía server
+
+
+2. Cấu trúc form cơ bản
+&lt;form id=&#34;registerForm&#34;&gt;
+  &lt;input type=&#34;text&#34; id=&#34;username&#34; placeholder=&#34;Tên đăng nhập&#34;&gt;
+  &lt;input type=&#34;email&#34; id=&#34;email&#34; placeholder=&#34;Email&#34;&gt;
+  &lt;input type=&#34;password&#34; id=&#34;password&#34; placeholder=&#34;Mật khẩu&#34;&gt;
+  &lt;button type=&#34;submit&#34;&gt;Đăng ký&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;p id=&#34;error&#34;&gt;&lt;/p&gt;
+3. Bắt sự kiện submit
+const form = document.getElementById(&#34;registerForm&#34;);
+
+form.addEventListener(&#34;submit&#34;, function(e) {
+  e.preventDefault(); // ngăn reload trang
+  console.log(&#34;Submit form&#34;);
+});
+
+
+📌 Bắt buộc dùng preventDefault()
+
+4. Lấy dữ liệu từ input
+const username = document.getElementById(&#34;username&#34;).value;
+const email = document.getElementById(&#34;email&#34;).value;
+const password = document.getElementById(&#34;password&#34;).value;
+
+5. Kiểm tra dữ liệu rỗng
+if (username === &#34;&#34; || email === &#34;&#34; || password === &#34;&#34;) {
+  error.innerText = &#34;Vui lòng nhập đầy đủ thông tin&#34;;
+  return;
+}
+
+6. Kiểm tra email hợp lệ
+function isValidEmail(email) {
+  return /^[^\s@]&#43;@[^\s@]&#43;\.[^\s@]&#43;$/.test(email);
+}
+
+if (!isValidEmail(email)) {
+  error.innerText = &#34;Email không hợp lệ&#34;;
+  return;
+}
+
+7. Kiểm tra độ dài mật khẩu
+if (password.length &lt; 6) {
+  error.innerText = &#34;Mật khẩu phải ít nhất 6 ký tự&#34;;
+  return;
+}
+
+8. Hiển thị lỗi thân thiện
+error.style.color = &#34;red&#34;;
+error.innerText = &#34;Lỗi nhập liệu&#34;;
+
+
+Hoặc dùng class:
+
+error.classList.add(&#34;error&#34;);
+
+9. Validation khi nhập (Realtime)
+password.addEventListener(&#34;input&#34;, function() {
+  if (password.value.length &lt; 6) {
+    error.innerText = &#34;Mật khẩu yếu&#34;;
+  } else {
+    error.innerText = &#34;&#34;;
+  }
+});
+
+10. Ví dụ hoàn chỉnh
+form.addEventListener(&#34;submit&#34;, function(e) {
+  e.preventDefault();
+
+  if (!username.value || !email.value || !password.value) {
+    error.innerText = &#34;Không được để trống&#34;;
+    return;
+  }
+
+  if (!isValidEmail(email.value)) {
+    error.innerText = &#34;Email không hợp lệ&#34;;
+    return;
+  }
+
+  if (password.value.length &lt; 6) {
+    error.innerText = &#34;Mật khẩu quá ngắn&#34;;
+    return;
+  }
+
+  error.style.color = &#34;green&#34;;
+  error.innerText = &#34;Dữ liệu hợp lệ!&#34;;
+});
+11. Validation HTML5 vs JavaScript
+| HTML5                 | JavaScript    |
+| --------------------- | ------------- |
+| Dễ dùng               | Linh hoạt     |
+| Ít tuỳ chỉnh          | Tuỳ chỉnh cao |
+| Phụ thuộc trình duyệt | Chủ động      |
+👉 Thực tế: kết hợp cả hai
+
+12. Lỗi thường gặp
+
+❌ Quên preventDefault()
+❌ Kiểm tra không đầy đủ
+❌ Chỉ validate frontend (cần backend nữa)
+" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -159,18 +271,134 @@
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     ><article>
   <header class="mb-14">
-    <h1 class="my-0! pb-2.5"></h1><div class="text-xs antialiased opacity-60"></div></header>
+    <h1 class="my-0! pb-2.5">Xử lý Form &amp; Validation trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 22, 2025</time></div></header>
 
-  <section></section>
+  <section><h2 id="1-form-và-validation-là-gì">1. Form và Validation là gì?</h2>
+<ul>
+<li><strong>Form</strong> dùng để thu thập dữ liệu người dùng</li>
+<li><strong>Validation</strong> dùng để <strong>kiểm tra dữ liệu trước khi gửi</strong></li>
+</ul>
+<p>👉 Validation giúp:</p>
+<ul>
+<li>Tránh dữ liệu sai</li>
+<li>Tăng trải nghiệm người dùng</li>
+<li>Giảm lỗi phía server</li>
+</ul>
+<hr>
+<h2 id="2-cấu-trúc-form-cơ-bản">2. Cấu trúc form cơ bản</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;registerForm&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Tên đăng nhập&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Email&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mật khẩu&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Đăng ký&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;error&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>3. Bắt sự kiện submit
+</span></span><span style="display:flex;"><span>const form = document.getElementById(&#34;registerForm&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>form.addEventListener(&#34;submit&#34;, function(e) {
+</span></span><span style="display:flex;"><span>  e.preventDefault(); // ngăn reload trang
+</span></span><span style="display:flex;"><span>  console.log(&#34;Submit form&#34;);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>📌 Bắt buộc dùng preventDefault()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>4. Lấy dữ liệu từ input
+</span></span><span style="display:flex;"><span>const username = document.getElementById(&#34;username&#34;).value;
+</span></span><span style="display:flex;"><span>const email = document.getElementById(&#34;email&#34;).value;
+</span></span><span style="display:flex;"><span>const password = document.getElementById(&#34;password&#34;).value;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>5. Kiểm tra dữ liệu rỗng
+</span></span><span style="display:flex;"><span>if (username === &#34;&#34; || email === &#34;&#34; || password === &#34;&#34;) {
+</span></span><span style="display:flex;"><span>  error.innerText = &#34;Vui lòng nhập đầy đủ thông tin&#34;;
+</span></span><span style="display:flex;"><span>  return;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>6. Kiểm tra email hợp lệ
+</span></span><span style="display:flex;"><span>function isValidEmail(email) {
+</span></span><span style="display:flex;"><span>  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if (!isValidEmail(email)) {
+</span></span><span style="display:flex;"><span>  error.innerText = &#34;Email không hợp lệ&#34;;
+</span></span><span style="display:flex;"><span>  return;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>7. Kiểm tra độ dài mật khẩu
+</span></span><span style="display:flex;"><span>if (password.length &lt; <span style="color:#f92672">6</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">innerText </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mật khẩu phải ít nhất 6 ký tự&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">8</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#a6e22e">Hiển</span> <span style="color:#a6e22e">thị</span> <span style="color:#a6e22e">lỗi</span> <span style="color:#a6e22e">thân</span> <span style="color:#a6e22e">thiện</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">style</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">color </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">innerText </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Lỗi nhập liệu&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Hoặc</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">class:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">classList</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">add</span><span style="color:#960050;background-color:#1e0010">(&#34;</span><span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">&#34;);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">9</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#a6e22e">Validation</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">nhập</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">Realtime</span><span style="color:#960050;background-color:#1e0010">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">password</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">addEventListener</span><span style="color:#960050;background-color:#1e0010">(&#34;</span><span style="color:#a6e22e">input</span><span style="color:#960050;background-color:#1e0010">&#34;,</span> <span style="color:#a6e22e">function</span><span style="color:#960050;background-color:#1e0010">()</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">password</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">value</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">length</span> <span style="color:#960050;background-color:#1e0010">&lt;</span> <span style="color:#a6e22e">6</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">innerText </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mật khẩu yếu&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#a6e22e">else</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">innerText </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">});</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">10</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#a6e22e">hoàn</span> <span style="color:#a6e22e">chỉnh</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">form</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">addEventListener</span><span style="color:#960050;background-color:#1e0010">(&#34;</span><span style="color:#a6e22e">submit</span><span style="color:#960050;background-color:#1e0010">&#34;,</span> <span style="color:#a6e22e">function</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">e</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">e</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">preventDefault</span><span style="color:#960050;background-color:#1e0010">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">(!</span><span style="color:#a6e22e">username</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">value</span> <span style="color:#960050;background-color:#1e0010">||</span> <span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">email</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">value</span> <span style="color:#960050;background-color:#1e0010">||</span> <span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">password</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">value</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">innerText </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Không được để trống&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">(!</span><span style="color:#a6e22e">isValidEmail</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">email</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">value</span><span style="color:#960050;background-color:#1e0010">))</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">innerText </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Email không hợp lệ&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">password</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">value</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">length</span> <span style="color:#960050;background-color:#1e0010">&lt;</span> <span style="color:#a6e22e">6</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">innerText </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Mật khẩu quá ngắn&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">return</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">style</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">color </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;green&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">error</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">innerText </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dữ liệu hợp lệ!&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">});</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">11</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#a6e22e">Validation</span> <span style="color:#a6e22e">HTML5</span> <span style="color:#a6e22e">vs</span> <span style="color:#a6e22e">JavaScript</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">HTML5</span>                 <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">JavaScript</span>    <span style="color:#960050;background-color:#1e0010">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">---------------------</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">-------------</span> <span style="color:#960050;background-color:#1e0010">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">Dễ</span> <span style="color:#a6e22e">dùng</span>               <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">Linh</span> <span style="color:#a6e22e">hoạt</span>     <span style="color:#960050;background-color:#1e0010">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">Ít</span> <span style="color:#a6e22e">tuỳ</span> <span style="color:#a6e22e">chỉnh</span>          <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">Tuỳ</span> <span style="color:#a6e22e">chỉnh</span> <span style="color:#a6e22e">cao</span> <span style="color:#960050;background-color:#1e0010">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">Phụ</span> <span style="color:#a6e22e">thuộc</span> <span style="color:#a6e22e">trình</span> <span style="color:#a6e22e">duyệt</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">Chủ</span> <span style="color:#a6e22e">động</span>      <span style="color:#960050;background-color:#1e0010">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Thực</span> <span style="color:#a6e22e">tế:</span> <span style="color:#a6e22e">kết</span> <span style="color:#a6e22e">hợp</span> <span style="color:#a6e22e">cả</span> <span style="color:#a6e22e">hai</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">12</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#a6e22e">Lỗi</span> <span style="color:#a6e22e">thường</span> <span style="color:#a6e22e">gặp</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Quên</span> <span style="color:#a6e22e">preventDefault</span><span style="color:#960050;background-color:#1e0010">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Kiểm</span> <span style="color:#a6e22e">tra</span> <span style="color:#a6e22e">không</span> <span style="color:#a6e22e">đầy</span> <span style="color:#a6e22e">đủ</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Chỉ</span> <span style="color:#a6e22e">validate</span> <span style="color:#a6e22e">frontend</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">cần</span> <span style="color:#a6e22e">backend</span> <span style="color:#a6e22e">nữa</span><span style="color:#960050;background-color:#1e0010">)</span>
+</span></span></code></pre></div></section>
 
-  <nav
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/js-dom"
+      >js-dom</a
+    ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-fetch-api/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-vong-lap/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Vòng lặp trong JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-ham-function/"
-      ><span></span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      href="http://localhost:1313/blog/js-event-trong-web/"
+      ><span>Xử lý sự kiện trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >

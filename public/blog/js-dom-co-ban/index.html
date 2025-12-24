@@ -20,12 +20,148 @@
   />
 
   
-  <title> - Ký sự Lập trình Web &amp; JavaScript</title>
+  <title>DOM cơ bản trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
 
   
   <meta name="theme-color" />
 
-  <meta name="description" content="" />
+  <meta name="description" content="1. DOM là gì?
+DOM (Document Object Model) là mô hình đối tượng biểu diễn toàn bộ trang HTML dưới dạng cây (tree).
+👉 Nhờ DOM, JavaScript có thể:
+
+Truy cập HTML
+Thay đổi nội dung
+Thay đổi style
+Bắt sự kiện người dùng
+
+📌 Không có DOM → JS không làm được web động
+
+2. Cấu trúc DOM dạng cây
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Tiêu đề&lt;/h1&gt;
+    &lt;p&gt;Nội dung&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+👉 Trình duyệt hiểu như:
+
+document
+ └── html
+     └── body
+         ├── h1
+         └── p
+
+3. Truy cập phần tử HTML
+🔹 3.1. getElementById
+&lt;h1 id=&#34;title&#34;&gt;Hello DOM&lt;/h1&gt;
+
+let title = document.getElementById(&#34;title&#34;);
+console.log(title);
+
+🔹 3.2. getElementsByClassName
+&lt;p class=&#34;text&#34;&gt;Đoạn 1&lt;/p&gt;
+&lt;p class=&#34;text&#34;&gt;Đoạn 2&lt;/p&gt;
+
+let texts = document.getElementsByClassName(&#34;text&#34;);
+
+
+👉 Trả về HTMLCollection
+
+🔹 3.3. getElementsByTagName
+let paragraphs = document.getElementsByTagName(&#34;p&#34;);
+
+🔹 3.4. querySelector (rất nên dùng)
+let title = document.querySelector(&#34;#title&#34;);
+
+
+👉 Dùng CSS selector
+
+🔹 3.5. querySelectorAll
+let items = document.querySelectorAll(&#34;.text&#34;);
+
+
+👉 Trả về NodeList
+
+4. Thay đổi nội dung HTML
+🔹 innerText
+title.innerText = &#34;Nội dung mới&#34;;
+
+🔹 innerHTML
+title.innerHTML = &#34;&lt;span&gt;DOM&lt;/span&gt;&#34;;
+
+
+⚠️ Cẩn thận XSS khi dùng innerHTML
+
+5. Thay đổi thuộc tính
+let img = document.querySelector(&#34;img&#34;);
+
+img.src = &#34;image.png&#34;;
+img.alt = &#34;Ảnh minh hoạ&#34;;
+
+
+Hoặc:
+
+img.setAttribute(&#34;src&#34;, &#34;image.png&#34;);
+
+6. Thay đổi CSS bằng JavaScript
+🔹 Inline style
+title.style.color = &#34;red&#34;;
+title.style.fontSize = &#34;32px&#34;;
+
+🔹 ClassList (khuyên dùng)
+title.classList.add(&#34;active&#34;);
+title.classList.remove(&#34;active&#34;);
+title.classList.toggle(&#34;active&#34;);
+
+
+✔ Sạch
+✔ Dễ quản lý
+
+7. Tạo và xoá phần tử
+🔹 Tạo phần tử
+let p = document.createElement(&#34;p&#34;);
+p.innerText = &#34;Đoạn mới&#34;;
+document.body.appendChild(p);
+
+🔹 Xoá phần tử
+p.remove();
+
+8. DOM và thời điểm chạy JS
+
+❌ Lỗi thường gặp:
+
+document.getElementById(&#34;title&#34;); // null
+
+
+👉 Do JS chạy trước khi HTML load
+
+✔ Cách xử lý:
+
+document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
+  // code DOM ở đây
+});
+
+9. Ví dụ thực tế
+Đổi tiêu đề khi click:
+let btn = document.querySelector(&#34;button&#34;);
+
+btn.onclick = function() {
+  title.innerText = &#34;Bạn vừa click&#34;;
+};
+10. So sánh nhanh
+| Cách           | Ghi chú   |
+| -------------- | --------- |
+| getElementById | Nhanh     |
+| querySelector  | Linh hoạt |
+| innerText      | An toàn   |
+| innerHTML      | Cẩn thận  |
+| classList      | Nên dùng  |
+11. Lỗi thường gặp
+
+❌ Sai selector
+❌ DOM chưa load
+❌ Lạm dụng innerHTML
+" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -159,18 +295,158 @@
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     ><article>
   <header class="mb-14">
-    <h1 class="my-0! pb-2.5"></h1><div class="text-xs antialiased opacity-60"></div></header>
+    <h1 class="my-0! pb-2.5">DOM cơ bản trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 22, 2025</time></div></header>
 
-  <section></section>
+  <section><h2 id="1-dom-là-gì">1. DOM là gì?</h2>
+<p><strong>DOM (Document Object Model)</strong> là mô hình đối tượng biểu diễn <strong>toàn bộ trang HTML</strong> dưới dạng cây (tree).</p>
+<p>👉 Nhờ DOM, JavaScript có thể:</p>
+<ul>
+<li>Truy cập HTML</li>
+<li>Thay đổi nội dung</li>
+<li>Thay đổi style</li>
+<li>Bắt sự kiện người dùng</li>
+</ul>
+<p>📌 <strong>Không có DOM → JS không làm được web động</strong></p>
+<hr>
+<h2 id="2-cấu-trúc-dom-dạng-cây">2. Cấu trúc DOM dạng cây</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;Tiêu đề&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;Nội dung&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>👉 Trình duyệt hiểu như:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>document
+</span></span><span style="display:flex;"><span> └── html
+</span></span><span style="display:flex;"><span>     └── body
+</span></span><span style="display:flex;"><span>         ├── h1
+</span></span><span style="display:flex;"><span>         └── p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>3. Truy cập phần tử HTML
+</span></span><span style="display:flex;"><span>🔹 3.1. getElementById
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;Hello DOM&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>let title = document.getElementById(&#34;title&#34;);
+</span></span><span style="display:flex;"><span>console.log(title);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>🔹 3.2. getElementsByClassName
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>&gt;Đoạn 1&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>&gt;Đoạn 2&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>let texts = document.getElementsByClassName(&#34;text&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 Trả về HTMLCollection
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>🔹 3.3. getElementsByTagName
+</span></span><span style="display:flex;"><span>let paragraphs = document.getElementsByTagName(&#34;p&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>🔹 3.4. querySelector (rất nên dùng)
+</span></span><span style="display:flex;"><span>let title = document.querySelector(&#34;#title&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 Dùng CSS selector
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>🔹 3.5. querySelectorAll
+</span></span><span style="display:flex;"><span>let items = document.querySelectorAll(&#34;.text&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 Trả về NodeList
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>4. Thay đổi nội dung HTML
+</span></span><span style="display:flex;"><span>🔹 innerText
+</span></span><span style="display:flex;"><span>title.innerText = &#34;Nội dung mới&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>🔹 innerHTML
+</span></span><span style="display:flex;"><span>title.innerHTML = &#34;&lt;<span style="color:#f92672">span</span>&gt;DOM&lt;/<span style="color:#f92672">span</span>&gt;&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>⚠️ Cẩn thận XSS khi dùng innerHTML
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>5. Thay đổi thuộc tính
+</span></span><span style="display:flex;"><span>let img = document.querySelector(&#34;img&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>img.src = &#34;image.png&#34;;
+</span></span><span style="display:flex;"><span>img.alt = &#34;Ảnh minh hoạ&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Hoặc:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>img.setAttribute(&#34;src&#34;, &#34;image.png&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>6. Thay đổi CSS bằng JavaScript
+</span></span><span style="display:flex;"><span>🔹 Inline style
+</span></span><span style="display:flex;"><span>title.style.color = &#34;red&#34;;
+</span></span><span style="display:flex;"><span>title.style.fontSize = &#34;32px&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>🔹 ClassList (khuyên dùng)
+</span></span><span style="display:flex;"><span>title.classList.add(&#34;active&#34;);
+</span></span><span style="display:flex;"><span>title.classList.remove(&#34;active&#34;);
+</span></span><span style="display:flex;"><span>title.classList.toggle(&#34;active&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>✔ Sạch
+</span></span><span style="display:flex;"><span>✔ Dễ quản lý
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>7. Tạo và xoá phần tử
+</span></span><span style="display:flex;"><span>🔹 Tạo phần tử
+</span></span><span style="display:flex;"><span>let p = document.createElement(&#34;p&#34;);
+</span></span><span style="display:flex;"><span>p.innerText = &#34;Đoạn mới&#34;;
+</span></span><span style="display:flex;"><span>document.body.appendChild(p);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>🔹 Xoá phần tử
+</span></span><span style="display:flex;"><span>p.remove();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>8. DOM và thời điểm chạy JS
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❌ Lỗi thường gặp:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>document.getElementById(&#34;title&#34;); // null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 Do JS chạy trước khi HTML load
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>✔ Cách xử lý:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>document.addEventListener(&#34;DOMContentLoaded&#34;, function() {
+</span></span><span style="display:flex;"><span>  // code DOM ở đây
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>9. Ví dụ thực tế
+</span></span><span style="display:flex;"><span>Đổi tiêu đề khi click:
+</span></span><span style="display:flex;"><span>let btn = document.querySelector(&#34;button&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>btn.onclick = function() {
+</span></span><span style="display:flex;"><span>  title.innerText = &#34;Bạn vừa click&#34;;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>10. So sánh nhanh
+</span></span><span style="display:flex;"><span>| Cách           | Ghi chú   |
+</span></span><span style="display:flex;"><span>| -------------- | --------- |
+</span></span><span style="display:flex;"><span>| getElementById | Nhanh     |
+</span></span><span style="display:flex;"><span>| querySelector  | Linh hoạt |
+</span></span><span style="display:flex;"><span>| innerText      | An toàn   |
+</span></span><span style="display:flex;"><span>| innerHTML      | Cẩn thận  |
+</span></span><span style="display:flex;"><span>| classList      | Nên dùng  |
+</span></span><span style="display:flex;"><span>11. Lỗi thường gặp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❌ Sai selector
+</span></span><span style="display:flex;"><span>❌ DOM chưa load
+</span></span><span style="display:flex;"><span>❌ Lạm dụng innerHTML
+</span></span></code></pre></div></section>
 
-  <nav
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/js-dom"
+      >js-dom</a
+    ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-call-api-thuc-te/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-cau-truc-dieu-kien/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Cấu trúc điều kiện trong JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-event-trong-web/"
-      ><span></span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      href="http://localhost:1313/blog/js-ham-function/"
+      ><span>Hàm (Function) trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >

@@ -20,12 +20,188 @@
   />
 
   
-  <title> - Ký sự Lập trình Web &amp; JavaScript</title>
+  <title>Xử lý sự kiện trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
 
   
   <meta name="theme-color" />
 
-  <meta name="description" content="" />
+  <meta name="description" content="1. Sự kiện (Event) là gì?
+Sự kiện (Event) là những hành động xảy ra khi người dùng:
+
+Click chuột
+Nhập dữ liệu
+Di chuyển chuột
+Gửi form
+Load trang
+
+👉 JavaScript dùng event để tương tác với người dùng
+
+2. Các cách gắn sự kiện
+❌ Cách 1: Inline HTML (không khuyến khích)
+&lt;button onclick=&#34;alert(&#39;Hello&#39;)&#34;&gt;Click&lt;/button&gt;
+Ok 👍 tiếp tục series js-dom nha.
+Dưới đây là nội dung hoàn chỉnh cho file js-event-trong-web.md, nối mạch trực tiếp sau bài DOM cơ bản.
+
+---
+title: &#34;Xử lý sự kiện trong JavaScript&#34;
+date: 2025-12-22
+draft: false
+tags: [&#34;js-dom&#34;]
+---
+
+## 1. Sự kiện (Event) là gì?
+
+**Sự kiện (Event)** là những hành động xảy ra khi người dùng:
+- Click chuột
+- Nhập dữ liệu
+- Di chuyển chuột
+- Gửi form
+- Load trang
+
+👉 JavaScript dùng event để **tương tác với người dùng**
+
+---
+
+## 2. Các cách gắn sự kiện
+
+### ❌ Cách 1: Inline HTML (không khuyến khích)
+
+```html
+&lt;button onclick=&#34;alert(&#39;Hello&#39;)&#34;&gt;Click&lt;/button&gt;
+
+
+❌ Khó quản lý
+❌ Không sạch code
+
+🔹 Cách 2: Gán qua thuộc tính
+let btn = document.querySelector(&#34;button&#34;);
+
+btn.onclick = function() {
+  alert(&#34;Click&#34;);
+};
+
+
+✔ Dễ hiểu
+❌ Ghi đè sự kiện cũ
+
+✅ Cách 3: addEventListener (nên dùng)
+btn.addEventListener(&#34;click&#34;, function() {
+  alert(&#34;Click&#34;);
+});
+
+
+✔ Gắn nhiều event
+✔ Chuẩn hiện đại
+
+3. Các sự kiện phổ biến
+| Sự kiện     | Khi nào      |
+| ----------- | ------------ |
+| `click`     | Click chuột  |
+| `dblclick`  | Click đúp    |
+| `mouseover` | Di chuột vào |
+| `mouseout`  | Di chuột ra  |
+| `keydown`   | Nhấn phím    |
+| `keyup`     | Nhả phím     |
+| `input`     | Nhập liệu    |
+| `change`    | Thay đổi     |
+| `submit`    | Gửi form     |
+| `load`      | Load trang   |
+4. Đối tượng Event (event)
+btn.addEventListener(&#34;click&#34;, function(event) {
+  console.log(event);
+});
+
+
+👉 event chứa:
+
+Loại sự kiện
+
+Phần tử gây ra sự kiện
+
+Vị trí chuột, phím bấm…
+
+🔹 event.target
+document.addEventListener(&#34;click&#34;, function(e) {
+  console.log(e.target);
+});
+
+
+👉 Phần tử được click
+
+5. Ngăn hành vi mặc định
+🔹 preventDefault()
+&lt;form id=&#34;myForm&#34;&gt;
+  &lt;button type=&#34;submit&#34;&gt;Gửi&lt;/button&gt;
+&lt;/form&gt;
+
+document.getElementById(&#34;myForm&#34;)
+  .addEventListener(&#34;submit&#34;, function(e) {
+    e.preventDefault();
+    console.log(&#34;Không reload trang&#34;);
+});
+
+
+👉 Rất quan trọng khi làm form
+
+6. Bắt sự kiện nhập liệu
+let input = document.querySelector(&#34;input&#34;);
+
+input.addEventListener(&#34;input&#34;, function(e) {
+  console.log(e.target.value);
+});
+
+7. Event Bubbling &amp; Capturing (hiểu cơ bản)
+&lt;div id=&#34;parent&#34;&gt;
+  &lt;button id=&#34;child&#34;&gt;Click&lt;/button&gt;
+&lt;/div&gt;
+
+parent.addEventListener(&#34;click&#34;, () =&gt; console.log(&#34;Parent&#34;));
+child.addEventListener(&#34;click&#34;, () =&gt; console.log(&#34;Child&#34;));
+
+
+👉 Click button:
+
+Child
+Parent
+
+
+📌 Đây gọi là bubbling
+
+8. Event Delegation (rất hay dùng)
+document.querySelector(&#34;ul&#34;)
+  .addEventListener(&#34;click&#34;, function(e) {
+    if (e.target.tagName === &#34;LI&#34;) {
+      console.log(e.target.innerText);
+    }
+});
+
+
+👉 Dùng khi:
+
+Danh sách động
+
+Nhiều phần tử con
+
+9. Ví dụ thực tế
+Click đổi màu nền:
+let btn = document.querySelector(&#34;button&#34;);
+
+btn.addEventListener(&#34;click&#34;, function() {
+  document.body.classList.toggle(&#34;dark&#34;);
+});
+
+10. Lỗi thường gặp
+
+❌ Gắn event khi DOM chưa load
+❌ Dùng inline event
+❌ Quên preventDefault khi submit form
+11. So sánh nhanh
+| Cách             | Ghi chú    |
+| ---------------- | ---------- |
+| Inline           | Không dùng |
+| onclick          | Đơn giản   |
+| addEventListener | Chuẩn      |
+" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -159,18 +335,194 @@
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     ><article>
   <header class="mb-14">
-    <h1 class="my-0! pb-2.5"></h1><div class="text-xs antialiased opacity-60"></div></header>
+    <h1 class="my-0! pb-2.5">Xử lý sự kiện trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 22, 2025</time></div></header>
 
-  <section></section>
+  <section><h2 id="1-sự-kiện-event-là-gì">1. Sự kiện (Event) là gì?</h2>
+<p><strong>Sự kiện (Event)</strong> là những hành động xảy ra khi người dùng:</p>
+<ul>
+<li>Click chuột</li>
+<li>Nhập dữ liệu</li>
+<li>Di chuyển chuột</li>
+<li>Gửi form</li>
+<li>Load trang</li>
+</ul>
+<p>👉 JavaScript dùng event để <strong>tương tác với người dùng</strong></p>
+<hr>
+<h2 id="2-các-cách-gắn-sự-kiện">2. Các cách gắn sự kiện</h2>
+<h3 id="-cách-1-inline-html-không-khuyến-khích">❌ Cách 1: Inline HTML (không khuyến khích)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(&#39;Hello&#39;)&#34;</span>&gt;Click&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>Ok 👍 tiếp tục series js-dom nha.
+</span></span><span style="display:flex;"><span>Dưới đây là nội dung hoàn chỉnh cho file js-event-trong-web.md, nối mạch trực tiếp sau bài DOM cơ bản.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;Xử lý sự kiện trong JavaScript&#34;
+</span></span><span style="display:flex;"><span>date: 2025-12-22
+</span></span><span style="display:flex;"><span>draft: false
+</span></span><span style="display:flex;"><span>tags: [&#34;js-dom&#34;]
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## 1. Sự kiện (Event) là gì?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>**Sự kiện (Event)** là những hành động xảy ra khi người dùng:
+</span></span><span style="display:flex;"><span>- Click chuột
+</span></span><span style="display:flex;"><span>- Nhập dữ liệu
+</span></span><span style="display:flex;"><span>- Di chuyển chuột
+</span></span><span style="display:flex;"><span>- Gửi form
+</span></span><span style="display:flex;"><span>- Load trang
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 JavaScript dùng event để **tương tác với người dùng**
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>## 2. Các cách gắn sự kiện
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>### ❌ Cách 1: Inline HTML (không khuyến khích)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```html
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert(&#39;Hello&#39;)&#34;</span>&gt;Click&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❌ Khó quản lý
+</span></span><span style="display:flex;"><span>❌ Không sạch code
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>🔹 Cách 2: Gán qua thuộc tính
+</span></span><span style="display:flex;"><span>let btn = document.querySelector(&#34;button&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>btn.onclick = function() {
+</span></span><span style="display:flex;"><span>  alert(&#34;Click&#34;);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>✔ Dễ hiểu
+</span></span><span style="display:flex;"><span>❌ Ghi đè sự kiện cũ
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>✅ Cách 3: addEventListener (nên dùng)
+</span></span><span style="display:flex;"><span>btn.addEventListener(&#34;click&#34;, function() {
+</span></span><span style="display:flex;"><span>  alert(&#34;Click&#34;);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>✔ Gắn nhiều event
+</span></span><span style="display:flex;"><span>✔ Chuẩn hiện đại
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>3. Các sự kiện phổ biến
+</span></span><span style="display:flex;"><span>| Sự kiện     | Khi nào      |
+</span></span><span style="display:flex;"><span>| ----------- | ------------ |
+</span></span><span style="display:flex;"><span>| `click`     | Click chuột  |
+</span></span><span style="display:flex;"><span>| `dblclick`  | Click đúp    |
+</span></span><span style="display:flex;"><span>| `mouseover` | Di chuột vào |
+</span></span><span style="display:flex;"><span>| `mouseout`  | Di chuột ra  |
+</span></span><span style="display:flex;"><span>| `keydown`   | Nhấn phím    |
+</span></span><span style="display:flex;"><span>| `keyup`     | Nhả phím     |
+</span></span><span style="display:flex;"><span>| `input`     | Nhập liệu    |
+</span></span><span style="display:flex;"><span>| `change`    | Thay đổi     |
+</span></span><span style="display:flex;"><span>| `submit`    | Gửi form     |
+</span></span><span style="display:flex;"><span>| `load`      | Load trang   |
+</span></span><span style="display:flex;"><span>4. Đối tượng Event (event)
+</span></span><span style="display:flex;"><span>btn.addEventListener(&#34;click&#34;, function(event) {
+</span></span><span style="display:flex;"><span>  console.log(event);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 event chứa:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Loại sự kiện
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Phần tử gây ra sự kiện
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Vị trí chuột, phím bấm…
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>🔹 event.target
+</span></span><span style="display:flex;"><span>document.addEventListener(&#34;click&#34;, function(e) {
+</span></span><span style="display:flex;"><span>  console.log(e.target);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 Phần tử được click
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>5. Ngăn hành vi mặc định
+</span></span><span style="display:flex;"><span>🔹 preventDefault()
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myForm&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Gửi&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>document.getElementById(&#34;myForm&#34;)
+</span></span><span style="display:flex;"><span>  .addEventListener(&#34;submit&#34;, function(e) {
+</span></span><span style="display:flex;"><span>    e.preventDefault();
+</span></span><span style="display:flex;"><span>    console.log(&#34;Không reload trang&#34;);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 Rất quan trọng khi làm form
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>6. Bắt sự kiện nhập liệu
+</span></span><span style="display:flex;"><span>let input = document.querySelector(&#34;input&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>input.addEventListener(&#34;input&#34;, function(e) {
+</span></span><span style="display:flex;"><span>  console.log(e.target.value);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>7. Event Bubbling <span style="color:#960050;background-color:#1e0010">&amp;</span> Capturing (hiểu cơ bản)
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;parent&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;child&#34;</span>&gt;Click&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>parent.addEventListener(&#34;click&#34;, () =&gt; console.log(&#34;Parent&#34;));
+</span></span><span style="display:flex;"><span>child.addEventListener(&#34;click&#34;, () =&gt; console.log(&#34;Child&#34;));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 Click button:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Child
+</span></span><span style="display:flex;"><span>Parent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>📌 Đây gọi là bubbling
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>8. Event Delegation (rất hay dùng)
+</span></span><span style="display:flex;"><span>document.querySelector(&#34;ul&#34;)
+</span></span><span style="display:flex;"><span>  .addEventListener(&#34;click&#34;, function(e) {
+</span></span><span style="display:flex;"><span>    if (e.target.tagName === &#34;LI&#34;) {
+</span></span><span style="display:flex;"><span>      console.log(e.target.innerText);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>👉 Dùng khi:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Danh sách động
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Nhiều phần tử con
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>9. Ví dụ thực tế
+</span></span><span style="display:flex;"><span>Click đổi màu nền:
+</span></span><span style="display:flex;"><span>let btn = document.querySelector(&#34;button&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>btn.addEventListener(&#34;click&#34;, function() {
+</span></span><span style="display:flex;"><span>  document.body.classList.toggle(&#34;dark&#34;);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>10. Lỗi thường gặp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>❌ Gắn event khi DOM chưa load
+</span></span><span style="display:flex;"><span>❌ Dùng inline event
+</span></span><span style="display:flex;"><span>❌ Quên preventDefault khi submit form
+</span></span><span style="display:flex;"><span>11. So sánh nhanh
+</span></span><span style="display:flex;"><span>| Cách             | Ghi chú    |
+</span></span><span style="display:flex;"><span>| ---------------- | ---------- |
+</span></span><span style="display:flex;"><span>| Inline           | Không dùng |
+</span></span><span style="display:flex;"><span>| onclick          | Đơn giản   |
+</span></span><span style="display:flex;"><span>| addEventListener | Chuẩn      |
+</span></span></code></pre></div></section>
 
-  <nav
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/js-dom"
+      >js-dom</a
+    ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-dom-co-ban/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a
-    ><a
-      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-fetch-api/"
-      ><span></span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-form-validation/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Xử lý Form &amp; Validation trong JavaScript</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >

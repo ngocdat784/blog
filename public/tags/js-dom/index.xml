@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Js-Dom on Ký sự Lập trình Web &amp; JavaScript</title>
+    <link>http://localhost:1313/tags/js-dom/</link>
+    <description>Recent content in Js-Dom on Ký sự Lập trình Web &amp; JavaScript</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/js-dom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOM cơ bản trong JavaScript</title>
+      <link>http://localhost:1313/blog/js-dom-co-ban/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/js-dom-co-ban/</guid>
+      <description>&lt;h2 id=&#34;1-dom-là-gì&#34;&gt;1. DOM là gì?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;DOM (Document Object Model)&lt;/strong&gt; là mô hình đối tượng biểu diễn &lt;strong&gt;toàn bộ trang HTML&lt;/strong&gt; dưới dạng cây (tree).&lt;/p&gt;&#xA;&lt;p&gt;👉 Nhờ DOM, JavaScript có thể:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Truy cập HTML&lt;/li&gt;&#xA;&lt;li&gt;Thay đổi nội dung&lt;/li&gt;&#xA;&lt;li&gt;Thay đổi style&lt;/li&gt;&#xA;&lt;li&gt;Bắt sự kiện người dùng&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;📌 &lt;strong&gt;Không có DOM → JS không làm được web động&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-cấu-trúc-dom-dạng-cây&#34;&gt;2. Cấu trúc DOM dạng cây&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;Tiêu đề&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;Nội dung&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

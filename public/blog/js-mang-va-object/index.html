@@ -20,12 +20,129 @@
   />
 
   
-  <title> - Ký sự Lập trình Web &amp; JavaScript</title>
+  <title>Mảng và Object trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
 
   
   <meta name="theme-color" />
 
-  <meta name="description" content="" />
+  <meta name="description" content="1. Mảng và Object là gì?
+Trong JavaScript:
+
+Mảng (Array) dùng để lưu danh sách dữ liệu
+Object dùng để lưu dữ liệu có cấu trúc
+
+👉 Đây là 2 kiểu dữ liệu quan trọng nhất khi làm web thực tế.
+
+2. Mảng (Array)
+2.1. Khai báo mảng
+let numbers = [1, 2, 3, 4];
+let fruits = [&#34;Táo&#34;, &#34;Cam&#34;, &#34;Chuối&#34;];
+👉 Mảng bắt đầu từ index = 0
+
+fruits[0]; // &#34;Táo&#34;
+
+2.2. Độ dài mảng
+fruits.length; // 3
+
+2.3. Thêm / xoá phần tử
+fruits.push(&#34;Xoài&#34;);    // thêm cuối
+fruits.pop();           // xoá cuối
+fruits.unshift(&#34;Nho&#34;);  // thêm đầu
+fruits.shift();         // xoá đầu
+
+2.4. Duyệt mảng
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+
+
+Hoặc:
+
+fruits.forEach(item =&gt; {
+  console.log(item);
+});
+
+2.5. Một số hàm mảng rất hay dùng
+let numbers = [1, 2, 3, 4, 5];
+
+numbers.map(x =&gt; x * 2);        // [2,4,6,8,10]
+numbers.filter(x =&gt; x &gt; 2);     // [3,4,5]
+numbers.find(x =&gt; x === 3);     // 3
+numbers.includes(4);            // true
+
+
+📌 Các hàm này không làm thay đổi mảng gốc (trừ vài hàm đặc biệt)
+
+3. Object
+3.1. Khai báo Object
+let student = {
+  name: &#34;Đạt&#34;,
+  age: 20,
+  major: &#34;CNTT&#34;
+};
+
+3.2. Truy cập thuộc tính
+student.name;        // &#34;Đạt&#34;
+student[&#34;age&#34;];      // 20
+
+3.3. Thêm / sửa / xoá thuộc tính
+student.email = &#34;dat@gmail.com&#34;;
+student.age = 21;
+delete student.major;
+
+3.4. Duyệt Object
+for (let key in student) {
+  console.log(key, student[key]);
+}
+
+4. Mảng chứa Object (cực kỳ phổ biến)
+let students = [
+  { name: &#34;An&#34;, age: 20 },
+  { name: &#34;Bình&#34;, age: 21 },
+  { name: &#34;Đạt&#34;, age: 22 }
+];
+
+Lọc sinh viên trên 20 tuổi:
+let result = students.filter(s =&gt; s.age &gt; 20);
+
+5. Destructuring (ES6)
+let { name, age } = student;
+console.log(name, age);
+
+
+Với mảng:
+
+let [a, b] = numbers;
+
+6. Spread Operator (...)
+let newFruits = [...fruits, &#34;Ổi&#34;];
+
+
+Với object:
+
+let newStudent = { ...student, age: 23 };
+
+
+👉 Rất hay dùng khi làm React / API
+
+7. So sánh mảng &amp; object
+|          | Mảng      | Object              |
+| -------- | --------- | ------------------- |
+| Lưu      | Danh sách | Dữ liệu có cấu trúc |
+| Truy cập | Index     | Key                 |
+| Thứ tự   | Có        | Không bắt buộc      |
+8. Ví dụ thực tế
+Tính tổng điểm sinh viên:
+let scores = [8, 7, 9];
+
+let total = scores.reduce((sum, s) =&gt; sum &#43; s, 0);
+
+9. Lỗi thường gặp
+
+❌ Truy cập sai index
+❌ Nhầm for...in và for...of
+❌ Thay đổi mảng gốc không kiểm soát
+" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -159,18 +276,139 @@
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     ><article>
   <header class="mb-14">
-    <h1 class="my-0! pb-2.5"></h1><div class="text-xs antialiased opacity-60"></div></header>
+    <h1 class="my-0! pb-2.5">Mảng và Object trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 22, 2025</time></div></header>
 
-  <section></section>
+  <section><h2 id="1-mảng-và-object-là-gì">1. Mảng và Object là gì?</h2>
+<p>Trong JavaScript:</p>
+<ul>
+<li><strong>Mảng (Array)</strong> dùng để lưu <strong>danh sách dữ liệu</strong></li>
+<li><strong>Object</strong> dùng để lưu <strong>dữ liệu có cấu trúc</strong></li>
+</ul>
+<p>👉 Đây là <strong>2 kiểu dữ liệu quan trọng nhất</strong> khi làm web thực tế.</p>
+<hr>
+<h2 id="2-mảng-array">2. Mảng (Array)</h2>
+<h3 id="21-khai-báo-mảng">2.1. Khai báo mảng</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruits</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Táo&#34;</span>, <span style="color:#e6db74">&#34;Cam&#34;</span>, <span style="color:#e6db74">&#34;Chuối&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Mảng</span> <span style="color:#a6e22e">bắt</span> <span style="color:#a6e22e">đầu</span> <span style="color:#a6e22e">từ</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>[<span style="color:#ae81ff">0</span>]; <span style="color:#75715e">// &#34;Táo&#34;
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.2</span>. <span style="color:#a6e22e">Độ</span> <span style="color:#a6e22e">dài</span> <span style="color:#a6e22e">mảng</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">length</span>; <span style="color:#75715e">// 3
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.3</span>. <span style="color:#a6e22e">Thêm</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">xoá</span> <span style="color:#a6e22e">phần</span> <span style="color:#a6e22e">tử</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;Xoài&#34;</span>);    <span style="color:#75715e">// thêm cuối
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">pop</span>();           <span style="color:#75715e">// xoá cuối
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#e6db74">&#34;Nho&#34;</span>);  <span style="color:#75715e">// thêm đầu
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">shift</span>();         <span style="color:#75715e">// xoá đầu
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.4</span>. <span style="color:#a6e22e">Duyệt</span> <span style="color:#a6e22e">mảng</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruit</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">fruits</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruit</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Hoặc</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">item</span> =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">item</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.5</span>. <span style="color:#a6e22e">Một</span> <span style="color:#a6e22e">số</span> <span style="color:#a6e22e">hàm</span> <span style="color:#a6e22e">mảng</span> <span style="color:#a6e22e">rất</span> <span style="color:#a6e22e">hay</span> <span style="color:#a6e22e">dùng</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);        <span style="color:#75715e">// [2,4,6,8,10]
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);     <span style="color:#75715e">// [3,4,5]
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>);     <span style="color:#75715e">// 3
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">4</span>);            <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Các</span> <span style="color:#a6e22e">hàm</span> <span style="color:#a6e22e">này</span> <span style="color:#a6e22e">không</span> <span style="color:#a6e22e">làm</span> <span style="color:#a6e22e">thay</span> <span style="color:#a6e22e">đổi</span> <span style="color:#a6e22e">mảng</span> <span style="color:#a6e22e">gốc</span> (<span style="color:#a6e22e">trừ</span> <span style="color:#a6e22e">vài</span> <span style="color:#a6e22e">hàm</span> <span style="color:#a6e22e">đặc</span> <span style="color:#a6e22e">biệt</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> Object
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.1</span>. <span style="color:#a6e22e">Khai</span> <span style="color:#a6e22e">báo</span> Object
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">student</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Đạt&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">major</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;CNTT&#34;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.2</span>. <span style="color:#a6e22e">Truy</span> <span style="color:#a6e22e">cập</span> <span style="color:#a6e22e">thuộc</span> <span style="color:#a6e22e">tính</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">name</span>;        <span style="color:#75715e">// &#34;Đạt&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">student</span>[<span style="color:#e6db74">&#34;age&#34;</span>];      <span style="color:#75715e">// 20
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.3</span>. <span style="color:#a6e22e">Thêm</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">sửa</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">xoá</span> <span style="color:#a6e22e">thuộc</span> <span style="color:#a6e22e">tính</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dat@gmail.com&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">major</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.4</span>. <span style="color:#a6e22e">Duyệt</span> Object
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">student</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">student</span>[<span style="color:#a6e22e">key</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Mảng</span> <span style="color:#a6e22e">chứa</span> Object (<span style="color:#a6e22e">cực</span> <span style="color:#a6e22e">kỳ</span> <span style="color:#a6e22e">phổ</span> <span style="color:#a6e22e">biến</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">students</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;An&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Bình&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">21</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Đạt&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22</span> }
+</span></span><span style="display:flex;"><span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Lọc</span> <span style="color:#a6e22e">sinh</span> <span style="color:#a6e22e">viên</span> <span style="color:#a6e22e">trên</span> <span style="color:#ae81ff">20</span> <span style="color:#a6e22e">tuổi</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">s</span> =&gt; <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Destructuring</span> (<span style="color:#a6e22e">ES6</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> { <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">student</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Với</span> <span style="color:#a6e22e">mảng</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Spread</span> <span style="color:#a6e22e">Operator</span> (...)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newFruits</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">fruits</span>, <span style="color:#e6db74">&#34;Ổi&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Với</span> <span style="color:#a6e22e">object</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newStudent</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">student</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">23</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Rất</span> <span style="color:#a6e22e">hay</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">làm</span> <span style="color:#a6e22e">React</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">API</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">So</span> <span style="color:#a6e22e">sánh</span> <span style="color:#a6e22e">mảng</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">object</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>          <span style="color:#f92672">|</span> <span style="color:#a6e22e">Mảng</span>      <span style="color:#f92672">|</span> Object              <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">--------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">---------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">-------------------</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Lưu</span>      <span style="color:#f92672">|</span> <span style="color:#a6e22e">Danh</span> <span style="color:#a6e22e">sách</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Dữ</span> <span style="color:#a6e22e">liệu</span> <span style="color:#a6e22e">có</span> <span style="color:#a6e22e">cấu</span> <span style="color:#a6e22e">trúc</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Truy</span> <span style="color:#a6e22e">cập</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Index</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Key</span>                 <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Thứ</span> <span style="color:#a6e22e">tự</span>   <span style="color:#f92672">|</span> <span style="color:#a6e22e">Có</span>        <span style="color:#f92672">|</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">bắt</span> <span style="color:#a6e22e">buộc</span>      <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8.</span> <span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#a6e22e">thực</span> <span style="color:#a6e22e">tế</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Tính</span> <span style="color:#a6e22e">tổng</span> <span style="color:#a6e22e">điểm</span> <span style="color:#a6e22e">sinh</span> <span style="color:#a6e22e">viên</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scores</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">total</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scores</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">sum</span>, <span style="color:#a6e22e">s</span>) =&gt; <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9.</span> <span style="color:#a6e22e">Lỗi</span> <span style="color:#a6e22e">thường</span> <span style="color:#a6e22e">gặp</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Truy</span> <span style="color:#a6e22e">cập</span> <span style="color:#a6e22e">sai</span> <span style="color:#a6e22e">index</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Nhầm</span> <span style="color:#66d9ef">for</span>...<span style="color:#66d9ef">in</span> <span style="color:#a6e22e">và</span> <span style="color:#66d9ef">for</span>...<span style="color:#66d9ef">of</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Thay</span> <span style="color:#a6e22e">đổi</span> <span style="color:#a6e22e">mảng</span> <span style="color:#a6e22e">gốc</span> <span style="color:#a6e22e">không</span> <span style="color:#a6e22e">kiểm</span> <span style="color:#a6e22e">soát</span>
+</span></span></code></pre></div></section>
 
-  <nav
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/js-co-ban"
+      >js-co-ban</a
+    ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-localstorage/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-ham-function/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Hàm (Function) trong JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-vong-lap/"
-      ><span></span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      href="http://localhost:1313/blog/js-toan-tu/"
+      ><span>Toán tử trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
