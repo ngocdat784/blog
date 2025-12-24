@@ -1,8 +1,12 @@
 ---
 title: "JavaScript là gì?"
 date: 2025-12-22
+description: "Giới thiệu JavaScript – ngôn ngữ lập trình cốt lõi trong phát triển web hiện đại."
+categories: ["JavaScript"]
+tags: ["JavaScript", "Web"]
+thumbnail: "/images/tải xuống.png"
+weight: 1
 draft: false
-tags: ["JavaScript"]
 ---
 
 ## JavaScript là gì?

@@ -1,0 +1,294 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="vi"
+  dir="ltr"
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Hồ sơ cá nhân - Ký sự Lập trình Web &amp; JavaScript</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="
+
+
+
+
+
+👤 Thông tin cá nhân
+
+🎂 Năm sinh: 2005
+📍 Địa điểm: Việt Nam
+📧 Email: ngocdat.dev@gmail.com
+🌐 Website: https://your-site.com
+💼 Định hướng: Web Developer / Backend Developer
+
+
+🎯 Mục tiêu nghề nghiệp
+Tôi hướng tới trở thành Software Engineer chuyên Web &amp; Backend, có khả năng:" />
+  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.153.1">
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="http://localhost:1313/"
+      >Ký sự Lập trình Web &amp; JavaScript</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/"
+        >Trang chủ</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/blog/js-la-gi/"
+        >Giới thiệu JS</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/tags/js-co-ban/"
+        >JS Cơ bản</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/tags/js-dom/"
+        >JS DOM &amp; Event</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/tags/js-api/"
+        >JS API</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/tags/js-nang-cao/"
+        >JS Nâng cao</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About Me</a
+      ></nav>
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Hồ sơ cá nhân</h1><div class="text-xs antialiased opacity-60"><time>Dec 24, 2025</time></div></header>
+
+  <section><!-- raw HTML omitted -->
+<p><img src="Gemini_Generated_Image_rcru1krcru1krcru.png" alt="Ảnh đại diện Ngọc Đạt Trần"></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="-thông-tin-cá-nhân">👤 Thông tin cá nhân</h2>
+<ul>
+<li>🎂 <strong>Năm sinh:</strong> 2005</li>
+<li>📍 <strong>Địa điểm:</strong> Việt Nam</li>
+<li>📧 <strong>Email:</strong> <a href="mailto:ngocdat.dev@gmail.com">ngocdat.dev@gmail.com</a></li>
+<li>🌐 <strong>Website:</strong> <a href="https://your-site.com">https://your-site.com</a></li>
+<li>💼 <strong>Định hướng:</strong> Web Developer / Backend Developer</li>
+</ul>
+<hr>
+<h2 id="-mục-tiêu-nghề-nghiệp">🎯 Mục tiêu nghề nghiệp</h2>
+<p>Tôi hướng tới trở thành <strong>Software Engineer chuyên Web &amp; Backend</strong>, có khả năng:</p>
+<ul>
+<li>Thiết kế và xây dựng hệ thống web hoàn chỉnh</li>
+<li>Hiểu rõ nghiệp vụ và luồng xử lý hệ thống</li>
+<li>Viết code rõ ràng, dễ bảo trì, có cấu trúc</li>
+<li>Không ngừng học hỏi và cải tiến bản thân</li>
+</ul>
+<hr>
+<h2 id="-kỹ-năng-chuyên-môn">🧠 Kỹ năng chuyên môn</h2>
+<h3 id="-ngôn-ngữ--công-nghệ">💻 Ngôn ngữ &amp; Công nghệ</h3>
+<ul>
+<li>HTML5, CSS3</li>
+<li>JavaScript (ES6+)</li>
+<li>C#, ASP.NET Core MVC</li>
+<li>Python, FastAPI</li>
+<li>SQL Server, MongoDB</li>
+</ul>
+<h3 id="-framework--công-cụ">🧩 Framework &amp; Công cụ</h3>
+<ul>
+<li>ASP.NET Core MVC</li>
+<li>FastAPI</li>
+<li>Bootstrap, Tailwind CSS</li>
+<li>Git &amp; GitHub</li>
+<li>Postman, Swagger</li>
+</ul>
+<hr>
+<h2 id="-dự-án-tiêu-biểu">🛠 Dự án tiêu biểu</h2>
+<h3 id="-hệ-thống-quản-lý-y-tế">🏥 Hệ thống quản lý y tế</h3>
+<ul>
+<li>Quản lý bác sĩ, bệnh nhân, lịch hẹn</li>
+<li>Phân quyền: Admin / Doctor / Patient</li>
+<li>Upload hình ảnh, phân trang, tìm kiếm</li>
+<li><strong>Công nghệ:</strong> ASP.NET Core MVC</li>
+</ul>
+<hr>
+<h3 id="-website-bán-hàng--ai-chatbot">🛒 Website bán hàng + AI Chatbot</h3>
+<ul>
+<li>Backend API với FastAPI</li>
+<li>Cơ sở dữ liệu MongoDB</li>
+<li>Tích hợp chatbot AI tư vấn sản phẩm</li>
+<li><strong>Công nghệ:</strong> FastAPI + HTML / CSS / JavaScript</li>
+</ul>
+<hr>
+<h3 id="-blog-lập-trình-cá-nhân">📘 Blog lập trình cá nhân</h3>
+<ul>
+<li>Viết series JavaScript từ cơ bản → nâng cao</li>
+<li>Sử dụng Hugo + Markdown</li>
+<li>Hướng tới người mới học lập trình</li>
+</ul>
+<hr>
+<h2 id="-học-vấn">📚 Học vấn</h2>
+<ul>
+<li>🎓 <strong>Sinh viên Công nghệ Thông tin</strong></li>
+<li>Tự học &amp; thực hành chuyên sâu:
+<ul>
+<li>Web Development</li>
+<li>Backend Architecture</li>
+<li>RESTful API Design</li>
+<li>Clean Code &amp; tư duy hệ thống</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-sở-thích--định-hướng">🌱 Sở thích &amp; Định hướng</h2>
+<ul>
+<li>✍️ Viết blog chia sẻ kiến thức</li>
+<li>🔍 Phân tích hệ thống thực tế</li>
+<li>🤖 AI &amp; Chatbot</li>
+<li>🚀 Mong muốn làm việc trong môi trường chuyên nghiệp, có mentor dẫn dắt</li>
+</ul>
+<hr>
+<h2 id="-liên-kết">📎 Liên kết</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/yourname">https://github.com/yourname</a></li>
+<li>Facebook: <a href="https://facebook.com/yourname">https://facebook.com/yourname</a></li>
+<li>LinkedIn: <a href="https://linkedin.com/in/yourname">https://linkedin.com/in/yourname</a></li>
+</ul>
+<hr>
+<!-- raw HTML omitted -->
+</section>
+
+  </article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2025
+    <a class="link" href="http://localhost:1313/">Ký sự Lập trình Web &amp; JavaScript</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

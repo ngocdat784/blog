@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Ký sự Lập trình Web &amp; JavaScript</title>
+    <link>http://localhost:1313/about/</link>
+    <description>Recent content in Abouts on Ký sự Lập trình Web &amp; JavaScript</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 24 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hồ sơ cá nhân</title>
+      <link>http://localhost:1313/about/profile/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/profile/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;img src=&#34;Gemini_Generated_Image_rcru1krcru1krcru.png&#34; alt=&#34;Ảnh đại diện Ngọc Đạt Trần&#34;&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-thông-tin-cá-nhân&#34;&gt;👤 Thông tin cá nhân&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;🎂 &lt;strong&gt;Năm sinh:&lt;/strong&gt; 2005&lt;/li&gt;&#xA;&lt;li&gt;📍 &lt;strong&gt;Địa điểm:&lt;/strong&gt; Việt Nam&lt;/li&gt;&#xA;&lt;li&gt;📧 &lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:ngocdat.dev@gmail.com&#34;&gt;ngocdat.dev@gmail.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;🌐 &lt;strong&gt;Website:&lt;/strong&gt; &lt;a href=&#34;https://your-site.com&#34;&gt;https://your-site.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;💼 &lt;strong&gt;Định hướng:&lt;/strong&gt; Web Developer / Backend Developer&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-mục-tiêu-nghề-nghiệp&#34;&gt;🎯 Mục tiêu nghề nghiệp&lt;/h2&gt;&#xA;&lt;p&gt;Tôi hướng tới trở thành &lt;strong&gt;Software Engineer chuyên Web &amp;amp; Backend&lt;/strong&gt;, có khả năng:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

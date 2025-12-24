@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaScript on Ký sự Lập trình Java &amp; JavaScript</title>
+    <title>JavaScript on Ký sự Lập trình Web &amp; JavaScript</title>
     <link>http://localhost:1313/tags/javascript/</link>
-    <description>Recent content in JavaScript on Ký sự Lập trình Java &amp; JavaScript</description>
+    <description>Recent content in JavaScript on Ký sự Lập trình Web &amp; JavaScript</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Biến và kiểu dữ liệu trong JavaScript</title>
-      <link>http://localhost:1313/blog/js-bien-kieu/</link>
+      <title>JavaScript là gì?</title>
+      <link>http://localhost:1313/blog/js-la-gi/</link>
       <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/js-bien-kieu/</guid>
-      <description>&lt;h2 id=&#34;biến-trong-javascript&#34;&gt;Biến trong JavaScript&lt;/h2&gt;&#xA;&lt;p&gt;Biến dùng để lưu trữ dữ liệu trong chương trình.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;An&amp;#34;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;age&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <guid>http://localhost:1313/blog/js-la-gi/</guid>
+      <description>&lt;h2 id=&#34;javascript-là-gì&#34;&gt;JavaScript là gì?&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript là một ngôn ngữ lập trình phổ biến, được sử dụng chủ yếu trong&#xA;phát triển website để tạo ra các trang web &lt;strong&gt;động và tương tác&lt;/strong&gt; với người dùng.&lt;/p&gt;&#xA;&lt;p&gt;Ngày nay, JavaScript không chỉ chạy trên trình duyệt mà còn được sử dụng&#xA;rộng rãi ở phía máy chủ.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;javascript-chạy-ở-đâu&#34;&gt;JavaScript chạy ở đâu?&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript có thể chạy ở nhiều môi trường khác nhau:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Trình duyệt web&lt;/strong&gt;: Chrome, Edge, Firefox…&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Server&lt;/strong&gt; thông qua nền tảng &lt;strong&gt;Node.js&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;ứng-dụng-của-javascript&#34;&gt;Ứng dụng của JavaScript&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript được sử dụng trong nhiều lĩnh vực:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

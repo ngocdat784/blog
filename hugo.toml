@@ -1,32 +1,46 @@
 baseURL = "http://localhost:1313/"
 languageCode = "vi"
-title = "Ký sự Lập trình Java & JavaScript"
+title = "Ký sự Lập trình Web & JavaScript"
 theme = "paper"
 
 [params]
   description = "Chia sẻ kiến thức Java, JavaScript và lập trình mạng cho sinh viên"
+
+# =========================
+# MENU CHÍNH
+# =========================
+
 [[menu.main]]
-  name = "Home"
+  name = "Trang chủ"
   url = "/"
   weight = 1
 
 [[menu.main]]
-  name = "Blog"
-  url = "/blog/"
+  name = "Giới thiệu JS"
+  url = "/blog/js-la-gi/"
   weight = 2
 
 [[menu.main]]
-  name = "Java"
-  url = "/tags/java/"
+  name = "JS Cơ bản"
+  url = "/tags/js-co-ban/"
   weight = 3
 
 [[menu.main]]
-  name = "JavaScript"
-  url = "/tags/javascript/"
+  name = "JS DOM & Event"
+  url = "/tags/js-dom/"
   weight = 4
+
+[[menu.main]]
+  name = "JS API"
+  url = "/tags/js-api/"
+  weight = 5
+
+[[menu.main]]
+  name = "JS Nâng cao"
+  url = "/tags/js-nang-cao/"
+  weight = 6
 
 [[menu.main]]
   name = "About Me"
   url = "/about/"
-  weight = 5
-
+  weight = 7
