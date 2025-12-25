@@ -16,31 +16,41 @@ theme = "paper"
   weight = 1
 
 [[menu.main]]
-  name = "Giới thiệu JS"
-  url = "/blog/js-la-gi/"
+  name = "Blog"
+  url = "/blog/"
   weight = 2
 
-[[menu.main]]
-  name = "JS Cơ bản"
-  url = "/tags/js-co-ban/"
-  weight = 3
+  [[menu.main]]
+    name = "Giới thiệu JavaScript"
+    url = "/blog/js-la-gi/"
+    parent = "Blog"
+    weight = 1
 
-[[menu.main]]
-  name = "JS DOM & Event"
-  url = "/tags/js-dom/"
-  weight = 4
+  [[menu.main]]
+    name = "JS Cơ bản"
+    url = "/tags/js-co-ban/"
+    parent = "Blog"
+    weight = 2
 
-[[menu.main]]
-  name = "JS API"
-  url = "/tags/js-api/"
-  weight = 5
+  [[menu.main]]
+    name = "JS DOM & Event"
+    url = "/tags/js-dom/"
+    parent = "Blog"
+    weight = 3
 
-[[menu.main]]
-  name = "JS Nâng cao"
-  url = "/tags/js-nang-cao/"
-  weight = 6
+  [[menu.main]]
+    name = "JS API"
+    url = "/tags/js-api/"
+    parent = "Blog"
+    weight = 4
+
+  [[menu.main]]
+    name = "JS Nâng cao"
+    url = "/tags/js-nang-cao/"
+    parent = "Blog"
+    weight = 5
 
 [[menu.main]]
   name = "About Me"
   url = "/about/"
-  weight = 7
+  weight = 3

@@ -36,12 +36,13 @@ Dựa trên điều kiện đúng hoặc sai (true / false)
 if (age &gt;= 18) {
   console.log(&#34;Đủ tuổi&#34;);
 }
-2. Câu lệnh if
+
+Câu lệnh if
 Cú pháp:
+
 if (điều_kiện) {
   // code chạy nếu điều kiện đúng
 }
-
 Ví dụ:
 let age = 20;
 
@@ -49,7 +50,8 @@ if (age &gt;= 18) {
   console.log(&#34;Bạn đủ tuổi&#34;);
 }
 
-3. if...else
+if&hellip;else
+
 let age = 16;
 
 if (age &gt;= 18) {
@@ -58,7 +60,8 @@ if (age &gt;= 18) {
   console.log(&#34;Chưa đủ tuổi&#34;);
 }
 
-4. if...else if...else
+if&hellip;else if&hellip;else
+
 let score = 8;
 
 if (score &gt;= 9) {
@@ -70,122 +73,7 @@ if (score &gt;= 9) {
 } else {
   console.log(&#34;Yếu&#34;);
 }
-
-
-📌 Điều kiện được kiểm tra từ trên xuống
-
-5. Điều kiện lồng nhau
-let age = 20;
-let hasID = true;
-
-if (age &gt;= 18) {
-  if (hasID) {
-    console.log(&#34;Được vào&#34;);
-  } else {
-    console.log(&#34;Thiếu giấy tờ&#34;);
-  }
-}
-
-
-❌ Dễ rối nếu lồng quá nhiều
-✔ Nên viết gọn hơn khi có thể
-
-6. Kết hợp với toán tử logic
-if (age &gt;= 18 &amp;&amp; hasID) {
-  console.log(&#34;Được vào&#34;);
-}
-
-
-👉 Gọn hơn ví dụ trên
-
-7. Câu lệnh switch...case
-Cú pháp:
-switch (value) {
-  case x:
-    // code
-    break;
-  case y:
-    // code
-    break;
-  default:
-    // code
-}
-
-Ví dụ:
-let day = 2;
-
-switch (day) {
-  case 1:
-    console.log(&#34;Thứ hai&#34;);
-    break;
-  case 2:
-    console.log(&#34;Thứ ba&#34;);
-    break;
-  case 3:
-    console.log(&#34;Thứ tư&#34;);
-    break;
-  default:
-    console.log(&#34;Không hợp lệ&#34;);
-}
-
-
-📌 Quên break sẽ chạy xuyên case
-
-8. Toán tử điều kiện (? :)
-let age = 20;
-
-let message = age &gt;= 18 ? &#34;Đủ tuổi&#34; : &#34;Chưa đủ tuổi&#34;;
-
-
-👉 Dùng cho điều kiện đơn giản
-
-9. Giá trị truthy &amp; falsy
-❌ Falsy:
-
-false
-
-0
-
-&#34;&#34;
-
-null
-
-undefined
-
-NaN
-
-✔ Truthy:
-
-Mọi giá trị còn lại
-
-if (&#34;hello&#34;) {
-  console.log(&#34;Chạy&#34;);
-}
-
-10. Ví dụ thực tế
-Kiểm tra đăng nhập:
-let isLogin = true;
-
-if (isLogin) {
-  console.log(&#34;Đã đăng nhập&#34;);
-} else {
-  console.log(&#34;Chưa đăng nhập&#34;);
-}
-
-11. Lỗi thường gặp
-
-❌ Dùng == thay vì ===
-❌ Quên break trong switch
-❌ Viết điều kiện quá phức tạp
-12. So sánh nhanh
-| Cách        | Khi nào dùng           |
-| ----------- | ---------------------- |
-| `if`        | Điều kiện đơn          |
-| `if...else` | 2 nhánh                |
-| `else if`   | Nhiều nhánh            |
-| `switch`    | So sánh giá trị cụ thể |
-| `? :`       | Viết gọn               |
-" />
+📌 Điều kiện được kiểm tra từ trên xuống" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -290,24 +178,8 @@ if (isLogin) {
         >Trang chủ</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/blog/js-la-gi/"
-        >Giới thiệu JS</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-co-ban/"
-        >JS Cơ bản</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-dom/"
-        >JS DOM &amp; Event</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-api/"
-        >JS API</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-nang-cao/"
-        >JS Nâng cao</a
+        href="/blog/"
+        >Blog</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
         href="/about/"
@@ -332,30 +204,33 @@ if (isLogin) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Đủ tuổi&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Câu</span> <span style="color:#a6e22e">lệnh</span> <span style="color:#66d9ef">if</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cú</span> <span style="color:#a6e22e">pháp</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">điều_kiện</span>) {
+</span></span></code></pre></div><ol start="2">
+<li>Câu lệnh if
+Cú pháp:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">điều_kiện</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// code chạy nếu điều kiện đúng
 </span></span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span></code></pre></div><p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Bạn đủ tuổi&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#66d9ef">if</span>...<span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;
+</span></span></code></pre></div><ol start="3">
+<li>if&hellip;else</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Đủ tuổi&#34;</span>);
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Chưa đủ tuổi&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#66d9ef">if</span>...<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>...<span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+</span></span></code></pre></div><ol start="4">
+<li>if&hellip;else if&hellip;else</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">score</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">score</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">9</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xuất sắc&#34;</span>);
@@ -366,12 +241,11 @@ if (isLogin) {
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Yếu&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Điều</span> <span style="color:#a6e22e">kiện</span> <span style="color:#a6e22e">được</span> <span style="color:#a6e22e">kiểm</span> <span style="color:#a6e22e">tra</span> <span style="color:#a6e22e">từ</span> <span style="color:#a6e22e">trên</span> <span style="color:#a6e22e">xuống</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Điều</span> <span style="color:#a6e22e">kiện</span> <span style="color:#a6e22e">lồng</span> <span style="color:#a6e22e">nhau</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span></code></pre></div><p>📌 Điều kiện được kiểm tra từ trên xuống</p>
+<ol start="5">
+<li>Điều kiện lồng nhau</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">hasID</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span>) {
@@ -381,22 +255,20 @@ if (isLogin) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Thiếu giấy tờ&#34;</span>);
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Dễ</span> <span style="color:#a6e22e">rối</span> <span style="color:#a6e22e">nếu</span> <span style="color:#a6e22e">lồng</span> <span style="color:#a6e22e">quá</span> <span style="color:#a6e22e">nhiều</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Nên</span> <span style="color:#a6e22e">viết</span> <span style="color:#a6e22e">gọn</span> <span style="color:#a6e22e">hơn</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">có</span> <span style="color:#a6e22e">thể</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Kết</span> <span style="color:#a6e22e">hợp</span> <span style="color:#a6e22e">với</span> <span style="color:#a6e22e">toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#a6e22e">logic</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">hasID</span>) {
+</span></span></code></pre></div><p>❌ Dễ rối nếu lồng quá nhiều
+✔ Nên viết gọn hơn khi có thể</p>
+<ol start="6">
+<li>Kết hợp với toán tử logic</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">hasID</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Được vào&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Gọn</span> <span style="color:#a6e22e">hơn</span> <span style="color:#a6e22e">ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#a6e22e">trên</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">Câu</span> <span style="color:#a6e22e">lệnh</span> <span style="color:#66d9ef">switch</span>...<span style="color:#66d9ef">case</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cú</span> <span style="color:#a6e22e">pháp</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">value</span>) {
+</span></span></code></pre></div><p>👉 Gọn hơn ví dụ trên</p>
+<ol start="7">
+<li>Câu lệnh switch&hellip;case
+Cú pháp:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">value</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// code
 </span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">break</span>;
@@ -406,9 +278,8 @@ if (isLogin) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// code
 </span></span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span></code></pre></div><p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">day</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">day</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
@@ -423,22 +294,19 @@ if (isLogin) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Không hợp lệ&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Quên</span> <span style="color:#66d9ef">break</span> <span style="color:#a6e22e">sẽ</span> <span style="color:#a6e22e">chạy</span> <span style="color:#a6e22e">xuyên</span> <span style="color:#66d9ef">case</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8.</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#a6e22e">điều</span> <span style="color:#a6e22e">kiện</span> (<span style="color:#f92672">?</span> <span style="color:#f92672">:</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span></code></pre></div><p>📌 Quên break sẽ chạy xuyên case</p>
+<ol start="8">
+<li>Toán tử điều kiện (? :)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;Đủ tuổi&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Chưa đủ tuổi&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Dùng</span> <span style="color:#a6e22e">cho</span> <span style="color:#a6e22e">điều</span> <span style="color:#a6e22e">kiện</span> <span style="color:#a6e22e">đơn</span> <span style="color:#a6e22e">giản</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9.</span> <span style="color:#a6e22e">Giá</span> <span style="color:#a6e22e">trị</span> <span style="color:#a6e22e">truthy</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">falsy</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Falsy</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">false</span>
+</span></span></code></pre></div><p>👉 Dùng cho điều kiện đơn giản</p>
+<ol start="9">
+<li>Giá trị truthy &amp; falsy</li>
+</ol>
+<p>❌ Falsy:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">false</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>
@@ -449,39 +317,61 @@ if (isLogin) {
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">undefined</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">NaN</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Truthy</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Mọi</span> <span style="color:#a6e22e">giá</span> <span style="color:#a6e22e">trị</span> <span style="color:#a6e22e">còn</span> <span style="color:#a6e22e">lại</span>
-</span></span><span style="display:flex;"><span>
+</span></span></code></pre></div><p>✔ Truthy:</p>
+<p>Mọi giá trị còn lại</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;hello&#34;</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Chạy&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10.</span> <span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#a6e22e">thực</span> <span style="color:#a6e22e">tế</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Kiểm</span> <span style="color:#a6e22e">tra</span> <span style="color:#a6e22e">đăng</span> <span style="color:#a6e22e">nhập</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isLogin</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span></code></pre></div><ol start="10">
+<li>Ví dụ thực tế
+Kiểm tra đăng nhập:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isLogin</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isLogin</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Đã đăng nhập&#34;</span>);
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Chưa đăng nhập&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11.</span> <span style="color:#a6e22e">Lỗi</span> <span style="color:#a6e22e">thường</span> <span style="color:#a6e22e">gặp</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Dùng</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">thay</span> <span style="color:#a6e22e">vì</span> <span style="color:#f92672">===</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Quên</span> <span style="color:#66d9ef">break</span> <span style="color:#a6e22e">trong</span> <span style="color:#66d9ef">switch</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Viết</span> <span style="color:#a6e22e">điều</span> <span style="color:#a6e22e">kiện</span> <span style="color:#a6e22e">quá</span> <span style="color:#a6e22e">phức</span> <span style="color:#a6e22e">tạp</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">12.</span> <span style="color:#a6e22e">So</span> <span style="color:#a6e22e">sánh</span> <span style="color:#a6e22e">nhanh</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Cách</span>        <span style="color:#f92672">|</span> <span style="color:#a6e22e">Khi</span> <span style="color:#a6e22e">nào</span> <span style="color:#a6e22e">dùng</span>           <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">-----------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">----------------------</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`if`</span>        <span style="color:#f92672">|</span> <span style="color:#a6e22e">Điều</span> <span style="color:#a6e22e">kiện</span> <span style="color:#a6e22e">đơn</span>          <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`if...else`</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2</span> <span style="color:#a6e22e">nhánh</span>                <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`else if`</span>   <span style="color:#f92672">|</span> <span style="color:#a6e22e">Nhiều</span> <span style="color:#a6e22e">nhánh</span>            <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`switch`</span>    <span style="color:#f92672">|</span> <span style="color:#a6e22e">So</span> <span style="color:#a6e22e">sánh</span> <span style="color:#a6e22e">giá</span> <span style="color:#a6e22e">trị</span> <span style="color:#a6e22e">cụ</span> <span style="color:#a6e22e">thể</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`? :`</span>       <span style="color:#f92672">|</span> <span style="color:#a6e22e">Viết</span> <span style="color:#a6e22e">gọn</span>               <span style="color:#f92672">|</span>
-</span></span></code></pre></div></section>
+</span></span></code></pre></div><ol start="11">
+<li>Lỗi thường gặp</li>
+</ol>
+<p>❌ Dùng == thay vì ===
+❌ Quên break trong switch
+❌ Viết điều kiện quá phức tạp
+12. So sánh nhanh</p>
+<table>
+  <thead>
+      <tr>
+          <th>Cách</th>
+          <th>Khi nào dùng</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>if</code></td>
+          <td>Điều kiện đơn</td>
+      </tr>
+      <tr>
+          <td><code>if...else</code></td>
+          <td>2 nhánh</td>
+      </tr>
+      <tr>
+          <td><code>else if</code></td>
+          <td>Nhiều nhánh</td>
+      </tr>
+      <tr>
+          <td><code>switch</code></td>
+          <td>So sánh giá trị cụ thể</td>
+      </tr>
+      <tr>
+          <td><code>? :</code></td>
+          <td>Viết gọn</td>
+      </tr>
+  </tbody>
+</table>
+</section>
 
   <footer class="mt-12 flex flex-wrap"><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
@@ -493,8 +383,8 @@ if (isLogin) {
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Biến và Kiểu dữ liệu trong JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-ham-function/"
-      ><span>Hàm (Function) trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      href="http://localhost:1313/blog/js-dom-co-ban/"
+      ><span>DOM cơ bản trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >

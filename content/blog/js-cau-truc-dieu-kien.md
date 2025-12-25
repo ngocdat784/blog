@@ -17,20 +17,24 @@ tags: ["js-co-ban"]
 if (age >= 18) {
   console.log("Đủ tuổi");
 }
+```
 2. Câu lệnh if
 Cú pháp:
+```js
 if (điều_kiện) {
   // code chạy nếu điều kiện đúng
 }
-
+```
 Ví dụ:
+```js
 let age = 20;
 
 if (age >= 18) {
   console.log("Bạn đủ tuổi");
 }
-
+```
 3. if...else
+```js
 let age = 16;
 
 if (age >= 18) {
@@ -38,8 +42,9 @@ if (age >= 18) {
 } else {
   console.log("Chưa đủ tuổi");
 }
-
+```
 4. if...else if...else
+```js
 let score = 8;
 
 if (score >= 9) {
@@ -52,10 +57,11 @@ if (score >= 9) {
   console.log("Yếu");
 }
 
-
+```
 📌 Điều kiện được kiểm tra từ trên xuống
 
 5. Điều kiện lồng nhau
+```js
 let age = 20;
 let hasID = true;
 
@@ -66,21 +72,23 @@ if (age >= 18) {
     console.log("Thiếu giấy tờ");
   }
 }
-
+```
 
 ❌ Dễ rối nếu lồng quá nhiều
 ✔ Nên viết gọn hơn khi có thể
 
 6. Kết hợp với toán tử logic
+```js
 if (age >= 18 && hasID) {
   console.log("Được vào");
 }
 
-
+```
 👉 Gọn hơn ví dụ trên
 
 7. Câu lệnh switch...case
 Cú pháp:
+```js
 switch (value) {
   case x:
     // code
@@ -91,8 +99,9 @@ switch (value) {
   default:
     // code
 }
-
+```
 Ví dụ:
+```js
 let day = 2;
 
 switch (day) {
@@ -109,20 +118,22 @@ switch (day) {
     console.log("Không hợp lệ");
 }
 
-
+```
 📌 Quên break sẽ chạy xuyên case
 
 8. Toán tử điều kiện (? :)
+```js
 let age = 20;
 
 let message = age >= 18 ? "Đủ tuổi" : "Chưa đủ tuổi";
 
-
+```
 👉 Dùng cho điều kiện đơn giản
 
 9. Giá trị truthy & falsy
-❌ Falsy:
 
+❌ Falsy:
+```js
 false
 
 0
@@ -134,17 +145,19 @@ null
 undefined
 
 NaN
-
+```
 ✔ Truthy:
 
 Mọi giá trị còn lại
+```js
 
 if ("hello") {
   console.log("Chạy");
 }
-
+```
 10. Ví dụ thực tế
 Kiểm tra đăng nhập:
+```js
 let isLogin = true;
 
 if (isLogin) {
@@ -152,7 +165,7 @@ if (isLogin) {
 } else {
   console.log("Chưa đăng nhập");
 }
-
+```
 11. Lỗi thường gặp
 
 ❌ Dùng == thay vì ===

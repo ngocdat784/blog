@@ -14,30 +14,35 @@ tags: ["js-co-ban"]
 console.log("Xin chào");
 console.log("Xin chào");
 console.log("Xin chào");
+```
 ❌ Viết như vậy rất dở
 ✔ Vòng lặp giúp viết gọn hơn
 
 2. Vòng lặp for
 Cú pháp:
+```js
 for (khởi_tạo; điều_kiện; cập_nhật) {
   // code
 }
-
+```
 Ví dụ:
+```js
 for (let i = 1; i <= 5; i++) {
   console.log(i);
 }
-
+```
 
 👉 Chạy từ 1 đến 5
 
 3. Vòng lặp while
 Cú pháp:
+```js
 while (điều_kiện) {
   // code
 }
-
+```
 Ví dụ:
+```js
 let i = 1;
 
 while (i <= 5) {
@@ -45,16 +50,18 @@ while (i <= 5) {
   i++;
 }
 
-
+```
 📌 Cẩn thận vòng lặp vô hạn nếu quên tăng i
 
 4. Vòng lặp do...while
 Cú pháp:
+```js
 do {
   // code
 } while (điều_kiện);
-
+```
 Ví dụ:
+```js
 let i = 10;
 
 do {
@@ -62,47 +69,52 @@ do {
   i++;
 } while (i < 5);
 
-
+```
 👉 Chạy ít nhất 1 lần, dù điều kiện sai
 
 5. break và continue
 🔹 break – thoát vòng lặp
+```js
 for (let i = 1; i <= 10; i++) {
   if (i === 5) break;
   console.log(i);
 }
-
+```
 
 👉 Kết quả: 1 2 3 4
 
 🔹 continue – bỏ qua lượt hiện tại
+```js
 for (let i = 1; i <= 5; i++) {
   if (i === 3) continue;
   console.log(i);
 }
-
+```
 
 👉 Bỏ qua số 3
 
 6. Vòng lặp với mảng
 🔹 for truyền thống
+```js
 let fruits = ["Táo", "Cam", "Chuối"];
 
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
-
+```
 🔹 for...of (rất nên dùng)
+```js
 for (let fruit of fruits) {
   console.log(fruit);
 }
-
+```
 
 ✔ Gọn
 ✔ Dễ đọc
 ✔ Phổ biến
 
 7. for...in (ít dùng)
+```js
 let student = {
   name: "Đạt",
   age: 20
@@ -112,23 +124,24 @@ for (let key in student) {
   console.log(key, student[key]);
 }
 
-
+```
 👉 Dùng cho object
 
 ❌ Không nên dùng cho mảng
 
 8. forEach – vòng lặp hiện đại
+```js
 fruits.forEach(function(item, index) {
   console.log(index, item);
 });
 
-
+```
 Hoặc dùng arrow function:
-
+```js
 fruits.forEach((item, index) => {
   console.log(index, item);
 });
-
+```
 
 📌 Không dùng được break
 9. So sánh nhanh các vòng lặp
@@ -142,12 +155,13 @@ fruits.forEach((item, index) => {
 | `forEach`    | Code gọn, hiện đại         |
 10. Ví dụ thực tế
 In các số chẵn từ 1 đến 10:
+```js
 for (let i = 1; i <= 10; i++) {
   if (i % 2 === 0) {
     console.log(i);
   }
 }
-
+```
 11. Lỗi thường gặp
 
 ❌ Quên tăng biến lặp → vòng lặp vô hạn

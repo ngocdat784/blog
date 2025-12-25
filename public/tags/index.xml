@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Ký sự Lập trình Web &amp; JavaScript</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Js-Api</title>
+      <link>http://localhost:1313/tags/js-api/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/js-api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Js-Nang-Cao</title>
+      <link>http://localhost:1313/tags/js-nang-cao/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/js-nang-cao/</guid>
+      <description></description>
+    </item>
     <item>
       <title>JavaScript</title>
       <link>http://localhost:1313/tags/javascript/</link>
@@ -23,17 +37,17 @@
       <description></description>
     </item>
     <item>
+      <title>Js-Dom</title>
+      <link>http://localhost:1313/tags/js-dom/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/js-dom/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Web</title>
       <link>http://localhost:1313/tags/web/</link>
       <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/web/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>http://localhost:1313/tags/java/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/java/</guid>
       <description></description>
     </item>
   </channel>

@@ -19,55 +19,60 @@ function sayHello() {
 }
 
 sayHello();
+```
 2. Vì sao phải dùng hàm?
 
 ❌ Không dùng hàm:
-
+```js
 console.log("Xin chào");
 console.log("Xin chào");
 console.log("Xin chào");
-
+```
 
 ✔ Dùng hàm:
-
+```js
 function greet() {
   console.log("Xin chào");
 }
 
 greet();
-
+```
 3. Cách khai báo hàm
 🔹 3.1. Function Declaration (phổ biến)
+```js
 function sum(a, b) {
   return a + b;
 }
 
 sum(3, 5); // 8
-
+```
 
 📌 Có thể gọi hàm trước khi khai báo
 
 🔹 3.2. Function Expression
+```js
 const multiply = function(a, b) {
   return a * b;
 };
 
 multiply(2, 4); // 8
-
+```
 
 ❌ Không gọi được trước khi khai báo
 
 🔹 3.3. Arrow Function (ES6 – rất phổ biến)
+```js
 const add = (a, b) => {
   return a + b;
 };
 
-
+```
 Viết gọn:
-
+```js
 const add = (a, b) => a + b;
-
+```
 4. Tham số và đối số
+```js
 function greet(name) {
   console.log("Xin chào " + name);
 }
@@ -78,34 +83,38 @@ greet("Đạt");
 name → tham số
 
 "Đạt" → đối số
-
+```
 5. Giá trị trả về (return)
+```js
 function square(x) {
   return x * x;
 }
 
 let result = square(5); // 25
 
-
+```
 📌 Sau return, code không chạy tiếp
 
 6. Hàm không có return
+```js
 function showMessage() {
   console.log("Hello");
 }
 
 let x = showMessage();
 console.log(x); // undefined
-
+```
 7. Tham số mặc định (Default Parameter)
+```js
 function greet(name = "bạn") {
   console.log("Xin chào " + name);
 }
 
 greet();
 greet("Đạt");
-
+```
 8. Hàm và phạm vi biến (Scope)
+```js
 let x = 10;
 
 function test() {
@@ -115,10 +124,11 @@ function test() {
 
 console.log(y); // ❌ Error
 
-
+```
 👉 Biến trong hàm chỉ dùng trong hàm
 
 9. Hàm lồng nhau
+```js
 function outer() {
   function inner() {
     console.log("Hàm bên trong");
@@ -128,9 +138,9 @@ function outer() {
 
 outer();
 
-
+```
 📌 Đây là nền tảng của Closure (học sau)
-
+```js
 10. Callback Function (khái niệm rất quan trọng)
 function process(callback) {
   callback();
@@ -140,11 +150,12 @@ process(function() {
   console.log("Đây là callback");
 });
 
-
+```
 👉 Hàm được truyền vào hàm khác
 
 11. Ví dụ thực tế
 Tính tổng các số trong mảng:
+```js
 function sumArray(arr) {
   let total = 0;
 
@@ -156,7 +167,7 @@ function sumArray(arr) {
 }
 
 sumArray([1, 2, 3, 4]); // 10
-
+```
 12. Lỗi thường gặp
 
 ❌ Quên return

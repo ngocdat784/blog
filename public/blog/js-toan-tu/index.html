@@ -35,15 +35,42 @@ Kết hợp điều kiện
 
 👉 Ví dụ:
 let a = 10 &#43; 5;
-| Toán tử | Ý nghĩa     |
-| ------- | ----------- |
-| `&#43;`     | Cộng        |
-| `-`     | Trừ         |
-| `*`     | Nhân        |
-| `/`     | Chia        |
-| `%`     | Chia lấy dư |
-| `**`    | Lũy thừa    |
+
+  
+      
+          Toán tử
+          Ý nghĩa
+      
+  
+  
+      
+          &#43;
+          Cộng
+      
+      
+          -
+          Trừ
+      
+      
+          *
+          Nhân
+      
+      
+          /
+          Chia
+      
+      
+          %
+          Chia lấy dư
+      
+      
+          **
+          Lũy thừa
+      
+  
+
 let a = 10;
+
 let b = 3;
 
 a &#43; b; // 13
@@ -52,97 +79,7 @@ a * b; // 30
 a / b; // 3.333...
 a % b; // 1
 a ** b; // 1000
-📌 Lưu ý:
-
-&#34;10&#34; &#43; 5 // &#34;105&#34;
-
-
-Dấu &#43; vừa là cộng, vừa là nối chuỗi.
-
-3. Toán tử gán (Assignment Operators)
-| Toán tử | Ví dụ    | Tương đương |
-| ------- | -------- | ----------- |
-| `=`     | `x = 10` |             |
-| `&#43;=`    | `x &#43;= 5` | `x = x &#43; 5` |
-| `-=`    | `x -= 2` | `x = x - 2` |
-| `*=`    | `x *= 3` | `x = x * 3` |
-| `/=`    | `x /= 2` | `x = x / 2` |
-4. Toán tử tăng / giảm
-let x = 5;
-
-x&#43;&#43;; // 6
-x--; // 5
-
-Phân biệt:
-let a = 5;
-console.log(a&#43;&#43;); // 5
-console.log(&#43;&#43;a); // 7
-
-
-👉 &#43;&#43;a: tăng trước
-👉 a&#43;&#43;: tăng sau
-
-5. Toán tử so sánh (Comparison Operators)
-| Toán tử | Ý nghĩa                |
-| ------- | ---------------------- |
-| `==`    | So sánh giá trị        |
-| `===`   | So sánh giá trị &#43; kiểu |
-| `!=`    | Khác giá trị           |
-| `!==`   | Khác giá trị hoặc kiểu |
-| `&gt;`     | Lớn hơn                |
-| `&lt;`     | Nhỏ hơn                |
-| `&gt;=`    | ≥                      |
-| `&lt;=`    | ≤                      |
-Ví dụ:
-5 == &#34;5&#34;;   // true
-5 === &#34;5&#34;;  // false
-
-
-📌 Luôn ưu tiên dùng ===
-6. Toán tử logic (Logical Operators)
-
-| Toán tử | Ý nghĩa |   |    |
-| ------- | ------- | - | -- |
-| `&amp;&amp;`    | AND     |   |    |
-| `       |         | ` | OR |
-| `!`     | NOT     |   |    |
-
-Ví dụ:
-let age = 20;
-let isStudent = true;
-
-age &gt;= 18 &amp;&amp; isStudent; // true
-
-!true; // false
-
-7. Toán tử điều kiện (Ternary Operator)
-condition ? value1 : value2;
-
-Ví dụ:
-let age = 16;
-
-let result = age &gt;= 18 ? &#34;Đủ tuổi&#34; : &#34;Chưa đủ tuổi&#34;;
-
-
-👉 Viết gọn hơn if...else
-
-8. Toán tử typeof
-
-Dùng để kiểm tra kiểu dữ liệu.
-
-typeof 10;        // &#34;number&#34;
-typeof &#34;Hello&#34;;   // &#34;string&#34;
-typeof true;      // &#34;boolean&#34;
-
-9. Thứ tự ưu tiên toán tử
-let result = 10 &#43; 5 * 2; // 20
-
-
-👉 Nhân chia trước, cộng trừ sau
-👉 Dùng ngoặc để rõ ràng:
-
-(10 &#43; 5) * 2; // 30
-" />
+📌 Lưu ý:" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -247,24 +184,8 @@ let result = 10 &#43; 5 * 2; // 20
         >Trang chủ</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/blog/js-la-gi/"
-        >Giới thiệu JS</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-co-ban/"
-        >JS Cơ bản</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-dom/"
-        >JS DOM &amp; Event</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-api/"
-        >JS API</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-nang-cao/"
-        >JS Nâng cao</a
+        href="/blog/"
+        >Blog</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
         href="/about/"
@@ -288,15 +209,42 @@ let result = 10 &#43; 5 * 2; // 20
 </ul>
 <p>👉 Ví dụ:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Ý</span> <span style="color:#a6e22e">nghĩa</span>     <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">-------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">-----------</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`+`</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Cộng</span>        <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`-`</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Trừ</span>         <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`*`</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Nhân</span>        <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`/`</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Chia</span>        <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`%`</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Chia</span> <span style="color:#a6e22e">lấy</span> <span style="color:#a6e22e">dư</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`**`</span>    <span style="color:#f92672">|</span> <span style="color:#a6e22e">Lũy</span> <span style="color:#a6e22e">thừa</span>    <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Toán tử</th>
+          <th>Ý nghĩa</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>+</code></td>
+          <td>Cộng</td>
+      </tr>
+      <tr>
+          <td><code>-</code></td>
+          <td>Trừ</td>
+      </tr>
+      <tr>
+          <td><code>*</code></td>
+          <td>Nhân</td>
+      </tr>
+      <tr>
+          <td><code>/</code></td>
+          <td>Chia</td>
+      </tr>
+      <tr>
+          <td><code>%</code></td>
+          <td>Chia lấy dư</td>
+      </tr>
+      <tr>
+          <td><code>**</code></td>
+          <td>Lũy thừa</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 13
@@ -305,96 +253,175 @@ let result = 10 &#43; 5 * 2; // 20
 </span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 3.333...
 </span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 1
 </span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">**</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 1000
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Lưu</span> <span style="color:#a6e22e">ý</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span> <span style="color:#75715e">// &#34;105&#34;
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Dấu</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">vừa</span> <span style="color:#a6e22e">là</span> <span style="color:#a6e22e">cộng</span>, <span style="color:#a6e22e">vừa</span> <span style="color:#a6e22e">là</span> <span style="color:#a6e22e">nối</span> <span style="color:#a6e22e">chuỗi</span>.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#a6e22e">gán</span> (<span style="color:#a6e22e">Assignment</span> <span style="color:#a6e22e">Operators</span>)
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span>    <span style="color:#f92672">|</span> <span style="color:#a6e22e">Tương</span> <span style="color:#a6e22e">đương</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">-------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">--------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">-----------</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`=`</span>     <span style="color:#f92672">|</span> <span style="color:#e6db74">`x = 10`</span> <span style="color:#f92672">|</span>             <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`+=`</span>    <span style="color:#f92672">|</span> <span style="color:#e6db74">`x += 5`</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">`x = x + 5`</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`-=`</span>    <span style="color:#f92672">|</span> <span style="color:#e6db74">`x -= 2`</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">`x = x - 2`</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`*=`</span>    <span style="color:#f92672">|</span> <span style="color:#e6db74">`x *= 3`</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">`x = x * 3`</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`/=`</span>    <span style="color:#f92672">|</span> <span style="color:#e6db74">`x /= 2`</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">`x = x / 2`</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#a6e22e">tăng</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">giảm</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span></span></code></pre></div><p>📌 Lưu ý:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span> <span style="color:#75715e">// &#34;105&#34;
+</span></span></span></code></pre></div><p>Dấu + vừa là cộng, vừa là nối chuỗi.</p>
+<ol start="3">
+<li>Toán tử gán (Assignment Operators)
+<table>
+  <thead>
+      <tr>
+          <th>Toán tử</th>
+          <th>Ví dụ</th>
+          <th>Tương đương</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>=</code></td>
+          <td><code>x = 10</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>+=</code></td>
+          <td><code>x += 5</code></td>
+          <td><code>x = x + 5</code></td>
+      </tr>
+      <tr>
+          <td><code>-=</code></td>
+          <td><code>x -= 2</code></td>
+          <td><code>x = x - 2</code></td>
+      </tr>
+      <tr>
+          <td><code>*=</code></td>
+          <td><code>x *= 3</code></td>
+          <td><code>x = x * 3</code></td>
+      </tr>
+      <tr>
+          <td><code>/=</code></td>
+          <td><code>x /= 2</code></td>
+          <td><code>x = x / 2</code></td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>Toán tử tăng / giảm</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span><span style="color:#f92672">++</span>; <span style="color:#75715e">// 6
 </span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span><span style="color:#f92672">--</span>; <span style="color:#75715e">// 5
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Phân</span> <span style="color:#a6e22e">biệt</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span></span></code></pre></div><p>Phân biệt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">++</span>); <span style="color:#75715e">// 5
 </span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">++</span><span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 7
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#f92672">++</span><span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">tăng</span> <span style="color:#a6e22e">trước</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">++:</span> <span style="color:#a6e22e">tăng</span> <span style="color:#a6e22e">sau</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#a6e22e">so</span> <span style="color:#a6e22e">sánh</span> (<span style="color:#a6e22e">Comparison</span> <span style="color:#a6e22e">Operators</span>)
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Ý</span> <span style="color:#a6e22e">nghĩa</span>                <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">-------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">----------------------</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`==`</span>    <span style="color:#f92672">|</span> <span style="color:#a6e22e">So</span> <span style="color:#a6e22e">sánh</span> <span style="color:#a6e22e">giá</span> <span style="color:#a6e22e">trị</span>        <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`===`</span>   <span style="color:#f92672">|</span> <span style="color:#a6e22e">So</span> <span style="color:#a6e22e">sánh</span> <span style="color:#a6e22e">giá</span> <span style="color:#a6e22e">trị</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">kiểu</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`!=`</span>    <span style="color:#f92672">|</span> <span style="color:#a6e22e">Khác</span> <span style="color:#a6e22e">giá</span> <span style="color:#a6e22e">trị</span>           <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`!==`</span>   <span style="color:#f92672">|</span> <span style="color:#a6e22e">Khác</span> <span style="color:#a6e22e">giá</span> <span style="color:#a6e22e">trị</span> <span style="color:#a6e22e">hoặc</span> <span style="color:#a6e22e">kiểu</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`&gt;`</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Lớn</span> <span style="color:#a6e22e">hơn</span>                <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`&lt;`</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Nhỏ</span> <span style="color:#a6e22e">hơn</span>                <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`&gt;=`</span>    <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">≥</span>                      <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`&lt;=`</span>    <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">≤</span>                      <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;5&#34;</span>;   <span style="color:#75715e">// true
+</span></span></span></code></pre></div><p>👉 ++a: tăng trước
+👉 a++: tăng sau</p>
+<ol start="5">
+<li>Toán tử so sánh (Comparison Operators)
+<table>
+  <thead>
+      <tr>
+          <th>Toán tử</th>
+          <th>Ý nghĩa</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>==</code></td>
+          <td>So sánh giá trị</td>
+      </tr>
+      <tr>
+          <td><code>===</code></td>
+          <td>So sánh giá trị + kiểu</td>
+      </tr>
+      <tr>
+          <td><code>!=</code></td>
+          <td>Khác giá trị</td>
+      </tr>
+      <tr>
+          <td><code>!==</code></td>
+          <td>Khác giá trị hoặc kiểu</td>
+      </tr>
+      <tr>
+          <td><code>&gt;</code></td>
+          <td>Lớn hơn</td>
+      </tr>
+      <tr>
+          <td><code>&lt;</code></td>
+          <td>Nhỏ hơn</td>
+      </tr>
+      <tr>
+          <td><code>&gt;=</code></td>
+          <td>≥</td>
+      </tr>
+      <tr>
+          <td><code>&lt;=</code></td>
+          <td>≤</td>
+      </tr>
+      <tr>
+          <td>Ví dụ:</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;5&#34;</span>;   <span style="color:#75715e">// true
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;5&#34;</span>;  <span style="color:#75715e">// false
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Luôn</span> <span style="color:#a6e22e">ưu</span> <span style="color:#a6e22e">tiên</span> <span style="color:#a6e22e">dùng</span> <span style="color:#f92672">===</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#a6e22e">logic</span> (<span style="color:#a6e22e">Logical</span> <span style="color:#a6e22e">Operators</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Ý</span> <span style="color:#a6e22e">nghĩa</span> <span style="color:#f92672">|</span>   <span style="color:#f92672">|</span>    <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">-------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">-------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">-</span> <span style="color:#f92672">|</span> <span style="color:#f92672">--</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`&amp;&amp;`</span>    <span style="color:#f92672">|</span> <span style="color:#a6e22e">AND</span>     <span style="color:#f92672">|</span>   <span style="color:#f92672">|</span>    <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`       |         | `</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">OR</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`!`</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">NOT</span>     <span style="color:#f92672">|</span>   <span style="color:#f92672">|</span>    <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span></span></code></pre></div><p>📌 Luôn ưu tiên dùng ===
+6. Toán tử logic (Logical Operators)</p>
+<table>
+  <thead>
+      <tr>
+          <th>Toán tử</th>
+          <th>Ý nghĩa</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&amp;&amp;</code></td>
+          <td>AND</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>`</td>
+          <td></td>
+          <td>`</td>
+          <td>OR</td>
+      </tr>
+      <tr>
+          <td><code>!</code></td>
+          <td>NOT</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isStudent</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">isStudent</span>; <span style="color:#75715e">// true
 </span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">!</span><span style="color:#66d9ef">true</span>; <span style="color:#75715e">// false
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#a6e22e">điều</span> <span style="color:#a6e22e">kiện</span> (<span style="color:#a6e22e">Ternary</span> <span style="color:#a6e22e">Operator</span>)
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">condition</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">value1</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">value2</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;
+</span></span></span></code></pre></div><ol start="7">
+<li>Toán tử điều kiện (Ternary Operator)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">condition</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">value1</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">value2</span>;
+</span></span></code></pre></div><p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;Đủ tuổi&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Chưa đủ tuổi&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Viết</span> <span style="color:#a6e22e">gọn</span> <span style="color:#a6e22e">hơn</span> <span style="color:#66d9ef">if</span>...<span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8.</span> <span style="color:#a6e22e">Toán</span> <span style="color:#a6e22e">tử</span> <span style="color:#66d9ef">typeof</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Dùng</span> <span style="color:#a6e22e">để</span> <span style="color:#a6e22e">kiểm</span> <span style="color:#a6e22e">tra</span> <span style="color:#a6e22e">kiểu</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span>.
-</span></span><span style="display:flex;"><span>
+</span></span></code></pre></div><p>👉 Viết gọn hơn if&hellip;else</p>
+<ol start="8">
+<li>Toán tử typeof</li>
+</ol>
+<p>Dùng để kiểm tra kiểu dữ liệu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#ae81ff">10</span>;        <span style="color:#75715e">// &#34;number&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#e6db74">&#34;Hello&#34;</span>;   <span style="color:#75715e">// &#34;string&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">true</span>;      <span style="color:#75715e">// &#34;boolean&#34;
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9.</span> <span style="color:#a6e22e">Thứ</span> <span style="color:#a6e22e">tự</span> <span style="color:#a6e22e">ưu</span> <span style="color:#a6e22e">tiên</span> <span style="color:#a6e22e">toán</span> <span style="color:#a6e22e">tử</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 20
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Nhân</span> <span style="color:#a6e22e">chia</span> <span style="color:#a6e22e">trước</span>, <span style="color:#a6e22e">cộng</span> <span style="color:#a6e22e">trừ</span> <span style="color:#a6e22e">sau</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Dùng</span> <span style="color:#a6e22e">ngoặc</span> <span style="color:#a6e22e">để</span> <span style="color:#a6e22e">rõ</span> <span style="color:#a6e22e">ràng</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 30
+</span></span></span></code></pre></div><ol start="9">
+<li>Thứ tự ưu tiên toán tử</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 20
+</span></span></span></code></pre></div><p>👉 Nhân chia trước, cộng trừ sau
+👉 Dùng ngoặc để rõ ràng:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>(<span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 30
 </span></span></span></code></pre></div></section>
 
   <footer class="mt-12 flex flex-wrap"><a
@@ -403,12 +430,12 @@ let result = 10 &#43; 5 * 2; // 20
       >js-co-ban</a
     ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-cau-truc-dieu-kien/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Lập trình hướng đối tượng trong Java</span></a
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-mang-va-object/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Mảng và Object trong JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-async-await/"
-      ><span></span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      href="http://localhost:1313/blog/js-vong-lap/"
+      ><span>Vòng lặp trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >

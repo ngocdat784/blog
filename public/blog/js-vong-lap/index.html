@@ -34,143 +34,17 @@ console.log(&#34;Xin chào&#34;);
 ❌ Viết như vậy rất dở
 ✔ Vòng lặp giúp viết gọn hơn
 
-2. Vòng lặp for
+Vòng lặp for
 Cú pháp:
+
 for (khởi_tạo; điều_kiện; cập_nhật) {
   // code
 }
-
 Ví dụ:
 for (let i = 1; i &lt;= 5; i&#43;&#43;) {
   console.log(i);
 }
-
-
-👉 Chạy từ 1 đến 5
-
-3. Vòng lặp while
-Cú pháp:
-while (điều_kiện) {
-  // code
-}
-
-Ví dụ:
-let i = 1;
-
-while (i &lt;= 5) {
-  console.log(i);
-  i&#43;&#43;;
-}
-
-
-📌 Cẩn thận vòng lặp vô hạn nếu quên tăng i
-
-4. Vòng lặp do...while
-Cú pháp:
-do {
-  // code
-} while (điều_kiện);
-
-Ví dụ:
-let i = 10;
-
-do {
-  console.log(i);
-  i&#43;&#43;;
-} while (i &lt; 5);
-
-
-👉 Chạy ít nhất 1 lần, dù điều kiện sai
-
-5. break và continue
-🔹 break – thoát vòng lặp
-for (let i = 1; i &lt;= 10; i&#43;&#43;) {
-  if (i === 5) break;
-  console.log(i);
-}
-
-
-👉 Kết quả: 1 2 3 4
-
-🔹 continue – bỏ qua lượt hiện tại
-for (let i = 1; i &lt;= 5; i&#43;&#43;) {
-  if (i === 3) continue;
-  console.log(i);
-}
-
-
-👉 Bỏ qua số 3
-
-6. Vòng lặp với mảng
-🔹 for truyền thống
-let fruits = [&#34;Táo&#34;, &#34;Cam&#34;, &#34;Chuối&#34;];
-
-for (let i = 0; i &lt; fruits.length; i&#43;&#43;) {
-  console.log(fruits[i]);
-}
-
-🔹 for...of (rất nên dùng)
-for (let fruit of fruits) {
-  console.log(fruit);
-}
-
-
-✔ Gọn
-✔ Dễ đọc
-✔ Phổ biến
-
-7. for...in (ít dùng)
-let student = {
-  name: &#34;Đạt&#34;,
-  age: 20
-};
-
-for (let key in student) {
-  console.log(key, student[key]);
-}
-
-
-👉 Dùng cho object
-
-❌ Không nên dùng cho mảng
-
-8. forEach – vòng lặp hiện đại
-fruits.forEach(function(item, index) {
-  console.log(index, item);
-});
-
-
-Hoặc dùng arrow function:
-
-fruits.forEach((item, index) =&gt; {
-  console.log(index, item);
-});
-
-
-📌 Không dùng được break
-9. So sánh nhanh các vòng lặp
-| Vòng lặp     | Khi nào dùng               |
-| ------------ | -------------------------- |
-| `for`        | Khi cần chỉ số             |
-| `while`      | Khi chưa biết trước số lần |
-| `do...while` | Chạy ít nhất 1 lần         |
-| `for...of`   | Lặp mảng                   |
-| `for...in`   | Lặp object                 |
-| `forEach`    | Code gọn, hiện đại         |
-10. Ví dụ thực tế
-In các số chẵn từ 1 đến 10:
-for (let i = 1; i &lt;= 10; i&#43;&#43;) {
-  if (i % 2 === 0) {
-    console.log(i);
-  }
-}
-
-11. Lỗi thường gặp
-
-❌ Quên tăng biến lặp → vòng lặp vô hạn
-❌ Dùng for...in cho mảng
-❌ Không kiểm tra length
-" />
+👉 Chạy từ 1 đến 5" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -275,24 +149,8 @@ for (let i = 1; i &lt;= 10; i&#43;&#43;) {
         >Trang chủ</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/blog/js-la-gi/"
-        >Giới thiệu JS</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-co-ban/"
-        >JS Cơ bản</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-dom/"
-        >JS DOM &amp; Event</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-api/"
-        >JS API</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-nang-cao/"
-        >JS Nâng cao</a
+        href="/blog/"
+        >Blog</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
         href="/about/"
@@ -312,96 +170,85 @@ for (let i = 1; i &lt;= 10; i&#43;&#43;) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Viết</span> <span style="color:#a6e22e">như</span> <span style="color:#a6e22e">vậy</span> <span style="color:#a6e22e">rất</span> <span style="color:#a6e22e">dở</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Vòng</span> <span style="color:#a6e22e">lặp</span> <span style="color:#a6e22e">giúp</span> <span style="color:#a6e22e">viết</span> <span style="color:#a6e22e">gọn</span> <span style="color:#a6e22e">hơn</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Vòng</span> <span style="color:#a6e22e">lặp</span> <span style="color:#66d9ef">for</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cú</span> <span style="color:#a6e22e">pháp</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">khởi_tạo</span>; <span style="color:#a6e22e">điều_kiện</span>; <span style="color:#a6e22e">cập_nhật</span>) {
+</span></span></code></pre></div><p>❌ Viết như vậy rất dở
+✔ Vòng lặp giúp viết gọn hơn</p>
+<ol start="2">
+<li>Vòng lặp for
+Cú pháp:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">khởi_tạo</span>; <span style="color:#a6e22e">điều_kiện</span>; <span style="color:#a6e22e">cập_nhật</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// code
 </span></span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span></code></pre></div><p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Chạy</span> <span style="color:#a6e22e">từ</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">đến</span> <span style="color:#ae81ff">5</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Vòng</span> <span style="color:#a6e22e">lặp</span> <span style="color:#66d9ef">while</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cú</span> <span style="color:#a6e22e">pháp</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">điều_kiện</span>) {
+</span></span></code></pre></div><p>👉 Chạy từ 1 đến 5</p>
+<ol start="3">
+<li>Vòng lặp while
+Cú pháp:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">điều_kiện</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// code
 </span></span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Cẩn</span> <span style="color:#a6e22e">thận</span> <span style="color:#a6e22e">vòng</span> <span style="color:#a6e22e">lặp</span> <span style="color:#a6e22e">vô</span> <span style="color:#a6e22e">hạn</span> <span style="color:#a6e22e">nếu</span> <span style="color:#a6e22e">quên</span> <span style="color:#a6e22e">tăng</span> <span style="color:#a6e22e">i</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Vòng</span> <span style="color:#a6e22e">lặp</span> <span style="color:#66d9ef">do</span>...<span style="color:#66d9ef">while</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Cú</span> <span style="color:#a6e22e">pháp</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span> {
+</span></span></code></pre></div><p>📌 Cẩn thận vòng lặp vô hạn nếu quên tăng i</p>
+<ol start="4">
+<li>Vòng lặp do&hellip;while
+Cú pháp:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">do</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// code
 </span></span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">điều_kiện</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>;
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Chạy</span> <span style="color:#a6e22e">ít</span> <span style="color:#a6e22e">nhất</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">lần</span>, <span style="color:#a6e22e">dù</span> <span style="color:#a6e22e">điều</span> <span style="color:#a6e22e">kiện</span> <span style="color:#a6e22e">sai</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#66d9ef">break</span> <span style="color:#a6e22e">và</span> <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">🔹</span> <span style="color:#66d9ef">break</span> <span style="color:#960050;background-color:#1e0010">–</span> <span style="color:#a6e22e">thoát</span> <span style="color:#a6e22e">vòng</span> <span style="color:#a6e22e">lặp</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span></code></pre></div><p>👉 Chạy ít nhất 1 lần, dù điều kiện sai</p>
+<ol start="5">
+<li>break và continue
+🔹 break – thoát vòng lặp</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">break</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Kết</span> <span style="color:#a6e22e">quả</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">🔹</span> <span style="color:#66d9ef">continue</span> <span style="color:#960050;background-color:#1e0010">–</span> <span style="color:#a6e22e">bỏ</span> <span style="color:#a6e22e">qua</span> <span style="color:#a6e22e">lượt</span> <span style="color:#a6e22e">hiện</span> <span style="color:#a6e22e">tại</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span></code></pre></div><p>👉 Kết quả: 1 2 3 4</p>
+<p>🔹 continue – bỏ qua lượt hiện tại</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">continue</span>;
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Bỏ</span> <span style="color:#a6e22e">qua</span> <span style="color:#a6e22e">số</span> <span style="color:#ae81ff">3</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Vòng</span> <span style="color:#a6e22e">lặp</span> <span style="color:#a6e22e">với</span> <span style="color:#a6e22e">mảng</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">🔹</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">truyền</span> <span style="color:#a6e22e">thống</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruits</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Táo&#34;</span>, <span style="color:#e6db74">&#34;Cam&#34;</span>, <span style="color:#e6db74">&#34;Chuối&#34;</span>];
+</span></span></code></pre></div><p>👉 Bỏ qua số 3</p>
+<ol start="6">
+<li>Vòng lặp với mảng
+🔹 for truyền thống</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruits</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Táo&#34;</span>, <span style="color:#e6db74">&#34;Cam&#34;</span>, <span style="color:#e6db74">&#34;Chuối&#34;</span>];
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruits</span>[<span style="color:#a6e22e">i</span>]);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">🔹</span> <span style="color:#66d9ef">for</span>...<span style="color:#66d9ef">of</span> (<span style="color:#a6e22e">rất</span> <span style="color:#a6e22e">nên</span> <span style="color:#a6e22e">dùng</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruit</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">fruits</span>) {
+</span></span></code></pre></div><p>🔹 for&hellip;of (rất nên dùng)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruit</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">fruits</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruit</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Gọn</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Dễ</span> <span style="color:#a6e22e">đọc</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Phổ</span> <span style="color:#a6e22e">biến</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#66d9ef">for</span>...<span style="color:#66d9ef">in</span> (<span style="color:#a6e22e">ít</span> <span style="color:#a6e22e">dùng</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">student</span> <span style="color:#f92672">=</span> {
+</span></span></code></pre></div><p>✔ Gọn
+✔ Dễ đọc
+✔ Phổ biến</p>
+<ol start="7">
+<li>for&hellip;in (ít dùng)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">student</span> <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Đạt&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>
 </span></span><span style="display:flex;"><span>};
@@ -409,49 +256,74 @@ for (let i = 1; i &lt;= 10; i&#43;&#43;) {
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">student</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">student</span>[<span style="color:#a6e22e">key</span>]);
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Dùng</span> <span style="color:#a6e22e">cho</span> <span style="color:#a6e22e">object</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">nên</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">cho</span> <span style="color:#a6e22e">mảng</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8.</span> <span style="color:#a6e22e">forEach</span> <span style="color:#960050;background-color:#1e0010">–</span> <span style="color:#a6e22e">vòng</span> <span style="color:#a6e22e">lặp</span> <span style="color:#a6e22e">hiện</span> <span style="color:#a6e22e">đại</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">index</span>) {
+</span></span></code></pre></div><p>👉 Dùng cho object</p>
+<p>❌ Không nên dùng cho mảng</p>
+<ol start="8">
+<li>forEach – vòng lặp hiện đại</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">index</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">index</span>, <span style="color:#a6e22e">item</span>);
 </span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Hoặc</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">arrow</span> <span style="color:#66d9ef">function</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">index</span>) =&gt; {
+</span></span></code></pre></div><p>Hoặc dùng arrow function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">item</span>, <span style="color:#a6e22e">index</span>) =&gt; {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">index</span>, <span style="color:#a6e22e">item</span>);
 </span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">được</span> <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9.</span> <span style="color:#a6e22e">So</span> <span style="color:#a6e22e">sánh</span> <span style="color:#a6e22e">nhanh</span> <span style="color:#a6e22e">các</span> <span style="color:#a6e22e">vòng</span> <span style="color:#a6e22e">lặp</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Vòng</span> <span style="color:#a6e22e">lặp</span>     <span style="color:#f92672">|</span> <span style="color:#a6e22e">Khi</span> <span style="color:#a6e22e">nào</span> <span style="color:#a6e22e">dùng</span>               <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">------------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">--------------------------</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`for`</span>        <span style="color:#f92672">|</span> <span style="color:#a6e22e">Khi</span> <span style="color:#a6e22e">cần</span> <span style="color:#a6e22e">chỉ</span> <span style="color:#a6e22e">số</span>             <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`while`</span>      <span style="color:#f92672">|</span> <span style="color:#a6e22e">Khi</span> <span style="color:#a6e22e">chưa</span> <span style="color:#a6e22e">biết</span> <span style="color:#a6e22e">trước</span> <span style="color:#a6e22e">số</span> <span style="color:#a6e22e">lần</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`do...while`</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Chạy</span> <span style="color:#a6e22e">ít</span> <span style="color:#a6e22e">nhất</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">lần</span>         <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`for...of`</span>   <span style="color:#f92672">|</span> <span style="color:#a6e22e">Lặp</span> <span style="color:#a6e22e">mảng</span>                   <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`for...in`</span>   <span style="color:#f92672">|</span> <span style="color:#a6e22e">Lặp</span> <span style="color:#a6e22e">object</span>                 <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#e6db74">`forEach`</span>    <span style="color:#f92672">|</span> <span style="color:#a6e22e">Code</span> <span style="color:#a6e22e">gọn</span>, <span style="color:#a6e22e">hiện</span> <span style="color:#a6e22e">đại</span>         <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10.</span> <span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#a6e22e">thực</span> <span style="color:#a6e22e">tế</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">In</span> <span style="color:#a6e22e">các</span> <span style="color:#a6e22e">số</span> <span style="color:#a6e22e">chẵn</span> <span style="color:#a6e22e">từ</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">đến</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span></code></pre></div><p>📌 Không dùng được break
+9. So sánh nhanh các vòng lặp</p>
+<table>
+  <thead>
+      <tr>
+          <th>Vòng lặp</th>
+          <th>Khi nào dùng</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>for</code></td>
+          <td>Khi cần chỉ số</td>
+      </tr>
+      <tr>
+          <td><code>while</code></td>
+          <td>Khi chưa biết trước số lần</td>
+      </tr>
+      <tr>
+          <td><code>do...while</code></td>
+          <td>Chạy ít nhất 1 lần</td>
+      </tr>
+      <tr>
+          <td><code>for...of</code></td>
+          <td>Lặp mảng</td>
+      </tr>
+      <tr>
+          <td><code>for...in</code></td>
+          <td>Lặp object</td>
+      </tr>
+      <tr>
+          <td><code>forEach</code></td>
+          <td>Code gọn, hiện đại</td>
+      </tr>
+      <tr>
+          <td>10. Ví dụ thực tế</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>In các số chẵn từ 1 đến 10:</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11.</span> <span style="color:#a6e22e">Lỗi</span> <span style="color:#a6e22e">thường</span> <span style="color:#a6e22e">gặp</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Quên</span> <span style="color:#a6e22e">tăng</span> <span style="color:#a6e22e">biến</span> <span style="color:#a6e22e">lặp</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">vòng</span> <span style="color:#a6e22e">lặp</span> <span style="color:#a6e22e">vô</span> <span style="color:#a6e22e">hạn</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Dùng</span> <span style="color:#66d9ef">for</span>...<span style="color:#66d9ef">in</span> <span style="color:#a6e22e">cho</span> <span style="color:#a6e22e">mảng</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">kiểm</span> <span style="color:#a6e22e">tra</span> <span style="color:#a6e22e">length</span>
-</span></span></code></pre></div></section>
+</span></span></code></pre></div><ol start="11">
+<li>Lỗi thường gặp</li>
+</ol>
+<p>❌ Quên tăng biến lặp → vòng lặp vô hạn
+❌ Dùng for&hellip;in cho mảng
+❌ Không kiểm tra length</p>
+</section>
 
   <footer class="mt-12 flex flex-wrap"><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"

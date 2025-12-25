@@ -16,6 +16,7 @@ tags: ["js-co-ban"]
 👉 Ví dụ:
 ```js
 let a = 10 + 5;
+```
 | Toán tử | Ý nghĩa     |
 | ------- | ----------- |
 | `+`     | Cộng        |
@@ -24,7 +25,9 @@ let a = 10 + 5;
 | `/`     | Chia        |
 | `%`     | Chia lấy dư |
 | `**`    | Lũy thừa    |
+```js
 let a = 10;
+
 let b = 3;
 
 a + b; // 13
@@ -33,11 +36,12 @@ a * b; // 30
 a / b; // 3.333...
 a % b; // 1
 a ** b; // 1000
+```
 📌 Lưu ý:
-
+```js
 "10" + 5 // "105"
 
-
+```
 Dấu + vừa là cộng, vừa là nối chuỗi.
 
 3. Toán tử gán (Assignment Operators)
@@ -49,16 +53,18 @@ Dấu + vừa là cộng, vừa là nối chuỗi.
 | `*=`    | `x *= 3` | `x = x * 3` |
 | `/=`    | `x /= 2` | `x = x / 2` |
 4. Toán tử tăng / giảm
+```js
 let x = 5;
 
 x++; // 6
 x--; // 5
-
+```
 Phân biệt:
+```js
 let a = 5;
 console.log(a++); // 5
 console.log(++a); // 7
-
+```
 
 👉 ++a: tăng trước
 👉 a++: tăng sau
@@ -75,9 +81,10 @@ console.log(++a); // 7
 | `>=`    | ≥                      |
 | `<=`    | ≤                      |
 Ví dụ:
+```js
 5 == "5";   // true
 5 === "5";  // false
-
+```
 
 📌 Luôn ưu tiên dùng ===
 6. Toán tử logic (Logical Operators)
@@ -89,37 +96,44 @@ Ví dụ:
 | `!`     | NOT     |   |    |
 
 Ví dụ:
+```js
 let age = 20;
 let isStudent = true;
 
 age >= 18 && isStudent; // true
 
 !true; // false
-
+```
 7. Toán tử điều kiện (Ternary Operator)
+```js
 condition ? value1 : value2;
-
+```
 Ví dụ:
+```js
 let age = 16;
 
 let result = age >= 18 ? "Đủ tuổi" : "Chưa đủ tuổi";
 
-
+```
 👉 Viết gọn hơn if...else
 
 8. Toán tử typeof
 
 Dùng để kiểm tra kiểu dữ liệu.
+```js
 
 typeof 10;        // "number"
 typeof "Hello";   // "string"
 typeof true;      // "boolean"
+```
 
 9. Thứ tự ưu tiên toán tử
+```js
 let result = 10 + 5 * 2; // 20
-
+```
 
 👉 Nhân chia trước, cộng trừ sau
 👉 Dùng ngoặc để rõ ràng:
-
+```js
 (10 + 5) * 2; // 30
+```

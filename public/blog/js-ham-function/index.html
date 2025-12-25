@@ -38,150 +38,29 @@ function sayHello() {
 }
 
 sayHello();
-2. Vì sao phải dùng hàm?
+
+Vì sao phải dùng hàm?
 
 ❌ Không dùng hàm:
-
 console.log(&#34;Xin chào&#34;);
 console.log(&#34;Xin chào&#34;);
 console.log(&#34;Xin chào&#34;);
-
-
 ✔ Dùng hàm:
-
 function greet() {
   console.log(&#34;Xin chào&#34;);
 }
 
 greet();
 
-3. Cách khai báo hàm
+Cách khai báo hàm
 🔹 3.1. Function Declaration (phổ biến)
+
 function sum(a, b) {
   return a &#43; b;
 }
 
 sum(3, 5); // 8
-
-
-📌 Có thể gọi hàm trước khi khai báo
-
-🔹 3.2. Function Expression
-const multiply = function(a, b) {
-  return a * b;
-};
-
-multiply(2, 4); // 8
-
-
-❌ Không gọi được trước khi khai báo
-
-🔹 3.3. Arrow Function (ES6 – rất phổ biến)
-const add = (a, b) =&gt; {
-  return a &#43; b;
-};
-
-
-Viết gọn:
-
-const add = (a, b) =&gt; a &#43; b;
-
-4. Tham số và đối số
-function greet(name) {
-  console.log(&#34;Xin chào &#34; &#43; name);
-}
-
-greet(&#34;Đạt&#34;);
-
-
-name → tham số
-
-&#34;Đạt&#34; → đối số
-
-5. Giá trị trả về (return)
-function square(x) {
-  return x * x;
-}
-
-let result = square(5); // 25
-
-
-📌 Sau return, code không chạy tiếp
-
-6. Hàm không có return
-function showMessage() {
-  console.log(&#34;Hello&#34;);
-}
-
-let x = showMessage();
-console.log(x); // undefined
-
-7. Tham số mặc định (Default Parameter)
-function greet(name = &#34;bạn&#34;) {
-  console.log(&#34;Xin chào &#34; &#43; name);
-}
-
-greet();
-greet(&#34;Đạt&#34;);
-
-8. Hàm và phạm vi biến (Scope)
-let x = 10;
-
-function test() {
-  let y = 20;
-  console.log(x); // OK
-}
-
-console.log(y); // ❌ Error
-
-
-👉 Biến trong hàm chỉ dùng trong hàm
-
-9. Hàm lồng nhau
-function outer() {
-  function inner() {
-    console.log(&#34;Hàm bên trong&#34;);
-  }
-  inner();
-}
-
-outer();
-
-
-📌 Đây là nền tảng của Closure (học sau)
-
-10. Callback Function (khái niệm rất quan trọng)
-function process(callback) {
-  callback();
-}
-
-process(function() {
-  console.log(&#34;Đây là callback&#34;);
-});
-
-
-👉 Hàm được truyền vào hàm khác
-
-11. Ví dụ thực tế
-Tính tổng các số trong mảng:
-function sumArray(arr) {
-  let total = 0;
-
-  for (let num of arr) {
-    total &#43;= num;
-  }
-
-  return total;
-}
-
-sumArray([1, 2, 3, 4]); // 10
-
-12. Lỗi thường gặp
-
-❌ Quên return
-❌ Nhầm tham số &amp; đối số
-❌ Gọi hàm trước khi khai báo (với expression)
-" />
+📌 Có thể gọi hàm trước khi khai báo" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -286,24 +165,8 @@ sumArray([1, 2, 3, 4]); // 10
         >Trang chủ</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/blog/js-la-gi/"
-        >Giới thiệu JS</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-co-ban/"
-        >JS Cơ bản</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-dom/"
-        >JS DOM &amp; Event</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-api/"
-        >JS API</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-nang-cao/"
-        >JS Nâng cao</a
+        href="/blog/"
+        >Blog</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
         href="/about/"
@@ -330,56 +193,46 @@ sumArray([1, 2, 3, 4]); // 10
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">sayHello</span>();
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">Vì</span> <span style="color:#a6e22e">sao</span> <span style="color:#a6e22e">phải</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">hàm</span><span style="color:#f92672">?</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">hàm</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
+</span></span></code></pre></div><ol start="2">
+<li>Vì sao phải dùng hàm?</li>
+</ol>
+<p>❌ Không dùng hàm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào&#34;</span>);
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✔</span> <span style="color:#a6e22e">Dùng</span> <span style="color:#a6e22e">hàm</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>() {
+</span></span></code></pre></div><p>✔ Dùng hàm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>() {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào&#34;</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">greet</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#a6e22e">Cách</span> <span style="color:#a6e22e">khai</span> <span style="color:#a6e22e">báo</span> <span style="color:#a6e22e">hàm</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">🔹</span> <span style="color:#ae81ff">3.1</span>. Function <span style="color:#a6e22e">Declaration</span> (<span style="color:#a6e22e">phổ</span> <span style="color:#a6e22e">biến</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+</span></span></code></pre></div><ol start="3">
+<li>Cách khai báo hàm
+🔹 3.1. Function Declaration (phổ biến)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>); <span style="color:#75715e">// 8
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Có</span> <span style="color:#a6e22e">thể</span> <span style="color:#a6e22e">gọi</span> <span style="color:#a6e22e">hàm</span> <span style="color:#a6e22e">trước</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">khai</span> <span style="color:#a6e22e">báo</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">🔹</span> <span style="color:#ae81ff">3.2</span>. Function <span style="color:#a6e22e">Expression</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">multiply</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+</span></span></span></code></pre></div><p>📌 Có thể gọi hàm trước khi khai báo</p>
+<p>🔹 3.2. Function Expression</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">multiply</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">b</span>;
 </span></span><span style="display:flex;"><span>};
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">multiply</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>); <span style="color:#75715e">// 8
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">gọi</span> <span style="color:#a6e22e">được</span> <span style="color:#a6e22e">trước</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">khai</span> <span style="color:#a6e22e">báo</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">🔹</span> <span style="color:#ae81ff">3.3</span>. <span style="color:#a6e22e">Arrow</span> Function (<span style="color:#a6e22e">ES6</span> <span style="color:#960050;background-color:#1e0010">–</span> <span style="color:#a6e22e">rất</span> <span style="color:#a6e22e">phổ</span> <span style="color:#a6e22e">biến</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; {
+</span></span></span></code></pre></div><p>❌ Không gọi được trước khi khai báo</p>
+<p>🔹 3.3. Arrow Function (ES6 – rất phổ biến)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
 </span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Viết</span> <span style="color:#a6e22e">gọn</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#a6e22e">Tham</span> <span style="color:#a6e22e">số</span> <span style="color:#a6e22e">và</span> <span style="color:#a6e22e">đối</span> <span style="color:#a6e22e">số</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span>) {
+</span></span></code></pre></div><p>Viết gọn:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
+</span></span></code></pre></div><ol start="4">
+<li>Tham số và đối số</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
@@ -389,35 +242,37 @@ sumArray([1, 2, 3, 4]); // 10
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">tham</span> <span style="color:#a6e22e">số</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;Đạt&#34;</span> <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">đối</span> <span style="color:#a6e22e">số</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#a6e22e">Giá</span> <span style="color:#a6e22e">trị</span> <span style="color:#a6e22e">trả</span> <span style="color:#a6e22e">về</span> (<span style="color:#66d9ef">return</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">square</span>(<span style="color:#a6e22e">x</span>) {
+</span></span></code></pre></div><ol start="5">
+<li>Giá trị trả về (return)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">square</span>(<span style="color:#a6e22e">x</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">x</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">square</span>(<span style="color:#ae81ff">5</span>); <span style="color:#75715e">// 25
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Sau</span> <span style="color:#66d9ef">return</span>, <span style="color:#a6e22e">code</span> <span style="color:#a6e22e">không</span> <span style="color:#a6e22e">chạy</span> <span style="color:#a6e22e">tiếp</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#a6e22e">Hàm</span> <span style="color:#a6e22e">không</span> <span style="color:#a6e22e">có</span> <span style="color:#66d9ef">return</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showMessage</span>() {
+</span></span></span></code></pre></div><p>📌 Sau return, code không chạy tiếp</p>
+<ol start="6">
+<li>Hàm không có return</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showMessage</span>() {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">showMessage</span>();
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>); <span style="color:#75715e">// undefined
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#a6e22e">Tham</span> <span style="color:#a6e22e">số</span> <span style="color:#a6e22e">mặc</span> <span style="color:#a6e22e">định</span> (<span style="color:#a6e22e">Default</span> <span style="color:#a6e22e">Parameter</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bạn&#34;</span>) {
+</span></span></span></code></pre></div><ol start="7">
+<li>Tham số mặc định (Default Parameter)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bạn&#34;</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Xin chào &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">greet</span>();
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">greet</span>(<span style="color:#e6db74">&#34;Đạt&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8.</span> <span style="color:#a6e22e">Hàm</span> <span style="color:#a6e22e">và</span> <span style="color:#a6e22e">phạm</span> <span style="color:#a6e22e">vi</span> <span style="color:#a6e22e">biến</span> (<span style="color:#a6e22e">Scope</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><ol start="8">
+<li>Hàm và phạm vi biến (Scope)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test</span>() {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
@@ -425,12 +280,11 @@ sumArray([1, 2, 3, 4]); // 10
 </span></span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">y</span>); <span style="color:#75715e">// ❌ Error
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Biến</span> <span style="color:#a6e22e">trong</span> <span style="color:#a6e22e">hàm</span> <span style="color:#a6e22e">chỉ</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">trong</span> <span style="color:#a6e22e">hàm</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9.</span> <span style="color:#a6e22e">Hàm</span> <span style="color:#a6e22e">lồng</span> <span style="color:#a6e22e">nhau</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">outer</span>() {
+</span></span></span></code></pre></div><p>👉 Biến trong hàm chỉ dùng trong hàm</p>
+<ol start="9">
+<li>Hàm lồng nhau</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">outer</span>() {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">inner</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hàm bên trong&#34;</span>);
 </span></span><span style="display:flex;"><span>  }
@@ -438,11 +292,8 @@ sumArray([1, 2, 3, 4]); // 10
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">outer</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Đây</span> <span style="color:#a6e22e">là</span> <span style="color:#a6e22e">nền</span> <span style="color:#a6e22e">tảng</span> <span style="color:#a6e22e">của</span> <span style="color:#a6e22e">Closure</span> (<span style="color:#a6e22e">học</span> <span style="color:#a6e22e">sau</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10.</span> <span style="color:#a6e22e">Callback</span> Function (<span style="color:#a6e22e">khái</span> <span style="color:#a6e22e">niệm</span> <span style="color:#a6e22e">rất</span> <span style="color:#a6e22e">quan</span> <span style="color:#a6e22e">trọng</span>)
+</span></span></code></pre></div><p>📌 Đây là nền tảng của Closure (học sau)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#ae81ff">10.</span> <span style="color:#a6e22e">Callback</span> Function (<span style="color:#a6e22e">khái</span> <span style="color:#a6e22e">niệm</span> <span style="color:#a6e22e">rất</span> <span style="color:#a6e22e">quan</span> <span style="color:#a6e22e">trọng</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">process</span>(<span style="color:#a6e22e">callback</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">callback</span>();
 </span></span><span style="display:flex;"><span>}
@@ -450,13 +301,12 @@ sumArray([1, 2, 3, 4]); // 10
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">process</span>(<span style="color:#66d9ef">function</span>() {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Đây là callback&#34;</span>);
 </span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Hàm</span> <span style="color:#a6e22e">được</span> <span style="color:#a6e22e">truyền</span> <span style="color:#a6e22e">vào</span> <span style="color:#a6e22e">hàm</span> <span style="color:#a6e22e">khác</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11.</span> <span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#a6e22e">thực</span> <span style="color:#a6e22e">tế</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Tính</span> <span style="color:#a6e22e">tổng</span> <span style="color:#a6e22e">các</span> <span style="color:#a6e22e">số</span> <span style="color:#a6e22e">trong</span> <span style="color:#a6e22e">mảng</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sumArray</span>(<span style="color:#a6e22e">arr</span>) {
+</span></span></code></pre></div><p>👉 Hàm được truyền vào hàm khác</p>
+<ol start="11">
+<li>Ví dụ thực tế
+Tính tổng các số trong mảng:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sumArray</span>(<span style="color:#a6e22e">arr</span>) {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">total</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">arr</span>) {
@@ -467,13 +317,13 @@ sumArray([1, 2, 3, 4]); // 10
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">sumArray</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]); <span style="color:#75715e">// 10
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">12.</span> <span style="color:#a6e22e">Lỗi</span> <span style="color:#a6e22e">thường</span> <span style="color:#a6e22e">gặp</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Quên</span> <span style="color:#66d9ef">return</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Nhầm</span> <span style="color:#a6e22e">tham</span> <span style="color:#a6e22e">số</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">đối</span> <span style="color:#a6e22e">số</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Gọi</span> <span style="color:#a6e22e">hàm</span> <span style="color:#a6e22e">trước</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">khai</span> <span style="color:#a6e22e">báo</span> (<span style="color:#a6e22e">với</span> <span style="color:#a6e22e">expression</span>)
-</span></span></code></pre></div></section>
+</span></span></span></code></pre></div><ol start="12">
+<li>Lỗi thường gặp</li>
+</ol>
+<p>❌ Quên return
+❌ Nhầm tham số &amp; đối số
+❌ Gọi hàm trước khi khai báo (với expression)</p>
+</section>
 
   <footer class="mt-12 flex flex-wrap"><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
@@ -481,12 +331,12 @@ sumArray([1, 2, 3, 4]); // 10
       >js-co-ban</a
     ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-cau-truc-dieu-kien/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Cấu trúc điều kiện trong JavaScript</span></a
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-dom-co-ban/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>DOM cơ bản trong JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-toan-tu/"
-      ><span>Toán tử trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      href="http://localhost:1313/blog/js-mang-va-object/"
+      ><span>Mảng và Object trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >

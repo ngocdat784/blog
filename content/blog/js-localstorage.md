@@ -5,64 +5,84 @@ draft: false
 tags: ["js-api"]
 ---
 
-## LocalStorage là gì?
+## 📦 LocalStorage là gì?
 
-**LocalStorage** là một Web API cho phép JavaScript **lưu trữ dữ liệu ngay trên trình duyệt** của người dùng.
+**LocalStorage** là một **Web API** cho phép JavaScript **lưu trữ dữ liệu trực tiếp trên trình duyệt** của người dùng.
 
-📌 Đặc điểm:
-- Lưu dữ liệu **dạng key – value**
-- Dữ liệu **không tự mất** khi reload hay đóng trình duyệt
+### 🔍 Đặc điểm chính
+
+- Lưu dữ liệu theo dạng **key – value**
+- Dữ liệu **không mất** khi reload hoặc đóng trình duyệt
 - Dung lượng khoảng **5–10MB**
-- Chỉ lưu được **string**
+- Chỉ lưu được **chuỗi (string)**
 
-👉 Rất hay dùng trong:
+👉 Thường dùng để:
 - Lưu token đăng nhập
-- Giỏ hàng
-- Theme (dark / light)
-- Trạng thái người dùng
+- Lưu giỏ hàng
+- Lưu theme (Dark / Light)
+- Lưu trạng thái người dùng
 
 ---
 
-## Cú pháp cơ bản của LocalStorage
+## 🧩 Cách sử dụng LocalStorage
 
-### Lưu dữ liệu
+LocalStorage cung cấp các phương thức cơ bản như:
+- `setItem()` – lưu dữ liệu
+- `getItem()` – lấy dữ liệu
+- `removeItem()` – xoá một key
+- `clear()` – xoá toàn bộ
+
+Ngoài ra, khi làm việc với **object / array**, ta cần kết hợp với **JSON**.
+
+---
+
+## 🧪 Ví dụ tổng hợp sử dụng LocalStorage
 
 ```js
+// ===============================
+// LƯU & LẤY DỮ LIỆU CƠ BẢN
+// ===============================
+
+// Lưu dữ liệu
 localStorage.setItem("username", "admin");
-Lấy dữ liệu
+
+// Lấy dữ liệu
 const username = localStorage.getItem("username");
 console.log(username);
 
-Xoá 1 key
+// Xoá một key
 localStorage.removeItem("username");
 
-Xoá toàn bộ
+// Xoá toàn bộ LocalStorage
 localStorage.clear();
 
-Lưu Object / Array vào LocalStorage
 
-❌ LocalStorage không lưu trực tiếp object
+// ===============================
+// LƯU OBJECT / ARRAY
+// ===============================
 
-👉 Phải chuyển sang JSON.
-
-Lưu object
 const user = {
   name: "Ngọc Đạt",
   role: "admin"
 };
 
+// Lưu object (phải stringify)
 localStorage.setItem("user", JSON.stringify(user));
 
-Lấy object
-const user = JSON.parse(localStorage.getItem("user"));
-console.log(user.name);
+// Lấy object
+const savedUser = JSON.parse(localStorage.getItem("user"));
+console.log(savedUser.name);
+```
+```js
+// ===============================
+// VÍ DỤ: LƯU TRẠNG THÁI ĐĂNG NHẬP
+// ===============================
 
-Ví dụ 1: Lưu trạng thái đăng nhập
-Sau khi login thành công
+// Sau khi đăng nhập thành công
 localStorage.setItem("token", "abc123");
 localStorage.setItem("fullName", "Ngọc Đạt Trần");
 
-Khi load trang
+// Khi load trang
 const token = localStorage.getItem("token");
 
 if (token) {
@@ -70,16 +90,23 @@ if (token) {
 } else {
   console.log("Chưa đăng nhập");
 }
+```
+```js
+// ===============================
+// VÍ DỤ: ĐĂNG XUẤT (LOGOUT)
+// ===============================
 
-Ví dụ 2: Đăng xuất (Logout)
 function logout() {
   localStorage.removeItem("token");
   localStorage.removeItem("fullName");
   window.location.href = "/login.html";
 }
+```
+```js
+// ===============================
+// VÍ DỤ: LƯU GIỎ HÀNG
+// ===============================
 
-Ví dụ 3: Lưu giỏ hàng vào LocalStorage
-Thêm sản phẩm vào giỏ
 function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -88,12 +115,15 @@ function addToCart(product) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-Lấy giỏ hàng
 function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
+```
+```js
+// ===============================
+// VÍ DỤ: LƯU THEME DARK / LIGHT
+// ===============================
 
-Ví dụ 4: Lưu theme Dark / Light
 function setTheme(theme) {
   localStorage.setItem("theme", theme);
   document.body.className = theme;
@@ -105,34 +135,44 @@ function loadTheme() {
 }
 
 loadTheme();
+```
+## ⚖️ LocalStorage vs SessionStorage
 
-LocalStorage vs SessionStorage
 | Tiêu chí         | LocalStorage | SessionStorage |
-| ---------------- | ------------ | -------------- |
-| Lưu lâu dài      | ✅            | ❌              |
-| Mất khi đóng tab | ❌            | ✅              |
+|------------------|--------------|----------------|
+| Lưu lâu dài      | ✅ Có        | ❌ Không       |
+| Mất khi đóng tab | ❌ Không     | ✅ Có          |
 | Dung lượng       | ~5MB         | ~5MB           |
-| Phổ biến         | Rất cao      | Trung bình     |
-👉 Token đăng nhập → LocalStorage
-👉 Form tạm → SessionStorage
+| Mức độ phổ biến  | Rất cao      | Trung bình     |
 
-Lưu ý bảo mật khi dùng LocalStorage
+**Nên dùng khi nào?**
 
-⚠ Không nên lưu:
+- 👉 **Token đăng nhập** → LocalStorage  
+- 👉 **Form tạm thời** → SessionStorage  
 
-Mật khẩu
+---
 
-Thông tin nhạy cảm
+## 🔐 Lưu ý bảo mật khi dùng LocalStorage
 
-⚠ Token trong LocalStorage:
+### ⚠ Không nên lưu
 
-Dễ bị XSS đánh cắp
+- Mật khẩu
+- Thông tin nhạy cảm (CMND, số thẻ, OTP, …)
 
-Giải pháp nâng cao: HttpOnly Cookie
+### ⚠ Token trong LocalStorage
 
-Các lỗi thường gặp
+- Có thể bị đánh cắp thông qua **tấn công XSS**
 
-❌ Quên JSON.stringify
-❌ JSON.parse(null) gây lỗi
-❌ Dùng key trùng nhau
-❌ Lưu quá nhiều dữ liệu
+### ✅ Giải pháp an toàn hơn
+
+- Sử dụng **HttpOnly Cookie**
+- Kết hợp **CSRF Token** để chống giả mạo request
+
+---
+
+## ❌ Các lỗi thường gặp khi dùng LocalStorage
+
+- Quên `JSON.stringify()` khi lưu object
+- Gọi `JSON.parse(null)` gây lỗi
+- Dùng trùng key giữa các chức năng
+- Lưu quá nhiều dữ liệu không cần thiết

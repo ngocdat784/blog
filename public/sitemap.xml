@@ -8,22 +8,49 @@
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2025-12-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/js-async-await/</loc>
+    <lastmod>2025-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2025-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/js-fetch-api/</loc>
+    <lastmod>2025-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/js-call-api-thuc-te/</loc>
+    <lastmod>2025-12-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/about/profile/</loc>
+    <lastmod>2025-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/js-api/</loc>
+    <lastmod>2025-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/js-nang-cao/</loc>
     <lastmod>2025-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-12-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/js-bien-va-kieu-du-lieu/</loc>
-    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/blog/js-localstorage/</loc>
+    <lastmod>2025-12-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/js-bien-va-kieu-du-lieu/</loc>
     <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/java/</loc>
+    <loc>http://localhost:1313/blog/js-cau-truc-dieu-kien/</loc>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/js-dom-co-ban/</loc>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/js-ham-function/</loc>
     <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/javascript/</loc>
@@ -35,36 +62,25 @@
     <loc>http://localhost:1313/tags/js-co-ban/</loc>
     <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/js-cau-truc-dieu-kien/</loc>
+    <loc>http://localhost:1313/tags/js-dom/</loc>
     <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/blog/js-mang-va-object/</loc>
     <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/js-toan-tu/</loc>
     <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/js-vong-lap/</loc>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/web/</loc>
     <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/js-async-await/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/js-call-api-thuc-te/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/js-dom-co-ban/</loc>
+    <loc>http://localhost:1313/blog/js-form-validation/</loc>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/js-event-trong-web/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/js-fetch-api/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/js-form-validation/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/js-ham-function/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/js-localstorage/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/js-mang-va-object/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/js-vong-lap/</loc>
+    <lastmod>2025-12-22T00:00:00+00:00</lastmod>
   </url>
 </urlset>

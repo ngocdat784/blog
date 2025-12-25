@@ -22,58 +22,31 @@ tags: ["js-dom"]
 
 ### ❌ Cách 1: Inline HTML (không khuyến khích)
 
-```html
+```js
 <button onclick="alert('Hello')">Click</button>
-Ok 👍 tiếp tục series js-dom nha.
-Dưới đây là nội dung hoàn chỉnh cho file js-event-trong-web.md, nối mạch trực tiếp sau bài DOM cơ bản.
-
----
-title: "Xử lý sự kiện trong JavaScript"
-date: 2025-12-22
-draft: false
-tags: ["js-dom"]
----
-
-## 1. Sự kiện (Event) là gì?
-
-**Sự kiện (Event)** là những hành động xảy ra khi người dùng:
-- Click chuột
-- Nhập dữ liệu
-- Di chuyển chuột
-- Gửi form
-- Load trang
-
-👉 JavaScript dùng event để **tương tác với người dùng**
-
----
-
-## 2. Các cách gắn sự kiện
-
-### ❌ Cách 1: Inline HTML (không khuyến khích)
-
-```html
-<button onclick="alert('Hello')">Click</button>
-
+```
 
 ❌ Khó quản lý
 ❌ Không sạch code
 
 🔹 Cách 2: Gán qua thuộc tính
+```js
 let btn = document.querySelector("button");
 
 btn.onclick = function() {
   alert("Click");
 };
-
+```
 
 ✔ Dễ hiểu
 ❌ Ghi đè sự kiện cũ
 
 ✅ Cách 3: addEventListener (nên dùng)
+```js
 btn.addEventListener("click", function() {
   alert("Click");
 });
-
+```
 
 ✔ Gắn nhiều event
 ✔ Chuẩn hiện đại
@@ -92,10 +65,11 @@ btn.addEventListener("click", function() {
 | `submit`    | Gửi form     |
 | `load`      | Load trang   |
 4. Đối tượng Event (event)
+```js
 btn.addEventListener("click", function(event) {
   console.log(event);
 });
-
+```
 
 👉 event chứa:
 
@@ -106,15 +80,17 @@ Phần tử gây ra sự kiện
 Vị trí chuột, phím bấm…
 
 🔹 event.target
+```js
 document.addEventListener("click", function(e) {
   console.log(e.target);
 });
 
-
+```
 👉 Phần tử được click
 
 5. Ngăn hành vi mặc định
 🔹 preventDefault()
+```js
 <form id="myForm">
   <button type="submit">Gửi</button>
 </form>
@@ -125,24 +101,26 @@ document.getElementById("myForm")
     console.log("Không reload trang");
 });
 
-
+```
 👉 Rất quan trọng khi làm form
 
 6. Bắt sự kiện nhập liệu
+```js
 let input = document.querySelector("input");
 
 input.addEventListener("input", function(e) {
   console.log(e.target.value);
 });
-
+```
 7. Event Bubbling & Capturing (hiểu cơ bản)
+```js
 <div id="parent">
   <button id="child">Click</button>
 </div>
 
 parent.addEventListener("click", () => console.log("Parent"));
 child.addEventListener("click", () => console.log("Child"));
-
+```
 
 👉 Click button:
 
@@ -153,6 +131,7 @@ Parent
 📌 Đây gọi là bubbling
 
 8. Event Delegation (rất hay dùng)
+```js
 document.querySelector("ul")
   .addEventListener("click", function(e) {
     if (e.target.tagName === "LI") {
@@ -160,7 +139,7 @@ document.querySelector("ul")
     }
 });
 
-
+```
 👉 Dùng khi:
 
 Danh sách động
@@ -169,12 +148,13 @@ Nhiều phần tử con
 
 9. Ví dụ thực tế
 Click đổi màu nền:
+```js
 let btn = document.querySelector("button");
 
 btn.addEventListener("click", function() {
   document.body.classList.toggle("dark");
 });
-
+```
 10. Lỗi thường gặp
 
 ❌ Gắn event khi DOM chưa load

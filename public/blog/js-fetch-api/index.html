@@ -44,124 +44,7 @@ fetch(url)
   .catch(error =&gt; {
     console.error(error);
   });
-📌 Giải thích:
-
-fetch(url) → gửi request
-
-response.json() → chuyển dữ liệu trả về thành JSON
-
-then() → xử lý dữ liệu
-
-catch() → bắt lỗi
-
-Ví dụ: Lấy dữ liệu từ API
-fetch(&#34;https://jsonplaceholder.typicode.com/posts&#34;)
-  .then(res =&gt; res.json())
-  .then(posts =&gt; {
-    console.log(posts);
-  });
-
-
-📌 API trên trả về danh sách bài viết giả để test.
-
-Sử dụng Fetch với async / await (khuyến nghị)
-async function getPosts() {
-  try {
-    const response = await fetch(&#34;https://jsonplaceholder.typicode.com/posts&#34;);
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-getPosts();
-
-
-✅ Code dễ đọc hơn
-✅ Gần giống code đồng bộ
-
-Gửi dữ liệu bằng Fetch (POST)
-fetch(&#34;https://jsonplaceholder.typicode.com/posts&#34;, {
-  method: &#34;POST&#34;,
-  headers: {
-    &#34;Content-Type&#34;: &#34;application/json&#34;
-  },
-  body: JSON.stringify({
-    title: &#34;Hello JS&#34;,
-    body: &#34;Fetch API rất dễ dùng&#34;,
-    userId: 1
-  })
-})
-.then(res =&gt; res.json())
-.then(data =&gt; console.log(data));
-
-
-📌 Các thành phần quan trọng:
-
-method: HTTP method (GET, POST, PUT, DELETE)
-
-headers: kiểu dữ liệu gửi đi
-
-body: dữ liệu gửi (phải dùng JSON.stringify)
-
-Kiểm tra lỗi khi gọi API
-fetch(url)
-  .then(res =&gt; {
-    if (!res.ok) {
-      throw new Error(&#34;Lỗi HTTP: &#34; &#43; res.status);
-    }
-    return res.json();
-  })
-  .then(data =&gt; console.log(data))
-  .catch(err =&gt; console.error(err.message));
-
-
-📌 res.ok = false khi:
-
-404 Not Found
-
-500 Server Error
-
-Ví dụ thực tế: Hiển thị dữ liệu ra HTML
-&lt;ul id=&#34;post-list&#34;&gt;&lt;/ul&gt;
-
-async function loadPosts() {
-  const res = await fetch(&#34;https://jsonplaceholder.typicode.com/posts&#34;);
-  const posts = await res.json();
-
-  const ul = document.getElementById(&#34;post-list&#34;);
-  posts.slice(0, 5).forEach(post =&gt; {
-    const li = document.createElement(&#34;li&#34;);
-    li.textContent = post.title;
-    ul.appendChild(li);
-  });
-}
-
-loadPosts();
-
-
-👉 Rất hay dùng trong:
-
-Trang blog
-
-Trang sản phẩm
-
-Dashboard
-So sánh Fetch API và XMLHttpRequest
-| Tiêu chí          | Fetch API   | XMLHttpRequest |
-| ----------------- | ----------- | -------------- |
-| Cú pháp           | Gọn, dễ đọc | Dài, khó nhớ   |
-| Promise           | Có          | Không          |
-| Hiện đại          | ✅           | ❌              |
-| Phổ biến hiện nay | ✅           | Ít dùng        |
-Lỗi thường gặp khi dùng Fetch
-
-❌ Quên return response.json()
-❌ Quên await
-❌ Gửi body nhưng không set Content-Type
-❌ Không xử lý lỗi HTTP
-" />
+📌 Giải thích:" />
   <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
@@ -266,24 +149,8 @@ Lỗi thường gặp khi dùng Fetch
         >Trang chủ</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/blog/js-la-gi/"
-        >Giới thiệu JS</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-co-ban/"
-        >JS Cơ bản</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-dom/"
-        >JS DOM &amp; Event</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-api/"
-        >JS API</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/tags/js-nang-cao/"
-        >JS Nâng cao</a
+        href="/blog/"
+        >Blog</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
         href="/about/"
@@ -316,28 +183,20 @@ Fetch thường được dùng để:</p>
 </span></span><span style="display:flex;"><span>  .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span> =&gt; {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">error</span>);
 </span></span><span style="display:flex;"><span>  });
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Giải</span> <span style="color:#a6e22e">thích</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">url</span>) <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">gửi</span> <span style="color:#a6e22e">request</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>() <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">chuyển</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span> <span style="color:#a6e22e">trả</span> <span style="color:#a6e22e">về</span> <span style="color:#a6e22e">thành</span> <span style="color:#a6e22e">JSON</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">then</span>() <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">xử</span> <span style="color:#a6e22e">lý</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">catch</span>() <span style="color:#960050;background-color:#1e0010">→</span> <span style="color:#a6e22e">bắt</span> <span style="color:#a6e22e">lỗi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Lấy</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span> <span style="color:#a6e22e">từ</span> <span style="color:#a6e22e">API</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/posts&#34;</span>)
+</span></span></code></pre></div><p>📌 Giải thích:</p>
+<p>fetch(url) → gửi request</p>
+<p>response.json() → chuyển dữ liệu trả về thành JSON</p>
+<p>then() → xử lý dữ liệu</p>
+<p>catch() → bắt lỗi</p>
+<p>Ví dụ: Lấy dữ liệu từ API</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/posts&#34;</span>)
 </span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>())
 </span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">posts</span> =&gt; {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">posts</span>);
 </span></span><span style="display:flex;"><span>  });
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">trên</span> <span style="color:#a6e22e">trả</span> <span style="color:#a6e22e">về</span> <span style="color:#a6e22e">danh</span> <span style="color:#a6e22e">sách</span> <span style="color:#a6e22e">bài</span> <span style="color:#a6e22e">viết</span> <span style="color:#a6e22e">giả</span> <span style="color:#a6e22e">để</span> <span style="color:#a6e22e">test</span>.
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Sử</span> <span style="color:#a6e22e">dụng</span> <span style="color:#a6e22e">Fetch</span> <span style="color:#a6e22e">với</span> <span style="color:#66d9ef">async</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">await</span> (<span style="color:#a6e22e">khuyến</span> <span style="color:#a6e22e">nghị</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getPosts</span>() {
+</span></span></code></pre></div><p>📌 API trên trả về danh sách bài viết giả để test.</p>
+<p>Sử dụng Fetch với async / await (khuyến nghị)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getPosts</span>() {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/posts&#34;</span>);
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
@@ -348,13 +207,10 @@ Fetch thường được dùng để:</p>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">getPosts</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✅</span> <span style="color:#a6e22e">Code</span> <span style="color:#a6e22e">dễ</span> <span style="color:#a6e22e">đọc</span> <span style="color:#a6e22e">hơn</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">✅</span> <span style="color:#a6e22e">Gần</span> <span style="color:#a6e22e">giống</span> <span style="color:#a6e22e">code</span> <span style="color:#a6e22e">đồng</span> <span style="color:#a6e22e">bộ</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Gửi</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span> <span style="color:#a6e22e">bằng</span> <span style="color:#a6e22e">Fetch</span> (<span style="color:#a6e22e">POST</span>)
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/posts&#34;</span>, {
+</span></span></code></pre></div><p>✅ Code dễ đọc hơn
+✅ Gần giống code đồng bộ</p>
+<p>Gửi dữ liệu bằng Fetch (POST)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/posts&#34;</span>, {
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Content-Type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/json&#34;</span>
@@ -367,18 +223,12 @@ Fetch thường được dùng để:</p>
 </span></span><span style="display:flex;"><span>})
 </span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>())
 </span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>));
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">Các</span> <span style="color:#a6e22e">thành</span> <span style="color:#a6e22e">phần</span> <span style="color:#a6e22e">quan</span> <span style="color:#a6e22e">trọng</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">HTTP</span> <span style="color:#a6e22e">method</span> (<span style="color:#a6e22e">GET</span>, <span style="color:#a6e22e">POST</span>, <span style="color:#a6e22e">PUT</span>, <span style="color:#a6e22e">DELETE</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">kiểu</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span> <span style="color:#a6e22e">gửi</span> <span style="color:#a6e22e">đi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span> <span style="color:#a6e22e">gửi</span> (<span style="color:#a6e22e">phải</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Kiểm</span> <span style="color:#a6e22e">tra</span> <span style="color:#a6e22e">lỗi</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">gọi</span> <span style="color:#a6e22e">API</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">url</span>)
+</span></span></code></pre></div><p>📌 Các thành phần quan trọng:</p>
+<p>method: HTTP method (GET, POST, PUT, DELETE)</p>
+<p>headers: kiểu dữ liệu gửi đi</p>
+<p>body: dữ liệu gửi (phải dùng JSON.stringify)</p>
+<p>Kiểm tra lỗi khi gọi API</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">url</span>)
 </span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">ok</span>) {
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;Lỗi HTTP: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>);
@@ -387,16 +237,13 @@ Fetch thường được dùng để:</p>
 </span></span><span style="display:flex;"><span>  })
 </span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">data</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>))
 </span></span><span style="display:flex;"><span>  .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">message</span>));
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">📌</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">ok</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> <span style="color:#a6e22e">khi</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
+</span></span></code></pre></div><p>📌 res.ok = false khi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">404</span> <span style="color:#a6e22e">Not</span> <span style="color:#a6e22e">Found</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">500</span> <span style="color:#a6e22e">Server</span> Error
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Ví</span> <span style="color:#a6e22e">dụ</span> <span style="color:#a6e22e">thực</span> <span style="color:#a6e22e">tế</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Hiển</span> <span style="color:#a6e22e">thị</span> <span style="color:#a6e22e">dữ</span> <span style="color:#a6e22e">liệu</span> <span style="color:#a6e22e">ra</span> <span style="color:#a6e22e">HTML</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-list&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+</span></span></code></pre></div><p>Ví dụ thực tế: Hiển thị dữ liệu ra HTML</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post-list&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadPosts</span>() {
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#34;https://jsonplaceholder.typicode.com/posts&#34;</span>);
@@ -411,29 +258,52 @@ Fetch thường được dùng để:</p>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">loadPosts</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">👉</span> <span style="color:#a6e22e">Rất</span> <span style="color:#a6e22e">hay</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">trong</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Trang</span> <span style="color:#a6e22e">blog</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Trang</span> <span style="color:#a6e22e">sản</span> <span style="color:#a6e22e">phẩm</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Dashboard</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">So</span> <span style="color:#a6e22e">sánh</span> <span style="color:#a6e22e">Fetch</span> <span style="color:#a6e22e">API</span> <span style="color:#a6e22e">và</span> <span style="color:#a6e22e">XMLHttpRequest</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Tiêu</span> <span style="color:#a6e22e">chí</span>          <span style="color:#f92672">|</span> <span style="color:#a6e22e">Fetch</span> <span style="color:#a6e22e">API</span>   <span style="color:#f92672">|</span> <span style="color:#a6e22e">XMLHttpRequest</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#f92672">-----------------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">-----------</span> <span style="color:#f92672">|</span> <span style="color:#f92672">--------------</span> <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Cú</span> <span style="color:#a6e22e">pháp</span>           <span style="color:#f92672">|</span> <span style="color:#a6e22e">Gọn</span>, <span style="color:#a6e22e">dễ</span> <span style="color:#a6e22e">đọc</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">Dài</span>, <span style="color:#a6e22e">khó</span> <span style="color:#a6e22e">nhớ</span>   <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> Promise           <span style="color:#f92672">|</span> <span style="color:#a6e22e">Có</span>          <span style="color:#f92672">|</span> <span style="color:#a6e22e">Không</span>          <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Hiện</span> <span style="color:#a6e22e">đại</span>          <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">✅</span>           <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">❌</span>              <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">Phổ</span> <span style="color:#a6e22e">biến</span> <span style="color:#a6e22e">hiện</span> <span style="color:#a6e22e">nay</span> <span style="color:#f92672">|</span> <span style="color:#960050;background-color:#1e0010">✅</span>           <span style="color:#f92672">|</span> <span style="color:#a6e22e">Ít</span> <span style="color:#a6e22e">dùng</span>        <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Lỗi</span> <span style="color:#a6e22e">thường</span> <span style="color:#a6e22e">gặp</span> <span style="color:#a6e22e">khi</span> <span style="color:#a6e22e">dùng</span> <span style="color:#a6e22e">Fetch</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Quên</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>()
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Quên</span> <span style="color:#66d9ef">await</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Gửi</span> <span style="color:#a6e22e">body</span> <span style="color:#a6e22e">nhưng</span> <span style="color:#a6e22e">không</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Type</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">❌</span> <span style="color:#a6e22e">Không</span> <span style="color:#a6e22e">xử</span> <span style="color:#a6e22e">lý</span> <span style="color:#a6e22e">lỗi</span> <span style="color:#a6e22e">HTTP</span>
-</span></span></code></pre></div></section>
+</span></span></code></pre></div><p>👉 Rất hay dùng trong:</p>
+<p>Trang blog</p>
+<p>Trang sản phẩm</p>
+<p>Dashboard
+So sánh Fetch API và XMLHttpRequest</p>
+<table>
+  <thead>
+      <tr>
+          <th>Tiêu chí</th>
+          <th>Fetch API</th>
+          <th>XMLHttpRequest</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Cú pháp</td>
+          <td>Gọn, dễ đọc</td>
+          <td>Dài, khó nhớ</td>
+      </tr>
+      <tr>
+          <td>Promise</td>
+          <td>Có</td>
+          <td>Không</td>
+      </tr>
+      <tr>
+          <td>Hiện đại</td>
+          <td>✅</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>Phổ biến hiện nay</td>
+          <td>✅</td>
+          <td>Ít dùng</td>
+      </tr>
+      <tr>
+          <td>Lỗi thường gặp khi dùng Fetch</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>❌ Quên return response.json()
+❌ Quên await
+❌ Gửi body nhưng không set Content-Type
+❌ Không xử lý lỗi HTTP</p>
+</section>
 
   <footer class="mt-12 flex flex-wrap"><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
@@ -441,12 +311,12 @@ Fetch thường được dùng để:</p>
       >js-api</a
     ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-la-gi/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>JavaScript là gì?</span></a
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/js-async-await/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Async / Await trong JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/js-bien-va-kieu-du-lieu/"
-      ><span>Biến và Kiểu dữ liệu trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      href="http://localhost:1313/blog/js-call-api-thuc-te/"
+      ><span>Gọi API thực tế bằng JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >

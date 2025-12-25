@@ -60,8 +60,9 @@ async function loadProducts() {
     console.error(err.message);
   }
 }
-
+```
 Hiển thị ra HTML
+```js
 <div id="product-list"></div>
 
 function renderProducts(products) {
@@ -79,11 +80,13 @@ function renderProducts(products) {
 }
 
 loadProducts();
+```
+
 
 Ví dụ 2: Gửi dữ liệu lên server (POST)
 API tạo sản phẩm
 POST http://localhost:8000/api/products
-
+```js
 JavaScript
 async function createProduct() {
   const product = {
@@ -102,12 +105,16 @@ async function createProduct() {
   const data = await res.json();
   console.log("Đã tạo:", data);
 }
+```
+
 
 Ví dụ 3: Gọi API có Token (Authentication)
 Lưu token sau khi đăng nhập
+```js
 localStorage.setItem("token", "abc123xyz");
-
+```
 Gọi API có xác thực
+```js
 async function getProfile() {
   const token = localStorage.getItem("token");
 
@@ -120,6 +127,7 @@ async function getProfile() {
   const data = await res.json();
   console.log(data);
 }
+```
 
 
 📌 Rất phổ biến trong:
@@ -130,13 +138,16 @@ Trang tài khoản
 
 Hệ thống phân quyền
 
+
 Ví dụ 4: Xử lý lỗi từ API
 Backend trả lỗi
+```js
 {
   "message": "Email hoặc mật khẩu không đúng"
 }
-
+```
 Frontend xử lý
+```js
 const res = await fetch(url);
 
 if (!res.ok) {
@@ -144,8 +155,9 @@ if (!res.ok) {
   alert(errorData.message);
   return;
 }
-
+```
 Ví dụ 5: Loading khi gọi API
+```js
 const loading = document.getElementById("loading");
 
 async function loadData() {
@@ -158,7 +170,7 @@ async function loadData() {
   console.log(data);
 }
 
-
+```
 👉 Trải nghiệm người dùng tốt hơn.
 
 Các lỗi thường gặp khi gọi API thực tế
@@ -172,21 +184,23 @@ Các lỗi thường gặp khi gọi API thực tế
 CORS là gì? (rất hay gặp)
 
 Nếu thấy lỗi:
+```js
 
 Access to fetch has been blocked by CORS policy
-
+```
 
 👉 Backend cần bật CORS:
 
 FastAPI:
+```js
 
 from fastapi.middleware.cors import CORSMiddleware
 
-
+```
 ASP.NET:
-
+```js
 builder.Services.AddCors();
-
+```
 Fetch API vs Axios (thực tế)
 | Tiêu chí      | Fetch | Axios   |
 | ------------- | ----- | ------- |

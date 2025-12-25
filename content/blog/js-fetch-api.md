@@ -29,6 +29,7 @@ fetch(url)
   .catch(error => {
     console.error(error);
   });
+  ```
 📌 Giải thích:
 
 fetch(url) → gửi request
@@ -40,16 +41,18 @@ then() → xử lý dữ liệu
 catch() → bắt lỗi
 
 Ví dụ: Lấy dữ liệu từ API
+```js
 fetch("https://jsonplaceholder.typicode.com/posts")
   .then(res => res.json())
   .then(posts => {
     console.log(posts);
   });
-
+```
 
 📌 API trên trả về danh sách bài viết giả để test.
 
 Sử dụng Fetch với async / await (khuyến nghị)
+```js
 async function getPosts() {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -62,11 +65,12 @@ async function getPosts() {
 
 getPosts();
 
-
+```
 ✅ Code dễ đọc hơn
 ✅ Gần giống code đồng bộ
 
 Gửi dữ liệu bằng Fetch (POST)
+```js
 fetch("https://jsonplaceholder.typicode.com/posts", {
   method: "POST",
   headers: {
@@ -81,7 +85,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
 .then(res => res.json())
 .then(data => console.log(data));
 
-
+```
 📌 Các thành phần quan trọng:
 
 method: HTTP method (GET, POST, PUT, DELETE)
@@ -91,6 +95,7 @@ headers: kiểu dữ liệu gửi đi
 body: dữ liệu gửi (phải dùng JSON.stringify)
 
 Kiểm tra lỗi khi gọi API
+```js
 fetch(url)
   .then(res => {
     if (!res.ok) {
@@ -101,14 +106,17 @@ fetch(url)
   .then(data => console.log(data))
   .catch(err => console.error(err.message));
 
-
+```
 📌 res.ok = false khi:
+```js
 
 404 Not Found
 
 500 Server Error
+```
 
 Ví dụ thực tế: Hiển thị dữ liệu ra HTML
+```js
 <ul id="post-list"></ul>
 
 async function loadPosts() {
@@ -124,7 +132,7 @@ async function loadPosts() {
 }
 
 loadPosts();
-
+```
 
 👉 Rất hay dùng trong:
 

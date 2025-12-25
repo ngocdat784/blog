@@ -22,32 +22,37 @@ Trong JavaScript:
 ```js
 let numbers = [1, 2, 3, 4];
 let fruits = ["Táo", "Cam", "Chuối"];
+```
 👉 Mảng bắt đầu từ index = 0
-
+```js
 fruits[0]; // "Táo"
-
+```
 2.2. Độ dài mảng
+```js
 fruits.length; // 3
-
+```
 2.3. Thêm / xoá phần tử
+```js
 fruits.push("Xoài");    // thêm cuối
 fruits.pop();           // xoá cuối
 fruits.unshift("Nho");  // thêm đầu
 fruits.shift();         // xoá đầu
-
+```
 2.4. Duyệt mảng
+```js
 for (let fruit of fruits) {
   console.log(fruit);
 }
-
+```
 
 Hoặc:
-
+```js
 fruits.forEach(item => {
   console.log(item);
 });
-
+```
 2.5. Một số hàm mảng rất hay dùng
+```js
 let numbers = [1, 2, 3, 4, 5];
 
 numbers.map(x => x * 2);        // [2,4,6,8,10]
@@ -55,59 +60,69 @@ numbers.filter(x => x > 2);     // [3,4,5]
 numbers.find(x => x === 3);     // 3
 numbers.includes(4);            // true
 
-
+```
 📌 Các hàm này không làm thay đổi mảng gốc (trừ vài hàm đặc biệt)
 
 3. Object
 3.1. Khai báo Object
+```js
 let student = {
   name: "Đạt",
   age: 20,
   major: "CNTT"
 };
-
+```
 3.2. Truy cập thuộc tính
+```js
 student.name;        // "Đạt"
 student["age"];      // 20
-
+```
 3.3. Thêm / sửa / xoá thuộc tính
+```js
 student.email = "dat@gmail.com";
 student.age = 21;
 delete student.major;
-
+```
 3.4. Duyệt Object
+```js
 for (let key in student) {
   console.log(key, student[key]);
 }
-
+```
 4. Mảng chứa Object (cực kỳ phổ biến)
+```js
 let students = [
   { name: "An", age: 20 },
   { name: "Bình", age: 21 },
   { name: "Đạt", age: 22 }
 ];
-
+```
 Lọc sinh viên trên 20 tuổi:
+```js
 let result = students.filter(s => s.age > 20);
-
+```
 5. Destructuring (ES6)
+```js
 let { name, age } = student;
 console.log(name, age);
 
-
+```
 Với mảng:
+```js
 
 let [a, b] = numbers;
-
+```
 6. Spread Operator (...)
+```js
 let newFruits = [...fruits, "Ổi"];
 
-
+```
 Với object:
+```js
 
 let newStudent = { ...student, age: 23 };
 
-
+```
 👉 Rất hay dùng khi làm React / API
 
 7. So sánh mảng & object
@@ -118,10 +133,11 @@ let newStudent = { ...student, age: 23 };
 | Thứ tự   | Có        | Không bắt buộc      |
 8. Ví dụ thực tế
 Tính tổng điểm sinh viên:
+```js
 let scores = [8, 7, 9];
 
 let total = scores.reduce((sum, s) => sum + s, 0);
-
+```
 9. Lỗi thường gặp
 
 ❌ Truy cập sai index

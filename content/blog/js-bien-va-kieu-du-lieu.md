@@ -4,7 +4,7 @@ title: "Biến và Kiểu dữ liệu trong JavaScript"
 date: 2025-12-22
 draft: false
 tags: ["js-co-ban"]
--------------------
+---
 
 ## 1. Biến trong JavaScript là gì?
 
