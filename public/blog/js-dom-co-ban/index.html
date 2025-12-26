@@ -11,7 +11,7 @@
   style="--bg:#faf8f1"
   lang="vi"
   dir="ltr"
-><head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -44,10 +44,10 @@ Bắt sự kiện người dùng
   &lt;/body&gt;
 &lt;/html&gt;
 👉 Trình duyệt hiểu như:" />
-  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/blog/main.min.css" />
+  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="https://ngocdat784.github.io/blog/main.min.css" />
 
   
-  <link rel="preload" as="image" href="http://localhost:1313/blog/theme.png" />
+  <link rel="preload" as="image" href="https://ngocdat784.github.io/blog/theme.png" />
 
   
 
@@ -55,21 +55,51 @@ Bắt sự kiện người dùng
 
   <script
     defer
-    src="http://localhost:1313/blog/highlight.min.js"
+    src="https://ngocdat784.github.io/blog/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
 
   
   <link
     rel="icon"
-    href="http://localhost:1313/blog/favicon.ico"
+    href="https://ngocdat784.github.io/blog/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/blog/apple-touch-icon.png"
+    href="https://ngocdat784.github.io/blog/apple-touch-icon.png"
   />
 
   <meta name="generator" content="Hugo 0.153.1">
+  <meta itemprop="name" content="DOM cơ bản trong JavaScript">
+  <meta itemprop="description" content="1. DOM là gì? DOM (Document Object Model) là mô hình đối tượng biểu diễn toàn bộ trang HTML dưới dạng cây (tree).
+👉 Nhờ DOM, JavaScript có thể:
+Truy cập HTML Thay đổi nội dung Thay đổi style Bắt sự kiện người dùng 📌 Không có DOM → JS không làm được web động
+2. Cấu trúc DOM dạng cây &lt;html&gt; &lt;body&gt; &lt;h1&gt;Tiêu đề&lt;/h1&gt; &lt;p&gt;Nội dung&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; 👉 Trình duyệt hiểu như:">
+  <meta itemprop="datePublished" content="2025-12-22T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-12-22T00:00:00+00:00">
+  <meta itemprop="wordCount" content="332">
+  <meta itemprop="keywords" content="Js-Dom"><meta property="og:url" content="https://ngocdat784.github.io/blog/blog/js-dom-co-ban/">
+  <meta property="og:site_name" content="Ký sự Lập trình Web & JavaScript">
+  <meta property="og:title" content="DOM cơ bản trong JavaScript">
+  <meta property="og:description" content="1. DOM là gì? DOM (Document Object Model) là mô hình đối tượng biểu diễn toàn bộ trang HTML dưới dạng cây (tree).
+👉 Nhờ DOM, JavaScript có thể:
+Truy cập HTML Thay đổi nội dung Thay đổi style Bắt sự kiện người dùng 📌 Không có DOM → JS không làm được web động
+2. Cấu trúc DOM dạng cây &lt;html&gt; &lt;body&gt; &lt;h1&gt;Tiêu đề&lt;/h1&gt; &lt;p&gt;Nội dung&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; 👉 Trình duyệt hiểu như:">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-12-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-22T00:00:00+00:00">
+    <meta property="article:tag" content="Js-Dom">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DOM cơ bản trong JavaScript">
+  <meta name="twitter:description" content="1. DOM là gì? DOM (Document Object Model) là mô hình đối tượng biểu diễn toàn bộ trang HTML dưới dạng cây (tree).
+👉 Nhờ DOM, JavaScript có thể:
+Truy cập HTML Thay đổi nội dung Thay đổi style Bắt sự kiện người dùng 📌 Không có DOM → JS không làm được web động
+2. Cấu trúc DOM dạng cây &lt;html&gt; &lt;body&gt; &lt;h1&gt;Tiêu đề&lt;/h1&gt; &lt;p&gt;Nội dung&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; 👉 Trình duyệt hiểu như:">
+
+  <link rel="canonical" href="https://ngocdat784.github.io/blog/blog/js-dom-co-ban/" />
 </head>
 <body
     class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
@@ -79,7 +109,7 @@ Bắt sự kiện người dùng
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
     <a
       class="-translate-y-[1px] text-2xl font-medium"
-      href="http://localhost:1313/blog/"
+      href="https://ngocdat784.github.io/blog/"
       >Ký sự Lập trình Web &amp; JavaScript</a
     >
     <div
@@ -309,21 +339,21 @@ Bắt sự kiện người dùng
 
   <footer class="mt-12 flex flex-wrap"><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/blog/tags/js-dom"
+      href="https://ngocdat784.github.io/blog/tags/js-dom"
       >js-dom</a
     ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/blog/js-cau-truc-dieu-kien/"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://ngocdat784.github.io/blog/blog/js-cau-truc-dieu-kien/"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Cấu trúc điều kiện trong JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="http://localhost:1313/blog/blog/js-ham-function/"
+      href="https://ngocdat784.github.io/blog/blog/js-ham-function/"
       ><span>Hàm (Function) trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
   <div class="mr-auto">&copy;2025
-    <a class="link" href="http://localhost:1313/blog/">Ký sự Lập trình Web &amp; JavaScript</a></div>
+    <a class="link" href="https://ngocdat784.github.io/blog/">Ký sự Lập trình Web &amp; JavaScript</a></div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
     >powered by hugo️️</a
   >️
