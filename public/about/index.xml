@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on Ký sự Lập trình Web &amp; JavaScript</title>
-    <link>https://ngocdat784.github.io/blog/about/</link>
+    <link>http://localhost:1313/blog/about/</link>
     <description>Recent content in About on Ký sự Lập trình Web &amp; JavaScript</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate>Wed, 24 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ngocdat784.github.io/blog/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/about/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hồ sơ cá nhân</title>
-      <link>https://ngocdat784.github.io/blog/about/profile/</link>
+      <link>http://localhost:1313/blog/about/profile/</link>
       <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://ngocdat784.github.io/blog/about/profile/</guid>
+      <guid>http://localhost:1313/blog/about/profile/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;img src=&#34;Gemini_Generated_Image_rcru1krcru1krcru.png&#34; alt=&#34;Ảnh đại diện Ngọc Đạt Trần&#34;&gt;&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-giới-thiệu&#34;&gt;👤 giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Tôi là Trần Ngọc Đạt,sinh năm 2004.Hiện đang sinh sống và học tập tại Việt Nam. Với định hướng phát triển sự nghiệp trong lĩnh vực Web Developer và Backend Developer, tôi đang từng bước xây dựng nền tảng vững chắc để trở thành một Software Engineer chuyên về Web &amp;amp; Backend trong tương lai.&lt;/p&gt;</description>
     </item>
   </channel>
