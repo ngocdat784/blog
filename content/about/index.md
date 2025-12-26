@@ -1,6 +1,6 @@
 ---
 title: "Hồ sơ cá nhân"
-slug: "about"
+date: 2025-12-24
 draft: false
 ---
 
@@ -8,7 +8,8 @@ draft: false
 
 ## Ngọc Đạt Trần
 
-**Web Developer • Backend Learner • JavaScript Enthusiast**  
+**Web Developer • Backend Learner • JavaScript Enthusiast**
+
 Xây dựng sản phẩm web đơn giản cho người dùng – vững chắc cho hệ thống
 
 ---
