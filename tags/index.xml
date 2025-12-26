@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Ký sự Lập trình Web &amp; JavaScript</title>
+    <link>http://localhost:1313/blog/tags/</link>
+    <description>Recent content in Tags on Ký sự Lập trình Web &amp; JavaScript</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 24 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Js-Api</title>
+      <link>http://localhost:1313/blog/tags/js-api/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tags/js-api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Js-Nang-Cao</title>
+      <link>http://localhost:1313/blog/tags/js-nang-cao/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tags/js-nang-cao/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>http://localhost:1313/blog/tags/javascript/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Js-Co-Ban</title>
+      <link>http://localhost:1313/blog/tags/js-co-ban/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tags/js-co-ban/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Js-Dom</title>
+      <link>http://localhost:1313/blog/tags/js-dom/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tags/js-dom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>http://localhost:1313/blog/tags/web/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tags/web/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

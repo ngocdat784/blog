@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Js-Api on Ký sự Lập trình Web &amp; JavaScript</title>
+    <link>http://localhost:1313/blog/tags/js-api/</link>
+    <description>Recent content in Js-Api on Ký sự Lập trình Web &amp; JavaScript</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Wed, 24 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/js-api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fetch API trong JavaScript</title>
+      <link>http://localhost:1313/blog/blog/js-fetch-api/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/blog/js-fetch-api/</guid>
+      <description>&lt;h2 id=&#34;fetch-api-là-gì&#34;&gt;Fetch API là gì?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Fetch API&lt;/strong&gt; là một API hiện đại trong JavaScript dùng để &lt;strong&gt;gửi và nhận dữ liệu từ server&lt;/strong&gt; thông qua giao thức HTTP.&lt;br&gt;&#xA;Fetch thường được dùng để:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Lấy dữ liệu từ API (JSON)&lt;/li&gt;&#xA;&lt;li&gt;Gửi dữ liệu lên server&lt;/li&gt;&#xA;&lt;li&gt;Thay thế cho &lt;code&gt;XMLHttpRequest&lt;/code&gt; cũ&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;👉 Fetch hoạt động dựa trên &lt;strong&gt;Promise&lt;/strong&gt;, giúp code gọn gàng và dễ đọc hơn.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;cú-pháp-cơ-bản-của-fetch-api&#34;&gt;Cú pháp cơ bản của Fetch API&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;fetch&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;json&lt;/span&gt;())&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; =&amp;gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  })&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  .&lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt; =&amp;gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;error&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  });&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;📌 Giải thích:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gọi API thực tế bằng JavaScript</title>
+      <link>http://localhost:1313/blog/blog/js-call-api-thuc-te/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/blog/js-call-api-thuc-te/</guid>
+      <description>&lt;h2 id=&#34;gọi-api-thực-tế-là-gì&#34;&gt;Gọi API thực tế là gì?&lt;/h2&gt;&#xA;&lt;p&gt;Trong các website hiện đại, &lt;strong&gt;JavaScript thường xuyên gọi API từ backend&lt;/strong&gt; để:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Lấy danh sách sản phẩm&lt;/li&gt;&#xA;&lt;li&gt;Đăng nhập / đăng ký&lt;/li&gt;&#xA;&lt;li&gt;Thêm giỏ hàng&lt;/li&gt;&#xA;&lt;li&gt;Đặt lịch, thanh toán&lt;/li&gt;&#xA;&lt;li&gt;Chatbot, AI, dashboard&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;👉 Bài này sẽ tập trung &lt;strong&gt;case thực tế&lt;/strong&gt;, không chỉ ví dụ minh hoạ.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;mô-hình-frontend-gọi-backend-api&#34;&gt;Mô hình Frontend gọi Backend API&lt;/h2&gt;&#xA;&lt;p&gt;HTML / JS (Browser)&#xA;↓ fetch()&#xA;REST API&#xA;↓&#xA;Backend (FastAPI / Node / ASP.NET)&#xA;↓&#xA;Database&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LocalStorage trong JavaScript</title>
+      <link>http://localhost:1313/blog/blog/js-localstorage/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/blog/js-localstorage/</guid>
+      <description>&lt;h2 id=&#34;-localstorage-là-gì&#34;&gt;📦 LocalStorage là gì?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;LocalStorage&lt;/strong&gt; là một &lt;strong&gt;Web API&lt;/strong&gt; cho phép JavaScript &lt;strong&gt;lưu trữ dữ liệu trực tiếp trên trình duyệt&lt;/strong&gt; của người dùng.&lt;/p&gt;&#xA;&lt;h3 id=&#34;-đặc-điểm-chính&#34;&gt;🔍 Đặc điểm chính&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Lưu dữ liệu theo dạng &lt;strong&gt;key – value&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;Dữ liệu &lt;strong&gt;không mất&lt;/strong&gt; khi reload hoặc đóng trình duyệt&lt;/li&gt;&#xA;&lt;li&gt;Dung lượng khoảng &lt;strong&gt;5–10MB&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;Chỉ lưu được &lt;strong&gt;chuỗi (string)&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;👉 Thường dùng để:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Lưu token đăng nhập&lt;/li&gt;&#xA;&lt;li&gt;Lưu giỏ hàng&lt;/li&gt;&#xA;&lt;li&gt;Lưu theme (Dark / Light)&lt;/li&gt;&#xA;&lt;li&gt;Lưu trạng thái người dùng&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-cách-sử-dụng-localstorage&#34;&gt;🧩 Cách sử dụng LocalStorage&lt;/h2&gt;&#xA;&lt;p&gt;LocalStorage cung cấp các phương thức cơ bản như:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
