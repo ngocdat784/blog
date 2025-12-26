@@ -25,7 +25,7 @@ draft: false
 
 ## 👤 giới thiệu
 
-Tôi sinh năm 2004, hiện đang sinh sống và học tập tại Việt Nam. Với định hướng phát triển sự nghiệp trong lĩnh vực Web Developer và Backend Developer, tôi đang từng bước xây dựng nền tảng vững chắc để trở thành một Software Engineer chuyên về Web & Backend trong tương lai.
+Tôi là Trần Ngọc Đạt,sinh năm 2004.Hiện đang sinh sống và học tập tại Việt Nam. Với định hướng phát triển sự nghiệp trong lĩnh vực Web Developer và Backend Developer, tôi đang từng bước xây dựng nền tảng vững chắc để trở thành một Software Engineer chuyên về Web & Backend trong tương lai.
 
 Mục tiêu nghề nghiệp của tôi là có thể thiết kế và xây dựng các hệ thống web hoàn chỉnh, không chỉ dừng lại ở việc viết code mà còn hiểu rõ nghiệp vụ, luồng xử lý và kiến trúc hệ thống. Tôi luôn hướng tới việc viết code rõ ràng, có cấu trúc, dễ bảo trì, đồng thời không ngừng học hỏi để cải thiện tư duy kỹ thuật và năng lực bản thân qua từng dự án.
 
@@ -41,7 +41,7 @@ Nếu bạn quan tâm, bạn có thể tìm hiểu thêm về tôi thông qua c�
 
 ## 📎 Liên kết
 
-- GitHub: https://github.com/yourname  
+- GitHub: https://github.com/ngocdat784
 - Facebook: https://www.facebook.com/share/1ALFPntDWX/
   
 
