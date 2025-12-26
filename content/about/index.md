@@ -1,6 +1,5 @@
 ---
 title: "Hồ sơ cá nhân"
-date: 2025-12-24
 draft: false
 ---
 
