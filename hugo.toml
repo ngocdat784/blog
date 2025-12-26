@@ -2,7 +2,8 @@ baseURL = "https://ngocdat784.github.io/blog/"
 languageCode = "vi"
 title = "Ký sự Lập trình Web & JavaScript"
 theme = "paper"
-
+relativeURLs = false
+canonifyURLs = true
 [params]
   description = "Chia sẻ kiến thức Java, JavaScript và lập trình mạng cho sinh viên"
 
@@ -17,7 +18,7 @@ theme = "paper"
 
 [[menu.main]]
   name = "Blog"
-  url = "/blog/"
+  url = "/posts/"
   weight = 2
 
 [[menu.main]]
