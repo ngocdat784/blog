@@ -3,7 +3,7 @@ languageCode = "vi"
 title = "Ký sự Lập trình Web & JavaScript"
 theme = "paper"
 
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = false
 
 [params]
