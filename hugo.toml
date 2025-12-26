@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://ngocdattran.github.io/blog/"
 languageCode = "vi"
 title = "Ký sự Lập trình Web & JavaScript"
 theme = "paper"
