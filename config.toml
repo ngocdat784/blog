@@ -1,8 +1,0 @@
-baseURL = "https://ngocdat784.github.io/blog/"
-languageCode = "vi-vn"
-title = "Ngọc Đạt Blog"
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
