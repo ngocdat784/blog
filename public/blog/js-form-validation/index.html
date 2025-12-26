@@ -11,7 +11,7 @@
   style="--bg:#faf8f1"
   lang="vi"
   dir="ltr"
-><head>
+><head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -56,10 +56,10 @@ form.addEventListener(&#34;submit&#34;, function(e) {
   console.log(&#34;Submit form&#34;);
 });
 📌 Bắt buộc dùng preventDefault()" />
-  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="https://ngocdat784.github.io/blog/main.min.css" />
+  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/blog/main.min.css" />
 
   
-  <link rel="preload" as="image" href="https://ngocdat784.github.io/blog/theme.png" />
+  <link rel="preload" as="image" href="http://localhost:1313/blog/theme.png" />
 
   
 
@@ -67,45 +67,21 @@ form.addEventListener(&#34;submit&#34;, function(e) {
 
   <script
     defer
-    src="https://ngocdat784.github.io/blog/highlight.min.js"
+    src="http://localhost:1313/blog/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
 
   
   <link
     rel="icon"
-    href="https://ngocdat784.github.io/blog/favicon.ico"
+    href="http://localhost:1313/blog/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="https://ngocdat784.github.io/blog/apple-touch-icon.png"
+    href="http://localhost:1313/blog/apple-touch-icon.png"
   />
 
   <meta name="generator" content="Hugo 0.153.1">
-  <meta itemprop="name" content="Xử lý Form & Validation trong JavaScript">
-  <meta itemprop="description" content="1. Form và Validation là gì? Form dùng để thu thập dữ liệu người dùng Validation dùng để kiểm tra dữ liệu trước khi gửi 👉 Validation giúp:
-Tránh dữ liệu sai Tăng trải nghiệm người dùng Giảm lỗi phía server 2. Cấu trúc form cơ bản &lt;form id=&#34;registerForm&#34;&gt; &lt;input type=&#34;text&#34; id=&#34;username&#34; placeholder=&#34;Tên đăng nhập&#34;&gt; &lt;input type=&#34;email&#34; id=&#34;email&#34; placeholder=&#34;Email&#34;&gt; &lt;input type=&#34;password&#34; id=&#34;password&#34; placeholder=&#34;Mật khẩu&#34;&gt; &lt;button type=&#34;submit&#34;&gt;Đăng ký&lt;/button&gt; &lt;/form&gt; &lt;p id=&#34;error&#34;&gt;&lt;/p&gt; Bắt sự kiện submit const form = document.getElementById(&#34;registerForm&#34;); form.addEventListener(&#34;submit&#34;, function(e) { e.preventDefault(); // ngăn reload trang console.log(&#34;Submit form&#34;); }); 📌 Bắt buộc dùng preventDefault()">
-  <meta itemprop="datePublished" content="2025-12-22T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-12-22T00:00:00+00:00">
-  <meta itemprop="wordCount" content="332">
-  <meta itemprop="keywords" content="Js-Dom"><meta property="og:url" content="https://ngocdat784.github.io/blog/blog/js-form-validation/">
-  <meta property="og:site_name" content="Ký sự Lập trình Web & JavaScript">
-  <meta property="og:title" content="Xử lý Form & Validation trong JavaScript">
-  <meta property="og:description" content="1. Form và Validation là gì? Form dùng để thu thập dữ liệu người dùng Validation dùng để kiểm tra dữ liệu trước khi gửi 👉 Validation giúp:
-Tránh dữ liệu sai Tăng trải nghiệm người dùng Giảm lỗi phía server 2. Cấu trúc form cơ bản &lt;form id=&#34;registerForm&#34;&gt; &lt;input type=&#34;text&#34; id=&#34;username&#34; placeholder=&#34;Tên đăng nhập&#34;&gt; &lt;input type=&#34;email&#34; id=&#34;email&#34; placeholder=&#34;Email&#34;&gt; &lt;input type=&#34;password&#34; id=&#34;password&#34; placeholder=&#34;Mật khẩu&#34;&gt; &lt;button type=&#34;submit&#34;&gt;Đăng ký&lt;/button&gt; &lt;/form&gt; &lt;p id=&#34;error&#34;&gt;&lt;/p&gt; Bắt sự kiện submit const form = document.getElementById(&#34;registerForm&#34;); form.addEventListener(&#34;submit&#34;, function(e) { e.preventDefault(); // ngăn reload trang console.log(&#34;Submit form&#34;); }); 📌 Bắt buộc dùng preventDefault()">
-  <meta property="og:locale" content="vi">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2025-12-22T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-12-22T00:00:00+00:00">
-    <meta property="article:tag" content="Js-Dom">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Xử lý Form & Validation trong JavaScript">
-  <meta name="twitter:description" content="1. Form và Validation là gì? Form dùng để thu thập dữ liệu người dùng Validation dùng để kiểm tra dữ liệu trước khi gửi 👉 Validation giúp:
-Tránh dữ liệu sai Tăng trải nghiệm người dùng Giảm lỗi phía server 2. Cấu trúc form cơ bản &lt;form id=&#34;registerForm&#34;&gt; &lt;input type=&#34;text&#34; id=&#34;username&#34; placeholder=&#34;Tên đăng nhập&#34;&gt; &lt;input type=&#34;email&#34; id=&#34;email&#34; placeholder=&#34;Email&#34;&gt; &lt;input type=&#34;password&#34; id=&#34;password&#34; placeholder=&#34;Mật khẩu&#34;&gt; &lt;button type=&#34;submit&#34;&gt;Đăng ký&lt;/button&gt; &lt;/form&gt; &lt;p id=&#34;error&#34;&gt;&lt;/p&gt; Bắt sự kiện submit const form = document.getElementById(&#34;registerForm&#34;); form.addEventListener(&#34;submit&#34;, function(e) { e.preventDefault(); // ngăn reload trang console.log(&#34;Submit form&#34;); }); 📌 Bắt buộc dùng preventDefault()">
-
-  <link rel="canonical" href="https://ngocdat784.github.io/blog/blog/js-form-validation/" />
 </head>
 <body
     class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
@@ -115,7 +91,7 @@ Tránh dữ liệu sai Tăng trải nghiệm người dùng Giảm lỗi phía s
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
     <a
       class="-translate-y-[1px] text-2xl font-medium"
-      href="https://ngocdat784.github.io/blog/"
+      href="http://localhost:1313/blog/"
       >Ký sự Lập trình Web &amp; JavaScript</a
     >
     <div
@@ -184,11 +160,11 @@ Tránh dữ liệu sai Tăng trải nghiệm người dùng Giảm lỗi phía s
         >Trang chủ</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/blog/"
+        href="/blog/blog/"
         >Blog</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/blog/about/"
+        href="about/"
         >About Me</a
       ></nav>
   </div>
@@ -343,21 +319,21 @@ Tránh dữ liệu sai Tăng trải nghiệm người dùng Giảm lỗi phía s
 
   <footer class="mt-12 flex flex-wrap"><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://ngocdat784.github.io/blog/tags/js-dom"
+      href="http://localhost:1313/blog/tags/js-dom"
       >js-dom</a
     ></footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a class="ltr:pr-3 rtl:pl-3" href="https://ngocdat784.github.io/blog/blog/js-vong-lap/"
+  ><a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/blog/blog/js-vong-lap/"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Vòng lặp trong JavaScript</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
-      href="https://ngocdat784.github.io/blog/blog/js-event-trong-web/"
+      href="http://localhost:1313/blog/blog/js-event-trong-web/"
       ><span>Xử lý sự kiện trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     ></nav></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
   <div class="mr-auto">&copy;2025
-    <a class="link" href="https://ngocdat784.github.io/blog/">Ký sự Lập trình Web &amp; JavaScript</a></div>
+    <a class="link" href="http://localhost:1313/blog/">Ký sự Lập trình Web &amp; JavaScript</a></div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
     >powered by hugo️️</a
   >️
