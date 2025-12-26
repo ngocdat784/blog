@@ -1,4 +1,4 @@
-baseURL = "http://ngocdattran.github.io/blog/"
+baseURL = "https://ngocdat784.github.io/blog/"
 languageCode = "vi"
 title = "Ký sự Lập trình Web & JavaScript"
 theme = "paper"
