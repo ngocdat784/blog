@@ -4,11 +4,7 @@ slug: "about"
 draft: false
 ---
 
-<p align="center">
-
 ![Ảnh đại diện Ngọc Đạt Trần](Gemini_Generated_Image_rcru1krcru1krcru.png)
-
-</p>
 
 ## Ngọc Đạt Trần
 
