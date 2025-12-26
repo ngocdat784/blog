@@ -1,0 +1,401 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="vi"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>LocalStorage trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="📦 LocalStorage là gì?
+LocalStorage là một Web API cho phép JavaScript lưu trữ dữ liệu trực tiếp trên trình duyệt của người dùng.
+🔍 Đặc điểm chính
+
+Lưu dữ liệu theo dạng key – value
+Dữ liệu không mất khi reload hoặc đóng trình duyệt
+Dung lượng khoảng 5–10MB
+Chỉ lưu được chuỗi (string)
+
+👉 Thường dùng để:
+
+Lưu token đăng nhập
+Lưu giỏ hàng
+Lưu theme (Dark / Light)
+Lưu trạng thái người dùng
+
+
+🧩 Cách sử dụng LocalStorage
+LocalStorage cung cấp các phương thức cơ bản như:" />
+  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="https://ngocdat784.github.io/blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://ngocdat784.github.io/blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://ngocdat784.github.io/blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://ngocdat784.github.io/blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://ngocdat784.github.io/blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.153.1">
+  <meta itemprop="name" content="LocalStorage trong JavaScript">
+  <meta itemprop="description" content="📦 LocalStorage là gì? LocalStorage là một Web API cho phép JavaScript lưu trữ dữ liệu trực tiếp trên trình duyệt của người dùng.
+🔍 Đặc điểm chính Lưu dữ liệu theo dạng key – value Dữ liệu không mất khi reload hoặc đóng trình duyệt Dung lượng khoảng 5–10MB Chỉ lưu được chuỗi (string) 👉 Thường dùng để:
+Lưu token đăng nhập Lưu giỏ hàng Lưu theme (Dark / Light) Lưu trạng thái người dùng 🧩 Cách sử dụng LocalStorage LocalStorage cung cấp các phương thức cơ bản như:">
+  <meta itemprop="datePublished" content="2025-12-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-12-24T00:00:00+00:00">
+  <meta itemprop="wordCount" content="475">
+  <meta itemprop="keywords" content="Js-Api"><meta property="og:url" content="https://ngocdat784.github.io/blog/blog/js-localstorage/">
+  <meta property="og:site_name" content="Ký sự Lập trình Web & JavaScript">
+  <meta property="og:title" content="LocalStorage trong JavaScript">
+  <meta property="og:description" content="📦 LocalStorage là gì? LocalStorage là một Web API cho phép JavaScript lưu trữ dữ liệu trực tiếp trên trình duyệt của người dùng.
+🔍 Đặc điểm chính Lưu dữ liệu theo dạng key – value Dữ liệu không mất khi reload hoặc đóng trình duyệt Dung lượng khoảng 5–10MB Chỉ lưu được chuỗi (string) 👉 Thường dùng để:
+Lưu token đăng nhập Lưu giỏ hàng Lưu theme (Dark / Light) Lưu trạng thái người dùng 🧩 Cách sử dụng LocalStorage LocalStorage cung cấp các phương thức cơ bản như:">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-12-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-24T00:00:00+00:00">
+    <meta property="article:tag" content="Js-Api">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LocalStorage trong JavaScript">
+  <meta name="twitter:description" content="📦 LocalStorage là gì? LocalStorage là một Web API cho phép JavaScript lưu trữ dữ liệu trực tiếp trên trình duyệt của người dùng.
+🔍 Đặc điểm chính Lưu dữ liệu theo dạng key – value Dữ liệu không mất khi reload hoặc đóng trình duyệt Dung lượng khoảng 5–10MB Chỉ lưu được chuỗi (string) 👉 Thường dùng để:
+Lưu token đăng nhập Lưu giỏ hàng Lưu theme (Dark / Light) Lưu trạng thái người dùng 🧩 Cách sử dụng LocalStorage LocalStorage cung cấp các phương thức cơ bản như:">
+
+  <link rel="canonical" href="https://ngocdat784.github.io/blog/blog/js-localstorage/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://ngocdat784.github.io/blog/"
+      >Ký sự Lập trình Web &amp; JavaScript</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../blog/"
+        >Trang chủ</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../blog/blog/"
+        >Blog</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="about/"
+        >About Me</a
+      ></nav>
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">LocalStorage trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 24, 2025</time></div></header>
+
+  <section><h2 id="-localstorage-là-gì">📦 LocalStorage là gì?</h2>
+<p><strong>LocalStorage</strong> là một <strong>Web API</strong> cho phép JavaScript <strong>lưu trữ dữ liệu trực tiếp trên trình duyệt</strong> của người dùng.</p>
+<h3 id="-đặc-điểm-chính">🔍 Đặc điểm chính</h3>
+<ul>
+<li>Lưu dữ liệu theo dạng <strong>key – value</strong></li>
+<li>Dữ liệu <strong>không mất</strong> khi reload hoặc đóng trình duyệt</li>
+<li>Dung lượng khoảng <strong>5–10MB</strong></li>
+<li>Chỉ lưu được <strong>chuỗi (string)</strong></li>
+</ul>
+<p>👉 Thường dùng để:</p>
+<ul>
+<li>Lưu token đăng nhập</li>
+<li>Lưu giỏ hàng</li>
+<li>Lưu theme (Dark / Light)</li>
+<li>Lưu trạng thái người dùng</li>
+</ul>
+<hr>
+<h2 id="-cách-sử-dụng-localstorage">🧩 Cách sử dụng LocalStorage</h2>
+<p>LocalStorage cung cấp các phương thức cơ bản như:</p>
+<ul>
+<li><code>setItem()</code> – lưu dữ liệu</li>
+<li><code>getItem()</code> – lấy dữ liệu</li>
+<li><code>removeItem()</code> – xoá một key</li>
+<li><code>clear()</code> – xoá toàn bộ</li>
+</ul>
+<p>Ngoài ra, khi làm việc với <strong>object / array</strong>, ta cần kết hợp với <strong>JSON</strong>.</p>
+<hr>
+<h2 id="-ví-dụ-tổng-hợp-sử-dụng-localstorage">🧪 Ví dụ tổng hợp sử dụng LocalStorage</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// LƯU &amp; LẤY DỮ LIỆU CƠ BẢN
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lưu dữ liệu
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;username&#34;</span>, <span style="color:#e6db74">&#34;admin&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lấy dữ liệu
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">username</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Xoá một key
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">removeItem</span>(<span style="color:#e6db74">&#34;username&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Xoá toàn bộ LocalStorage
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">clear</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// LƯU OBJECT / ARRAY
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Ngọc Đạt&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">role</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;admin&#34;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lưu object (phải stringify)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;user&#34;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">user</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lấy object
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">savedUser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;user&#34;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">savedUser</span>.<span style="color:#a6e22e">name</span>);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// VÍ DỤ: LƯU TRẠNG THÁI ĐĂNG NHẬP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Sau khi đăng nhập thành công
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;token&#34;</span>, <span style="color:#e6db74">&#34;abc123&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;fullName&#34;</span>, <span style="color:#e6db74">&#34;Ngọc Đạt Trần&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Khi load trang
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;token&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">token</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Đã đăng nhập&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Chưa đăng nhập&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// VÍ DỤ: ĐĂNG XUẤT (LOGOUT)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">logout</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">removeItem</span>(<span style="color:#e6db74">&#34;token&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">removeItem</span>(<span style="color:#e6db74">&#34;fullName&#34;</span>);
+</span></span><span style="display:flex;"><span>  window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/login.html&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// VÍ DỤ: LƯU GIỎ HÀNG
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addToCart</span>(<span style="color:#a6e22e">product</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">cart</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;cart&#34;</span>)) <span style="color:#f92672">||</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cart</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">product</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;cart&#34;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">cart</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCart</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;cart&#34;</span>)) <span style="color:#f92672">||</span> [];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// VÍ DỤ: LƯU THEME DARK / LIGHT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ===============================
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setTheme</span>(<span style="color:#a6e22e">theme</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;theme&#34;</span>, <span style="color:#a6e22e">theme</span>);
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">theme</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadTheme</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">theme</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;theme&#34;</span>) <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;light&#34;</span>;
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">theme</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">loadTheme</span>();
+</span></span></code></pre></div><h2 id="-localstorage-vs-sessionstorage">⚖️ LocalStorage vs SessionStorage</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Tiêu chí</th>
+          <th>LocalStorage</th>
+          <th>SessionStorage</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Lưu lâu dài</td>
+          <td>✅ Có</td>
+          <td>❌ Không</td>
+      </tr>
+      <tr>
+          <td>Mất khi đóng tab</td>
+          <td>❌ Không</td>
+          <td>✅ Có</td>
+      </tr>
+      <tr>
+          <td>Dung lượng</td>
+          <td>~5MB</td>
+          <td>~5MB</td>
+      </tr>
+      <tr>
+          <td>Mức độ phổ biến</td>
+          <td>Rất cao</td>
+          <td>Trung bình</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Nên dùng khi nào?</strong></p>
+<ul>
+<li>👉 <strong>Token đăng nhập</strong> → LocalStorage</li>
+<li>👉 <strong>Form tạm thời</strong> → SessionStorage</li>
+</ul>
+<hr>
+<h2 id="-lưu-ý-bảo-mật-khi-dùng-localstorage">🔐 Lưu ý bảo mật khi dùng LocalStorage</h2>
+<h3 id="-không-nên-lưu">⚠ Không nên lưu</h3>
+<ul>
+<li>Mật khẩu</li>
+<li>Thông tin nhạy cảm (CMND, số thẻ, OTP, …)</li>
+</ul>
+<h3 id="-token-trong-localstorage">⚠ Token trong LocalStorage</h3>
+<ul>
+<li>Có thể bị đánh cắp thông qua <strong>tấn công XSS</strong></li>
+</ul>
+<h3 id="-giải-pháp-an-toàn-hơn">✅ Giải pháp an toàn hơn</h3>
+<ul>
+<li>Sử dụng <strong>HttpOnly Cookie</strong></li>
+<li>Kết hợp <strong>CSRF Token</strong> để chống giả mạo request</li>
+</ul>
+<hr>
+<h2 id="-các-lỗi-thường-gặp-khi-dùng-localstorage">❌ Các lỗi thường gặp khi dùng LocalStorage</h2>
+<ul>
+<li>Quên <code>JSON.stringify()</code> khi lưu object</li>
+<li>Gọi <code>JSON.parse(null)</code> gây lỗi</li>
+<li>Dùng trùng key giữa các chức năng</li>
+<li>Lưu quá nhiều dữ liệu không cần thiết</li>
+</ul>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://ngocdat784.github.io/blog/tags/js-api"
+      >js-api</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://ngocdat784.github.io/blog/blog/js-call-api-thuc-te/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Gọi API thực tế bằng JavaScript</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://ngocdat784.github.io/blog/blog/js-bien-va-kieu-du-lieu/"
+      ><span>Biến và Kiểu dữ liệu trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2025
+    <a class="link" href="https://ngocdat784.github.io/blog/">Ký sự Lập trình Web &amp; JavaScript</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

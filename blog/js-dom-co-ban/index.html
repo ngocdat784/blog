@@ -1,0 +1,369 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="vi"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>DOM cơ bản trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="1. DOM là gì?
+DOM (Document Object Model) là mô hình đối tượng biểu diễn toàn bộ trang HTML dưới dạng cây (tree).
+👉 Nhờ DOM, JavaScript có thể:
+
+Truy cập HTML
+Thay đổi nội dung
+Thay đổi style
+Bắt sự kiện người dùng
+
+📌 Không có DOM → JS không làm được web động
+
+2. Cấu trúc DOM dạng cây
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Tiêu đề&lt;/h1&gt;
+    &lt;p&gt;Nội dung&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+👉 Trình duyệt hiểu như:" />
+  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="https://ngocdat784.github.io/blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://ngocdat784.github.io/blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://ngocdat784.github.io/blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://ngocdat784.github.io/blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://ngocdat784.github.io/blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.153.1">
+  <meta itemprop="name" content="DOM cơ bản trong JavaScript">
+  <meta itemprop="description" content="1. DOM là gì? DOM (Document Object Model) là mô hình đối tượng biểu diễn toàn bộ trang HTML dưới dạng cây (tree).
+👉 Nhờ DOM, JavaScript có thể:
+Truy cập HTML Thay đổi nội dung Thay đổi style Bắt sự kiện người dùng 📌 Không có DOM → JS không làm được web động
+2. Cấu trúc DOM dạng cây &lt;html&gt; &lt;body&gt; &lt;h1&gt;Tiêu đề&lt;/h1&gt; &lt;p&gt;Nội dung&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; 👉 Trình duyệt hiểu như:">
+  <meta itemprop="datePublished" content="2025-12-22T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-12-22T00:00:00+00:00">
+  <meta itemprop="wordCount" content="332">
+  <meta itemprop="keywords" content="Js-Dom"><meta property="og:url" content="https://ngocdat784.github.io/blog/blog/js-dom-co-ban/">
+  <meta property="og:site_name" content="Ký sự Lập trình Web & JavaScript">
+  <meta property="og:title" content="DOM cơ bản trong JavaScript">
+  <meta property="og:description" content="1. DOM là gì? DOM (Document Object Model) là mô hình đối tượng biểu diễn toàn bộ trang HTML dưới dạng cây (tree).
+👉 Nhờ DOM, JavaScript có thể:
+Truy cập HTML Thay đổi nội dung Thay đổi style Bắt sự kiện người dùng 📌 Không có DOM → JS không làm được web động
+2. Cấu trúc DOM dạng cây &lt;html&gt; &lt;body&gt; &lt;h1&gt;Tiêu đề&lt;/h1&gt; &lt;p&gt;Nội dung&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; 👉 Trình duyệt hiểu như:">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-12-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-22T00:00:00+00:00">
+    <meta property="article:tag" content="Js-Dom">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DOM cơ bản trong JavaScript">
+  <meta name="twitter:description" content="1. DOM là gì? DOM (Document Object Model) là mô hình đối tượng biểu diễn toàn bộ trang HTML dưới dạng cây (tree).
+👉 Nhờ DOM, JavaScript có thể:
+Truy cập HTML Thay đổi nội dung Thay đổi style Bắt sự kiện người dùng 📌 Không có DOM → JS không làm được web động
+2. Cấu trúc DOM dạng cây &lt;html&gt; &lt;body&gt; &lt;h1&gt;Tiêu đề&lt;/h1&gt; &lt;p&gt;Nội dung&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; 👉 Trình duyệt hiểu như:">
+
+  <link rel="canonical" href="https://ngocdat784.github.io/blog/blog/js-dom-co-ban/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://ngocdat784.github.io/blog/"
+      >Ký sự Lập trình Web &amp; JavaScript</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../blog/"
+        >Trang chủ</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../blog/blog/"
+        >Blog</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="about/"
+        >About Me</a
+      ></nav>
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">DOM cơ bản trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 22, 2025</time></div></header>
+
+  <section><h2 id="1-dom-là-gì">1. DOM là gì?</h2>
+<p><strong>DOM (Document Object Model)</strong> là mô hình đối tượng biểu diễn <strong>toàn bộ trang HTML</strong> dưới dạng cây (tree).</p>
+<p>👉 Nhờ DOM, JavaScript có thể:</p>
+<ul>
+<li>Truy cập HTML</li>
+<li>Thay đổi nội dung</li>
+<li>Thay đổi style</li>
+<li>Bắt sự kiện người dùng</li>
+</ul>
+<p>📌 <strong>Không có DOM → JS không làm được web động</strong></p>
+<hr>
+<h2 id="2-cấu-trúc-dom-dạng-cây">2. Cấu trúc DOM dạng cây</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">body</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Tiêu</span> <span style="color:#a6e22e">đề</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Nội</span> <span style="color:#a6e22e">dung</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/body&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/html&gt;</span>
+</span></span></code></pre></div><p>👉 Trình duyệt hiểu như:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document
+</span></span><span style="display:flex;"><span> <span style="color:#960050;background-color:#1e0010">└──</span> <span style="color:#a6e22e">html</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#960050;background-color:#1e0010">└──</span> <span style="color:#a6e22e">body</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#960050;background-color:#1e0010">├──</span> <span style="color:#a6e22e">h1</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#960050;background-color:#1e0010">└──</span> <span style="color:#a6e22e">p</span>
+</span></span><span style="display:flex;"><span>         
+</span></span></code></pre></div><ol start="3">
+<li>Truy cập phần tử HTML
+🔹 3.1. getElementById</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">DOM</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;title&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">title</span>);
+</span></span></code></pre></div><p>🔹 3.2. getElementsByClassName</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Đoạn</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span> <span style="color:#66d9ef">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Đoạn</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">texts</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#34;text&#34;</span>);
+</span></span></code></pre></div><p>👉 Trả về HTMLCollection</p>
+<p>🔹 3.3. getElementsByTagName</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">paragraphs</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;p&#34;</span>);
+</span></span></code></pre></div><p>🔹 3.4. querySelector (rất nên dùng)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#title&#34;</span>);
+</span></span></code></pre></div><p>👉 Dùng CSS selector</p>
+<p>🔹 3.5. querySelectorAll</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#34;.text&#34;</span>);
+</span></span></code></pre></div><p>👉 Trả về NodeList</p>
+<ol start="4">
+<li>Thay đổi nội dung HTML
+🔹 innerText</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">innerText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Nội dung mới&#34;</span>;
+</span></span></code></pre></div><p>🔹 innerHTML</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;span&gt;DOM&lt;/span&gt;&#34;</span>;
+</span></span></code></pre></div><p>⚠️ Cẩn thận XSS khi dùng innerHTML</p>
+<ol start="5">
+<li>Thay đổi thuộc tính</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">img</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;image.png&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">alt</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ảnh minh hoạ&#34;</span>;
+</span></span></code></pre></div><p>Hoặc:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;src&#34;</span>, <span style="color:#e6db74">&#34;image.png&#34;</span>);
+</span></span></code></pre></div><ol start="6">
+<li>Thay đổi CSS bằng JavaScript
+🔹 Inline style</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">fontSize</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;32px&#34;</span>;
+</span></span></code></pre></div><p>🔹 ClassList (khuyên dùng)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;active&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#34;active&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">toggle</span>(<span style="color:#e6db74">&#34;active&#34;</span>);
+</span></span></code></pre></div><p>✔ Sạch
+✔ Dễ quản lý</p>
+<ol start="7">
+<li>Tạo và xoá phần tử
+🔹 Tạo phần tử</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;p&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">innerText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Đoạn mới&#34;</span>;
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">p</span>);
+</span></span></code></pre></div><p>🔹 Xoá phần tử</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">remove</span>();
+</span></span></code></pre></div><ol start="8">
+<li>DOM và thời điểm chạy JS</li>
+</ol>
+<p>❌ Lỗi thường gặp:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;title&#34;</span>); <span style="color:#75715e">// null
+</span></span></span></code></pre></div><p>👉 Do JS chạy trước khi HTML load</p>
+<p>✔ Cách xử lý:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// code DOM ở đây
+</span></span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><ol start="9">
+<li>Ví dụ thực tế
+Đổi tiêu đề khi click:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">btn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;button&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span>.<span style="color:#a6e22e">innerText</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bạn vừa click&#34;</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><ol start="10">
+<li>So sánh nhanh
+<table>
+  <thead>
+      <tr>
+          <th>Cách</th>
+          <th>Ghi chú</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>getElementById</td>
+          <td>Nhanh</td>
+      </tr>
+      <tr>
+          <td>querySelector</td>
+          <td>Linh hoạt</td>
+      </tr>
+      <tr>
+          <td>innerText</td>
+          <td>An toàn</td>
+      </tr>
+      <tr>
+          <td>innerHTML</td>
+          <td>Cẩn thận</td>
+      </tr>
+      <tr>
+          <td>classList</td>
+          <td>Nên dùng</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>Lỗi thường gặp</li>
+</ol>
+<p>❌ Sai selector
+❌ DOM chưa load
+❌ Lạm dụng innerHTML</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://ngocdat784.github.io/blog/tags/js-dom"
+      >js-dom</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://ngocdat784.github.io/blog/blog/js-cau-truc-dieu-kien/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Cấu trúc điều kiện trong JavaScript</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://ngocdat784.github.io/blog/blog/js-ham-function/"
+      ><span>Hàm (Function) trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2025
+    <a class="link" href="https://ngocdat784.github.io/blog/">Ký sự Lập trình Web &amp; JavaScript</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

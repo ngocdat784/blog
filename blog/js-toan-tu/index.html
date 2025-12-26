@@ -1,0 +1,483 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="vi"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Toán tử trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="1. Toán tử là gì?
+Toán tử (Operator) là các ký hiệu dùng để:
+
+Thực hiện phép tính
+So sánh
+Gán giá trị
+Kết hợp điều kiện
+
+👉 Ví dụ:
+let a = 10 &#43; 5;
+
+  
+      
+          Toán tử
+          Ý nghĩa
+      
+  
+  
+      
+          &#43;
+          Cộng
+      
+      
+          -
+          Trừ
+      
+      
+          *
+          Nhân
+      
+      
+          /
+          Chia
+      
+      
+          %
+          Chia lấy dư
+      
+      
+          **
+          Lũy thừa
+      
+  
+
+let a = 10;
+
+let b = 3;
+
+a &#43; b; // 13
+a - b; // 7
+a * b; // 30
+a / b; // 3.333...
+a % b; // 1
+a ** b; // 1000
+📌 Lưu ý:" />
+  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="https://ngocdat784.github.io/blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://ngocdat784.github.io/blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://ngocdat784.github.io/blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://ngocdat784.github.io/blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://ngocdat784.github.io/blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.153.1">
+  <meta itemprop="name" content="Toán tử trong JavaScript">
+  <meta itemprop="description" content="1. Toán tử là gì? Toán tử (Operator) là các ký hiệu dùng để:
+Thực hiện phép tính So sánh Gán giá trị Kết hợp điều kiện 👉 Ví dụ:
+let a = 10 &#43; 5; Toán tử Ý nghĩa &#43; Cộng - Trừ * Nhân / Chia % Chia lấy dư ** Lũy thừa let a = 10; let b = 3; a &#43; b; // 13 a - b; // 7 a * b; // 30 a / b; // 3.333... a % b; // 1 a ** b; // 1000 📌 Lưu ý:">
+  <meta itemprop="datePublished" content="2025-12-22T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-12-22T00:00:00+00:00">
+  <meta itemprop="wordCount" content="386">
+  <meta itemprop="keywords" content="Js-Co-Ban"><meta property="og:url" content="https://ngocdat784.github.io/blog/blog/js-toan-tu/">
+  <meta property="og:site_name" content="Ký sự Lập trình Web & JavaScript">
+  <meta property="og:title" content="Toán tử trong JavaScript">
+  <meta property="og:description" content="1. Toán tử là gì? Toán tử (Operator) là các ký hiệu dùng để:
+Thực hiện phép tính So sánh Gán giá trị Kết hợp điều kiện 👉 Ví dụ:
+let a = 10 &#43; 5; Toán tử Ý nghĩa &#43; Cộng - Trừ * Nhân / Chia % Chia lấy dư ** Lũy thừa let a = 10; let b = 3; a &#43; b; // 13 a - b; // 7 a * b; // 30 a / b; // 3.333... a % b; // 1 a ** b; // 1000 📌 Lưu ý:">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-12-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-22T00:00:00+00:00">
+    <meta property="article:tag" content="Js-Co-Ban">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Toán tử trong JavaScript">
+  <meta name="twitter:description" content="1. Toán tử là gì? Toán tử (Operator) là các ký hiệu dùng để:
+Thực hiện phép tính So sánh Gán giá trị Kết hợp điều kiện 👉 Ví dụ:
+let a = 10 &#43; 5; Toán tử Ý nghĩa &#43; Cộng - Trừ * Nhân / Chia % Chia lấy dư ** Lũy thừa let a = 10; let b = 3; a &#43; b; // 13 a - b; // 7 a * b; // 30 a / b; // 3.333... a % b; // 1 a ** b; // 1000 📌 Lưu ý:">
+
+  <link rel="canonical" href="https://ngocdat784.github.io/blog/blog/js-toan-tu/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://ngocdat784.github.io/blog/"
+      >Ký sự Lập trình Web &amp; JavaScript</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../blog/"
+        >Trang chủ</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../blog/blog/"
+        >Blog</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="about/"
+        >About Me</a
+      ></nav>
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Toán tử trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 22, 2025</time></div></header>
+
+  <section><h2 id="1-toán-tử-là-gì">1. Toán tử là gì?</h2>
+<p><strong>Toán tử (Operator)</strong> là các ký hiệu dùng để:</p>
+<ul>
+<li>Thực hiện phép tính</li>
+<li>So sánh</li>
+<li>Gán giá trị</li>
+<li>Kết hợp điều kiện</li>
+</ul>
+<p>👉 Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>;
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Toán tử</th>
+          <th>Ý nghĩa</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>+</code></td>
+          <td>Cộng</td>
+      </tr>
+      <tr>
+          <td><code>-</code></td>
+          <td>Trừ</td>
+      </tr>
+      <tr>
+          <td><code>*</code></td>
+          <td>Nhân</td>
+      </tr>
+      <tr>
+          <td><code>/</code></td>
+          <td>Chia</td>
+      </tr>
+      <tr>
+          <td><code>%</code></td>
+          <td>Chia lấy dư</td>
+      </tr>
+      <tr>
+          <td><code>**</code></td>
+          <td>Lũy thừa</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 13
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 7
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 30
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 3.333...
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">%</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">**</span> <span style="color:#a6e22e">b</span>; <span style="color:#75715e">// 1000
+</span></span></span></code></pre></div><p>📌 Lưu ý:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span> <span style="color:#75715e">// &#34;105&#34;
+</span></span></span></code></pre></div><p>Dấu + vừa là cộng, vừa là nối chuỗi.</p>
+<ol start="3">
+<li>Toán tử gán (Assignment Operators)
+<table>
+  <thead>
+      <tr>
+          <th>Toán tử</th>
+          <th>Ví dụ</th>
+          <th>Tương đương</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>=</code></td>
+          <td><code>x = 10</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>+=</code></td>
+          <td><code>x += 5</code></td>
+          <td><code>x = x + 5</code></td>
+      </tr>
+      <tr>
+          <td><code>-=</code></td>
+          <td><code>x -= 2</code></td>
+          <td><code>x = x - 2</code></td>
+      </tr>
+      <tr>
+          <td><code>*=</code></td>
+          <td><code>x *= 3</code></td>
+          <td><code>x = x * 3</code></td>
+      </tr>
+      <tr>
+          <td><code>/=</code></td>
+          <td><code>x /= 2</code></td>
+          <td><code>x = x / 2</code></td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>Toán tử tăng / giảm</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span><span style="color:#f92672">++</span>; <span style="color:#75715e">// 6
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span><span style="color:#f92672">--</span>; <span style="color:#75715e">// 5
+</span></span></span></code></pre></div><p>Phân biệt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span><span style="color:#f92672">++</span>); <span style="color:#75715e">// 5
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#f92672">++</span><span style="color:#a6e22e">a</span>); <span style="color:#75715e">// 7
+</span></span></span></code></pre></div><p>👉 ++a: tăng trước
+👉 a++: tăng sau</p>
+<ol start="5">
+<li>Toán tử so sánh (Comparison Operators)
+<table>
+  <thead>
+      <tr>
+          <th>Toán tử</th>
+          <th>Ý nghĩa</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>==</code></td>
+          <td>So sánh giá trị</td>
+      </tr>
+      <tr>
+          <td><code>===</code></td>
+          <td>So sánh giá trị + kiểu</td>
+      </tr>
+      <tr>
+          <td><code>!=</code></td>
+          <td>Khác giá trị</td>
+      </tr>
+      <tr>
+          <td><code>!==</code></td>
+          <td>Khác giá trị hoặc kiểu</td>
+      </tr>
+      <tr>
+          <td><code>&gt;</code></td>
+          <td>Lớn hơn</td>
+      </tr>
+      <tr>
+          <td><code>&lt;</code></td>
+          <td>Nhỏ hơn</td>
+      </tr>
+      <tr>
+          <td><code>&gt;=</code></td>
+          <td>≥</td>
+      </tr>
+      <tr>
+          <td><code>&lt;=</code></td>
+          <td>≤</td>
+      </tr>
+      <tr>
+          <td>Ví dụ:</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;5&#34;</span>;   <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;5&#34;</span>;  <span style="color:#75715e">// false
+</span></span></span></code></pre></div><p>📌 Luôn ưu tiên dùng ===
+6. Toán tử logic (Logical Operators)</p>
+<table>
+  <thead>
+      <tr>
+          <th>Toán tử</th>
+          <th>Ý nghĩa</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&amp;&amp;</code></td>
+          <td>AND</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>`</td>
+          <td></td>
+          <td>`</td>
+          <td>OR</td>
+      </tr>
+      <tr>
+          <td><code>!</code></td>
+          <td>NOT</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isStudent</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">isStudent</span>; <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">!</span><span style="color:#66d9ef">true</span>; <span style="color:#75715e">// false
+</span></span></span></code></pre></div><ol start="7">
+<li>Toán tử điều kiện (Ternary Operator)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">condition</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">value1</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">value2</span>;
+</span></span></code></pre></div><p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;Đủ tuổi&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Chưa đủ tuổi&#34;</span>;
+</span></span></code></pre></div><p>👉 Viết gọn hơn if&hellip;else</p>
+<ol start="8">
+<li>Toán tử typeof</li>
+</ol>
+<p>Dùng để kiểm tra kiểu dữ liệu.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#ae81ff">10</span>;        <span style="color:#75715e">// &#34;number&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#e6db74">&#34;Hello&#34;</span>;   <span style="color:#75715e">// &#34;string&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">true</span>;      <span style="color:#75715e">// &#34;boolean&#34;
+</span></span></span></code></pre></div><ol start="9">
+<li>Thứ tự ưu tiên toán tử</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 20
+</span></span></span></code></pre></div><p>👉 Nhân chia trước, cộng trừ sau
+👉 Dùng ngoặc để rõ ràng:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>(<span style="color:#ae81ff">10</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// 30
+</span></span></span></code></pre></div></section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://ngocdat784.github.io/blog/tags/js-co-ban"
+      >js-co-ban</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://ngocdat784.github.io/blog/blog/js-mang-va-object/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Mảng và Object trong JavaScript</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://ngocdat784.github.io/blog/blog/js-vong-lap/"
+      ><span>Vòng lặp trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2025
+    <a class="link" href="https://ngocdat784.github.io/blog/">Ký sự Lập trình Web &amp; JavaScript</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

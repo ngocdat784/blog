@@ -1,0 +1,352 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="vi"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Mảng và Object trong JavaScript - Ký sự Lập trình Web &amp; JavaScript</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="1. Mảng và Object là gì?
+Trong JavaScript:
+
+Mảng (Array) dùng để lưu danh sách dữ liệu
+Object dùng để lưu dữ liệu có cấu trúc
+
+👉 Đây là 2 kiểu dữ liệu quan trọng nhất khi làm web thực tế.
+
+2. Mảng (Array)
+2.1. Khai báo mảng
+let numbers = [1, 2, 3, 4];
+let fruits = [&#34;Táo&#34;, &#34;Cam&#34;, &#34;Chuối&#34;];
+👉 Mảng bắt đầu từ index = 0
+fruits[0]; // &#34;Táo&#34;
+2.2. Độ dài mảng
+fruits.length; // 3
+2.3. Thêm / xoá phần tử" />
+  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="https://ngocdat784.github.io/blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://ngocdat784.github.io/blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://ngocdat784.github.io/blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://ngocdat784.github.io/blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://ngocdat784.github.io/blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.153.1">
+  <meta itemprop="name" content="Mảng và Object trong JavaScript">
+  <meta itemprop="description" content="1. Mảng và Object là gì? Trong JavaScript:
+Mảng (Array) dùng để lưu danh sách dữ liệu Object dùng để lưu dữ liệu có cấu trúc 👉 Đây là 2 kiểu dữ liệu quan trọng nhất khi làm web thực tế.
+2. Mảng (Array) 2.1. Khai báo mảng let numbers = [1, 2, 3, 4]; let fruits = [&#34;Táo&#34;, &#34;Cam&#34;, &#34;Chuối&#34;]; 👉 Mảng bắt đầu từ index = 0
+fruits[0]; // &#34;Táo&#34; 2.2. Độ dài mảng
+fruits.length; // 3 2.3. Thêm / xoá phần tử">
+  <meta itemprop="datePublished" content="2025-12-22T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-12-22T00:00:00+00:00">
+  <meta itemprop="wordCount" content="388">
+  <meta itemprop="keywords" content="Js-Co-Ban"><meta property="og:url" content="https://ngocdat784.github.io/blog/blog/js-mang-va-object/">
+  <meta property="og:site_name" content="Ký sự Lập trình Web & JavaScript">
+  <meta property="og:title" content="Mảng và Object trong JavaScript">
+  <meta property="og:description" content="1. Mảng và Object là gì? Trong JavaScript:
+Mảng (Array) dùng để lưu danh sách dữ liệu Object dùng để lưu dữ liệu có cấu trúc 👉 Đây là 2 kiểu dữ liệu quan trọng nhất khi làm web thực tế.
+2. Mảng (Array) 2.1. Khai báo mảng let numbers = [1, 2, 3, 4]; let fruits = [&#34;Táo&#34;, &#34;Cam&#34;, &#34;Chuối&#34;]; 👉 Mảng bắt đầu từ index = 0
+fruits[0]; // &#34;Táo&#34; 2.2. Độ dài mảng
+fruits.length; // 3 2.3. Thêm / xoá phần tử">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-12-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-22T00:00:00+00:00">
+    <meta property="article:tag" content="Js-Co-Ban">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mảng và Object trong JavaScript">
+  <meta name="twitter:description" content="1. Mảng và Object là gì? Trong JavaScript:
+Mảng (Array) dùng để lưu danh sách dữ liệu Object dùng để lưu dữ liệu có cấu trúc 👉 Đây là 2 kiểu dữ liệu quan trọng nhất khi làm web thực tế.
+2. Mảng (Array) 2.1. Khai báo mảng let numbers = [1, 2, 3, 4]; let fruits = [&#34;Táo&#34;, &#34;Cam&#34;, &#34;Chuối&#34;]; 👉 Mảng bắt đầu từ index = 0
+fruits[0]; // &#34;Táo&#34; 2.2. Độ dài mảng
+fruits.length; // 3 2.3. Thêm / xoá phần tử">
+
+  <link rel="canonical" href="https://ngocdat784.github.io/blog/blog/js-mang-va-object/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://ngocdat784.github.io/blog/"
+      >Ký sự Lập trình Web &amp; JavaScript</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../blog/"
+        >Trang chủ</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../blog/blog/"
+        >Blog</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="about/"
+        >About Me</a
+      ></nav>
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Mảng và Object trong JavaScript</h1><div class="text-xs antialiased opacity-60"><time>Dec 22, 2025</time></div></header>
+
+  <section><h2 id="1-mảng-và-object-là-gì">1. Mảng và Object là gì?</h2>
+<p>Trong JavaScript:</p>
+<ul>
+<li><strong>Mảng (Array)</strong> dùng để lưu <strong>danh sách dữ liệu</strong></li>
+<li><strong>Object</strong> dùng để lưu <strong>dữ liệu có cấu trúc</strong></li>
+</ul>
+<p>👉 Đây là <strong>2 kiểu dữ liệu quan trọng nhất</strong> khi làm web thực tế.</p>
+<hr>
+<h2 id="2-mảng-array">2. Mảng (Array)</h2>
+<h3 id="21-khai-báo-mảng">2.1. Khai báo mảng</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruits</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Táo&#34;</span>, <span style="color:#e6db74">&#34;Cam&#34;</span>, <span style="color:#e6db74">&#34;Chuối&#34;</span>];
+</span></span></code></pre></div><p>👉 Mảng bắt đầu từ index = 0</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>[<span style="color:#ae81ff">0</span>]; <span style="color:#75715e">// &#34;Táo&#34;
+</span></span></span></code></pre></div><p>2.2. Độ dài mảng</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">length</span>; <span style="color:#75715e">// 3
+</span></span></span></code></pre></div><p>2.3. Thêm / xoá phần tử</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;Xoài&#34;</span>);    <span style="color:#75715e">// thêm cuối
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">pop</span>();           <span style="color:#75715e">// xoá cuối
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#e6db74">&#34;Nho&#34;</span>);  <span style="color:#75715e">// thêm đầu
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">shift</span>();         <span style="color:#75715e">// xoá đầu
+</span></span></span></code></pre></div><p>2.4. Duyệt mảng</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">fruit</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">fruits</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fruit</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Hoặc:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">fruits</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">item</span> =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">item</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>2.5. Một số hàm mảng rất hay dùng</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);        <span style="color:#75715e">// [2,4,6,8,10]
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>);     <span style="color:#75715e">// [3,4,5]
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>);     <span style="color:#75715e">// 3
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#ae81ff">4</span>);            <span style="color:#75715e">// true
+</span></span></span></code></pre></div><p>📌 Các hàm này không làm thay đổi mảng gốc (trừ vài hàm đặc biệt)</p>
+<ol start="3">
+<li>Object
+3.1. Khai báo Object</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">student</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Đạt&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">major</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;CNTT&#34;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>3.2. Truy cập thuộc tính</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">name</span>;        <span style="color:#75715e">// &#34;Đạt&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">student</span>[<span style="color:#e6db74">&#34;age&#34;</span>];      <span style="color:#75715e">// 20
+</span></span></span></code></pre></div><p>3.3. Thêm / sửa / xoá thuộc tính</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dat@gmail.com&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">student</span>.<span style="color:#a6e22e">major</span>;
+</span></span></code></pre></div><p>3.4. Duyệt Object</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">student</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">student</span>[<span style="color:#a6e22e">key</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="4">
+<li>Mảng chứa Object (cực kỳ phổ biến)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">students</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;An&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Bình&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">21</span> },
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Đạt&#34;</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">22</span> }
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></div><p>Lọc sinh viên trên 20 tuổi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">students</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">s</span> =&gt; <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>);
+</span></span></code></pre></div><ol start="5">
+<li>Destructuring (ES6)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> { <span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">student</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span>);
+</span></span></code></pre></div><p>Với mảng:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>;
+</span></span></code></pre></div><ol start="6">
+<li>Spread Operator (&hellip;)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newFruits</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">fruits</span>, <span style="color:#e6db74">&#34;Ổi&#34;</span>];
+</span></span></code></pre></div><p>Với object:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">newStudent</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">student</span>, <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">23</span> };
+</span></span></code></pre></div><p>👉 Rất hay dùng khi làm React / API</p>
+<ol start="7">
+<li>So sánh mảng &amp; object
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Mảng</th>
+          <th>Object</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Lưu</td>
+          <td>Danh sách</td>
+          <td>Dữ liệu có cấu trúc</td>
+      </tr>
+      <tr>
+          <td>Truy cập</td>
+          <td>Index</td>
+          <td>Key</td>
+      </tr>
+      <tr>
+          <td>Thứ tự</td>
+          <td>Có</td>
+          <td>Không bắt buộc</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>Ví dụ thực tế
+Tính tổng điểm sinh viên:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">scores</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">total</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">scores</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">sum</span>, <span style="color:#a6e22e">s</span>) =&gt; <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">0</span>);
+</span></span></code></pre></div><ol start="9">
+<li>Lỗi thường gặp</li>
+</ol>
+<p>❌ Truy cập sai index
+❌ Nhầm for&hellip;in và for&hellip;of
+❌ Thay đổi mảng gốc không kiểm soát</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://ngocdat784.github.io/blog/tags/js-co-ban"
+      >js-co-ban</a
+    ></footer><nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://ngocdat784.github.io/blog/blog/js-ham-function/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Hàm (Function) trong JavaScript</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://ngocdat784.github.io/blog/blog/js-toan-tu/"
+      ><span>Toán tử trong JavaScript</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2025
+    <a class="link" href="https://ngocdat784.github.io/blog/">Ký sự Lập trình Web &amp; JavaScript</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="vi"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Blog - Ký sự Lập trình Web &amp; JavaScript</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  <meta
+    name="description"
+    content="Chia sẻ kiến thức Java, JavaScript và lập trình mạng cho sinh viên"
+  />
+  <meta name="author" content="Ký sự Lập trình Web &amp; JavaScript" /><link rel="preload stylesheet" as="style" href="https://ngocdat784.github.io/blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://ngocdat784.github.io/blog/theme.png" />
+
+  
+
+  
+
+  
+
+  
+  <link
+    rel="icon"
+    href="https://ngocdat784.github.io/blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://ngocdat784.github.io/blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.153.1">
+  <meta itemprop="name" content="Blog">
+  <meta itemprop="description" content="Chào mừng bạn đến với Blog lập trình Java &amp; JavaScript 👋
+Nơi mình chia sẻ:
+Kiến thức Java cơ bản đến nâng cao JavaScript cho lập trình web Ghi chép trong quá trình học tập và thực hành 📌 Blog được xây dựng phục vụ mục đích học tập và làm portfolio cá nhân.">
+  <meta itemprop="datePublished" content="2025-12-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-12-24T00:00:00+00:00">
+  <meta itemprop="wordCount" content="55"><meta property="og:url" content="https://ngocdat784.github.io/blog/blog/">
+  <meta property="og:site_name" content="Ký sự Lập trình Web & JavaScript">
+  <meta property="og:title" content="Blog">
+  <meta property="og:description" content="Chào mừng bạn đến với Blog lập trình Java &amp; JavaScript 👋
+Nơi mình chia sẻ:
+Kiến thức Java cơ bản đến nâng cao JavaScript cho lập trình web Ghi chép trong quá trình học tập và thực hành 📌 Blog được xây dựng phục vụ mục đích học tập và làm portfolio cá nhân.">
+  <meta property="og:locale" content="vi">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blog">
+  <meta name="twitter:description" content="Chào mừng bạn đến với Blog lập trình Java &amp; JavaScript 👋
+Nơi mình chia sẻ:
+Kiến thức Java cơ bản đến nâng cao JavaScript cho lập trình web Ghi chép trong quá trình học tập và thực hành 📌 Blog được xây dựng phục vụ mục đích học tập và làm portfolio cá nhân.">
+<link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://ngocdat784.github.io/blog/blog/index.xml"
+    title="Ký sự Lập trình Web &amp; JavaScript"
+  />
+  <link rel="canonical" href="https://ngocdat784.github.io/blog/blog/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://ngocdat784.github.io/blog/"
+      >Ký sự Lập trình Web &amp; JavaScript</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../../blog/"
+        >Trang chủ</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="../../../blog/blog/"
+        >Blog</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="about/"
+        >About Me</a
+      ></nav>
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    >
+
+
+<style>
+.blog-list-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 40px;
+}
+
+.post-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.post-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.post-body {
+  padding: 24px;
+}
+
+.post-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.post-title a {
+  color: #000;
+  text-decoration: none;
+}
+
+.post-meta {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.post-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.read-more {
+  font-weight: 600;
+  color: #000;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+</style>
+
+<div class="blog-list-wrapper">
+  <div class="blog-grid">
+
+    
+    <div>
+
+      
+
+      
+      <article class="post-card">
+
+        
+
+        <div class="post-body">
+          <h2 class="post-title">
+            <a href="../../../blog/blog/js-dom-co-ban/">DOM cơ bản trong JavaScript</a>
+          </h2>
+
+          <div class="post-meta">
+            22 Dec 2025
+          </div>
+
+          
+
+          <a href="../../../blog/blog/js-dom-co-ban/" class="read-more">
+            Read more →
+          </a>
+        </div>
+
+      </article>
+      
+      <article class="post-card">
+
+        
+
+        <div class="post-body">
+          <h2 class="post-title">
+            <a href="../../../blog/blog/js-cau-truc-dieu-kien/">Cấu trúc điều kiện trong JavaScript</a>
+          </h2>
+
+          <div class="post-meta">
+            22 Dec 2025
+          </div>
+
+          
+
+          <a href="../../../blog/blog/js-cau-truc-dieu-kien/" class="read-more">
+            Read more →
+          </a>
+        </div>
+
+      </article>
+      
+      <article class="post-card">
+
+        
+
+        <div class="post-body">
+          <h2 class="post-title">
+            <a href="../../../blog/blog/js-bien-va-kieu-du-lieu/">Biến và Kiểu dữ liệu trong JavaScript</a>
+          </h2>
+
+          <div class="post-meta">
+            22 Dec 2025
+          </div>
+
+          
+
+          <a href="../../../blog/blog/js-bien-va-kieu-du-lieu/" class="read-more">
+            Read more →
+          </a>
+        </div>
+
+      </article>
+      
+      <article class="post-card">
+
+        
+<div class="post-thumb">
+  <a href="../../../blog/blog/">
+    <img src="../../../images/t%e1%ba%a3i%20xu%e1%bb%91ng.png" alt="Blog">
+  </a>
+</div>
+
+
+        <div class="post-body">
+          <h2 class="post-title">
+            <a href="../../../blog/blog/js-la-gi/">JavaScript là gì?</a>
+          </h2>
+
+          <div class="post-meta">
+            22 Dec 2025
+          </div>
+
+          
+          <p class="post-desc">Giới thiệu JavaScript – ngôn ngữ lập trình cốt lõi trong phát triển web hiện đại.</p>
+          
+
+          <a href="../../../blog/blog/js-la-gi/" class="read-more">
+            Read more →
+          </a>
+        </div>
+
+      </article>
+      
+
+      
+      <div class="pagination">
+        
+          <a href="../../../blog/blog/">← Previous</a>
+        
+
+        
+      </div>
+
+    </div>
+
+    
+    <aside>
+      <style>
+.sidebar-box {
+  background: #fff;
+  padding: 24px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.sidebar-box h3 {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+</style>
+
+<div class="sidebar-box">
+  <h3>SEARCH</h3>
+  <input type="text" placeholder="Search..." style="width:100%;padding:10px;">
+</div>
+
+<div class="sidebar-box">
+  <h3>FACEBOOK PAGE</h3>
+  <p>Ngọc Đạt</p>
+</div>
+
+    </aside>
+
+  </div>
+</div>
+
+</main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2025
+    <a class="link" href="https://ngocdat784.github.io/blog/">Ký sự Lập trình Web &amp; JavaScript</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>
